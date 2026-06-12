@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import ProjectModal from './ProjectModal'
 
 const projects = [
@@ -71,12 +72,24 @@ const projects = [
     area: '5,600 sq ft',
     role: 'Lead Designer',
     description:
-      'Interior concept for a twelve-room maison d\'hôtes set within a classified 18th-century building. The scheme layered period architectural detail with contemporary French craft — ceramic lighting, woven textiles, and hand-dyed wallcoverings produced by regional artisans.',
-    tags: ['Maison d\'Hôtes', 'Heritage', 'Artisan Craft'],
+      "Interior concept for a twelve-room maison d'hôtes set within a classified 18th-century building. The scheme layered period architectural detail with contemporary French craft — ceramic lighting, woven textiles, and hand-dyed wallcoverings produced by regional artisans.",
+    tags: ["Maison d'Hôtes", 'Heritage', 'Artisan Craft'],
   },
 ]
 
 const filters = ['All', 'Residential', 'Hospitality']
+
+const listVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.07 } },
+  exit: { transition: { staggerChildren: 0.04, staggerDirection: -1 } },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.25, 0.1, 0.25, 1] } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.2, ease: 'easeIn' } },
+}
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All')
@@ -88,7 +101,6 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24 px-6 md:px-16 max-w-5xl mx-auto">
-      {/* Section header */}
       <div className="mb-14">
         <p className="text-xs tracking-[0.2em] uppercase text-sage mb-3">Selected Work</p>
         <h2
@@ -99,7 +111,6 @@ export default function Projects() {
         </h2>
       </div>
 
-      {/* Filter tabs */}
       <div className="flex gap-8 mb-12 border-b border-stone/10 pb-0">
         {filters.map(f => (
           <button
@@ -116,47 +127,58 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Project list */}
-      <ul className="divide-y divide-stone/10">
-        {filtered.map((project, i) => (
-          <li key={project.id}>
-            <button
-              onClick={() => setSelectedProject(project)}
-              className="w-full text-left py-7 flex items-baseline justify-between group"
-            >
-              <div className="flex items-baseline gap-6">
-                <span className="text-xs text-stone/30 w-5 shrink-0">{String(i + 1).padStart(2, '0')}</span>
-                <div>
-                  <span
-                    className="text-2xl md:text-3xl font-light group-hover:text-terra transition-colors duration-200"
-                    style={{ fontFamily: 'var(--font-display)' }}
-                  >
-                    {project.name}
+      <AnimatePresence mode="wait">
+        <motion.ul
+          key={activeFilter}
+          variants={listVariants}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          className="divide-y divide-stone/10"
+        >
+          {filtered.map((project, i) => (
+            <motion.li key={project.id} variants={itemVariants}>
+              <button
+                onClick={() => setSelectedProject(project)}
+                className="w-full text-left py-7 flex items-baseline justify-between group"
+              >
+                <div className="flex items-baseline gap-6">
+                  <span className="text-xs text-stone/30 w-5 shrink-0">
+                    {String(i + 1).padStart(2, '0')}
                   </span>
-                  <span className="ml-4 text-xs tracking-widest uppercase text-stone/40">
-                    {project.location}
-                  </span>
+                  <div>
+                    <span
+                      className="text-2xl md:text-3xl font-light group-hover:text-terra transition-colors duration-200"
+                      style={{ fontFamily: 'var(--font-display)' }}
+                    >
+                      {project.name}
+                    </span>
+                    <span className="ml-4 text-xs tracking-widest uppercase text-stone/40">
+                      {project.location}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center gap-6 shrink-0 ml-4">
-                <span className="hidden md:block text-xs tracking-widest uppercase text-stone/40">
-                  {project.category}
-                </span>
-                <span className="text-stone/30 text-sm">{project.year}</span>
-                <span className="text-terra opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
-              </div>
-            </button>
-          </li>
-        ))}
-      </ul>
+                <div className="flex items-center gap-6 shrink-0 ml-4">
+                  <span className="hidden md:block text-xs tracking-widest uppercase text-stone/40">
+                    {project.category}
+                  </span>
+                  <span className="text-stone/30 text-sm">{project.year}</span>
+                  <span className="text-terra opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
+                </div>
+              </button>
+            </motion.li>
+          ))}
+        </motion.ul>
+      </AnimatePresence>
 
-      {/* Modal */}
-      {selectedProject && (
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
-      )}
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   )
 }
