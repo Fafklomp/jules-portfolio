@@ -1,15 +1,31 @@
-import Hero from './components/Hero'
-import Links from './components/Links'
-import Projects from './components/Projects'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import Nav from './components/Nav'
+import Home from './pages/Home'
+import ProjectsPage from './pages/ProjectsPage'
+import ContactPage from './pages/ContactPage'
 import Footer from './components/Footer'
+
+function AnimatedRoutes() {
+  const location = useLocation()
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/"         element={<Home />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/contact"  element={<ContactPage />} />
+      </Routes>
+    </AnimatePresence>
+  )
+}
 
 export default function App() {
   return (
-    <main className="min-h-screen" style={{ backgroundColor: '#F7F4EF' }}>
-      <Hero />
-      <Projects />
-      <Links />
-      <Footer />
-    </main>
+    <BrowserRouter>
+      <main className="min-h-screen" style={{ backgroundColor: '#F7F4EF' }}>
+        <Nav />
+        <AnimatedRoutes />
+      </main>
+    </BrowserRouter>
   )
 }

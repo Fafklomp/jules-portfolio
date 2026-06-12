@@ -14,11 +14,23 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: #F7F4EF;
   color: #2C2822;
   font-family: 'Poppins', system-ui, sans-serif;
   font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #B8643A22;
+  color: #2C2822;
 }
