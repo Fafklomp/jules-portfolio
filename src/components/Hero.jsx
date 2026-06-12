@@ -1,16 +1,64 @@
+import { useRef, useState, useEffect } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import photo from '../assets/photo.jpg'
+
 export default function Hero() {
+  const ref = useRef(null)
+  const containerRef = useRef(null)
+  const [textOffset, setTextOffset] = useState(0)
+
+  // Measure how far the text needs to travel to land at viewport center
+  useEffect(() => {
+    const measure = () => {
+      if (containerRef.current) {
+        const imageCenter = containerRef.current.offsetHeight / 2
+        const viewportCenter = window.innerHeight / 2
+        setTextOffset(viewportCenter - imageCenter)
+      }
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [])
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end end'],
+  })
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.1])
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+  const textY = useTransform(scrollYProgress, [0, 1], [0, textOffset])
+
   return (
-    <section className="px-6 md:px-16 pt-24 pb-16 max-w-5xl mx-auto">
-      <p className="text-xs tracking-[0.2em] uppercase text-sage mb-6">Portfolio</p>
-      <h1
-        className="text-6xl md:text-8xl font-light leading-none tracking-tight mb-6"
-        style={{ fontFamily: 'var(--font-display)', color: '#2C2822' }}
-      >
-        Jules Tucker
-      </h1>
-      <p className="text-lg md:text-xl font-light text-stone/60 max-w-md leading-relaxed">
-        Interior Designer
-      </p>
-    </section>
+    <div ref={ref} className="h-[300vh] max-w-5xl mx-auto">
+      <div ref={containerRef} className="sticky top-0 overflow-hidden rounded-sm">
+        {/* Image */}
+        <motion.img
+          src={photo}
+          alt=""
+          aria-hidden="true"
+          style={{ scale, y: imageY }}
+          className="w-full h-auto block origin-top"
+        />
+
+        {/* Text — starts centered on image, scrolls up to viewport center */}
+        <motion.div
+          style={{ y: textY }}
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+        >
+          <h1
+            className="text-7xl md:text-9xl font-bold leading-none tracking-tight mb-2 text-offwhite"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Jules Tucker
+          </h1>
+          <p className="text-4xl md:text-5xl font-light text-offwhite/70 max-w-md leading-none mb-0">
+            Interior Designer
+          </p>
+          <p className="text-sm tracking-[0.2em] uppercase font-bold text-offwhite/70">Portfolio</p>
+        </motion.div>
+      </div>
+    </div>
   )
 }

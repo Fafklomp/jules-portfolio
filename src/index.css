@@ -7,7 +7,7 @@
   --color-terra: #B8643A;
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-body: 'Poppins', system-ui, sans-serif;
 }
 
 *, *::before, *::after {
@@ -18,7 +18,7 @@ body {
   margin: 0;
   background-color: #F7F4EF;
   color: #2C2822;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
 }
