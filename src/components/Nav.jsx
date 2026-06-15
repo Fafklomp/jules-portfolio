@@ -3,7 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom'
 import { useScroll } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Work',    to: '/projects' },
+  { label: 'Projects', to: '/projects' },
   { label: 'About',   to: '/'         },
   { label: 'Contact', to: '/contact'  },
 ]

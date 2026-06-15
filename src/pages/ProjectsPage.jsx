@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import ProjectModal from '../components/ProjectModal'
-import Hero from '../components/Hero'
 import projects from '../data/projects'
 
 const filters = ['All', 'Residential', 'Hospitality']
@@ -66,9 +65,7 @@ export default function ProjectsPage() {
 
   return (
     <PageTransition>
-      <Hero />
-
-      <section className="pt-16 pb-24 px-6 md:px-16 max-w-5xl mx-auto">
+      <section className="pt-32 pb-24 px-6 md:px-16 max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
             <p className="text-xs tracking-[0.2em] uppercase text-sage mb-2">Selected Work</p>

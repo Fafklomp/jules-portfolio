@@ -52,7 +52,6 @@ export default function Hero() {
           <p className="text-4xl md:text-5xl font-light italic text-offwhite max-w-md leading-none mb-0">
             Interior Designer
           </p>
-          <p className="text-sm tracking-[0.2em] uppercase text-offwhite mt-6">Portfolio</p>
         </motion.div>
       </div>
     </div>
