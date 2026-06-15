@@ -45,10 +45,9 @@ export default function Nav() {
                 to={to}
                 className={({ isActive }) => {
                   const base = 'text-xs tracking-widest uppercase transition-colors duration-200'
-                  const active = isActive ? 'text-terra' : ''
                   const color = showBg
-                    ? (isActive ? 'text-terra' : 'text-stone/50 hover:text-terra')
-                    : (isActive ? 'text-terra' : 'text-offwhite/70 hover:text-offwhite')
+                    ? (isActive ? 'text-stone' : 'text-stone/50 hover:text-stone')
+                    : (isActive ? 'text-offwhite' : 'text-offwhite/70 hover:text-offwhite')
                   return `${base} ${color}`
                 }}
               >

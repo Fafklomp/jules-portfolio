@@ -172,10 +172,10 @@ export default function Projects() {
     <section id="projects" className="py-24 px-6 md:px-16 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
         <div>
-          <p className="text-xs tracking-[0.2em] uppercase text-sage mb-2">Selected Work</p>
+          <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-2">Selected Work</p>
           <h2
             className="text-4xl md:text-5xl font-light leading-tight"
-            style={{ fontFamily: 'var(--font-display)', color: '#2C2822' }}
+            style={{ fontFamily: 'var(--font-display)', color: '#2d2e8c', fontStyle: 'italic' }}
           >
             Projects
           </h2>

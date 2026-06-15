@@ -3,8 +3,9 @@
 @theme {
   --color-stone: #2C2822;
   --color-offwhite: #F7F4EF;
-  --color-sage: #8A9485;
-  --color-terra: #B8643A;
+  --color-sage: #2d2e8c;
+  --color-terra: #2d2e8c;
+  --color-gold: #fdbf69;
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Poppins', system-ui, sans-serif;
@@ -30,7 +31,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+li::marker {
+  color: #fdbf69;
+}
+
 ::selection {
-  background-color: #B8643A22;
+  background-color: #2d2e8c22;
   color: #2C2822;
 }

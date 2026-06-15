@@ -68,10 +68,10 @@ export default function ProjectsPage() {
       <section className="pt-32 pb-24 px-6 md:px-16 max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <p className="text-xs tracking-[0.2em] uppercase text-sage mb-2">Selected Work</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-2">Selected Work</p>
             <h1
               className="text-4xl md:text-6xl font-light leading-tight"
-              style={{ fontFamily: 'var(--font-display)', color: '#2C2822' }}
+              style={{ fontFamily: 'var(--font-display)', color: '#2d2e8c', fontStyle: 'italic' }}
             >
               Projects
             </h1>
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
                 onClick={() => setActiveFilter(f)}
                 className={`pb-3 text-xs tracking-widest uppercase transition-colors duration-200 border-b-[1.5px] -mb-px ${
                   activeFilter === f
-                    ? 'border-terra text-stone'
+                    ? 'border-gold text-stone'
                     : 'border-transparent text-stone/35 hover:text-stone/60'
                 }`}
               >

@@ -20,10 +20,10 @@ export default function Links() {
   return (
     <section id="links" className="py-24 px-6 md:px-16 max-w-5xl mx-auto border-t border-stone/10">
       <div className="mb-12">
-        <p className="text-xs tracking-[0.2em] uppercase text-sage mb-2">Connect</p>
+        <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-2">Connect</p>
         <h2
           className="text-4xl md:text-5xl font-light leading-tight"
-          style={{ fontFamily: 'var(--font-display)', color: '#2C2822' }}
+          style={{ fontFamily: 'var(--font-display)', color: '#2d2e8c', fontStyle: 'italic' }}
         >
           Links
         </h2>

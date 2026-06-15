@@ -54,13 +54,13 @@ export default function ProjectModal({ project, onClose }) {
         </button>
 
         <div className="p-8 md:p-12">
-          <p className="text-xs tracking-[0.2em] uppercase text-sage mb-4">
+          <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-4">
             {project.category}
           </p>
 
           <h3
             className="text-4xl md:text-5xl font-light leading-tight mb-2"
-            style={{ fontFamily: 'var(--font-display)', color: '#2C2822' }}
+            style={{ fontFamily: 'var(--font-display)', color: '#2d2e8c', fontStyle: 'italic' }}
           >
             {project.name}
           </h3>

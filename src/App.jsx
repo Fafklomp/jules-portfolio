@@ -27,6 +27,7 @@ export default function App() {
       <main className="min-h-screen" style={{ backgroundColor: '#F7F4EF' }}>
         <Nav />
         <AnimatedRoutes />
+        <Footer />
       </main>
     </BrowserRouter>
   )

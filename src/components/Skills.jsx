@@ -45,20 +45,20 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6 md:px-16 max-w-5xl mx-auto border-t border-stone/10">
       <div className="mb-12">
-        <p className="text-xs tracking-[0.2em] uppercase text-sage mb-2">Expertise</p>
+        <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-2">Expertise</p>
         <h2
           className="text-4xl md:text-5xl font-light leading-tight"
-          style={{ fontFamily: 'var(--font-display)', color: '#2C2822' }}
+          style={{ fontFamily: 'var(--font-display)', color: '#2d2e8c', fontStyle: 'italic' }}
         >
           Skills
         </h2>
       </div>
 
-      <div className="space-y-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
         {skillGroups.map(({ category, skills }) => (
-          <div key={category} className="grid md:grid-cols-[240px_1fr] gap-3 md:gap-16 items-start">
-            <p className="text-xs tracking-[0.15em] uppercase text-stone/40 md:pt-2">{category}</p>
-            <div className="flex flex-wrap gap-2">
+          <div key={category}>
+            <p className="text-xs tracking-[0.15em] uppercase mb-4" style={{ color: '#2d2e8c' }}>{category}</p>
+            <div className="flex flex-col gap-2">
               {skills.map(skill => {
                 const entry = skillIcons[skill]
                 return (
@@ -66,7 +66,7 @@ export default function Skills() {
                     key={skill}
                     className="flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-light border border-stone/15 text-stone/60 hover:border-terra hover:text-terra transition-colors duration-200 cursor-default"
                   >
-                    {entry && <entry.icon className="text-sm shrink-0" style={{ color: entry.color }} />}
+                    {entry && <entry.icon className="text-xl shrink-0" style={{ color: entry.color }} />}
                     {skill}
                   </span>
                 )
@@ -74,6 +74,7 @@ export default function Skills() {
             </div>
           </div>
         ))}
+
       </div>
     </section>
   )

@@ -37,7 +37,7 @@ export default function Home() {
       <FadeIn>
         <section id="about" className="px-6 md:px-16 pt-8 pb-20 max-w-5xl mx-auto">
           <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
-            <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">About Me</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">About Me</p>
             <div className="space-y-4">
               <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
                 My name is Jules, a South African trained Interior Architect passionate about crafting spaces through the lens of human wellbeing and sustainability. After gaining three years of professional experience, earning my LEED Green Associate credential, and graduating Cum Laude with my Honours in Interior Architecture, I have developed a strong commitment to designing interiors that exceed client expectations.
@@ -54,7 +54,7 @@ export default function Home() {
       <FadeIn>
         <section className="px-6 md:px-16 pb-20 max-w-5xl mx-auto">
           <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
-            <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">Work Experience</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Work Experience</p>
             <div className="space-y-6">
               <WorkEntry dates={['Jul 2024 –', 'Jun 2026']} company="Silvio Rech and Lesley Carstens" role="Interior Architect · Johannesburg, South Africa">
                 <p className="text-xs font-light text-stone/70 leading-relaxed">During my time here, I collaborated with a team of five interior designers and five architects on the design of a luxury resort in the Seychelles, which featured a beach restaurant, pool deck, 21 villas, and a spa. While I contributed to the interior design of the various buildings, my primary focus was the spa and wellness center — a $10 million project — where I worked closely with one interior designer and three architects. My interior design colleague and I were responsible for the complete interior design scope of the spa. My focus included custom joinery and FF&amp;E, furniture layouts, reflected ceiling plans, and coordination with electrical and plumbing systems. I also prepared schedules, tender documentation, and 3D visualizations, while developing client presentations and liaising with contractors to ensure seamless project delivery. The project was executed using Revit, Enscape, Lumion, and SketchUp.</p>
@@ -92,7 +92,7 @@ export default function Home() {
 
             {/* Info */}
             <div>
-              <p className="text-xs tracking-[0.2em] uppercase text-sage mb-6">Info</p>
+              <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-6">Info</p>
               <dl className="space-y-2">
                 {[
                   ['Location',        'London United Kingdom'],
@@ -111,7 +111,7 @@ export default function Home() {
 
             {/* Education */}
             <div>
-              <p className="text-xs tracking-[0.2em] uppercase text-sage mb-6">Education</p>
+              <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-6">Education</p>
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <span className="text-sm font-light text-stone/40 w-20 shrink-0">2023</span>
@@ -150,7 +150,7 @@ export default function Home() {
       <FadeIn>
         <section className="px-6 md:px-16 pb-20 max-w-5xl mx-auto border-t border-stone/10 pt-16">
           <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
-            <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">Certificates</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Certificates</p>
             <ul className="list-disc list-outside ml-4 space-y-2">
               <li className="text-sm font-light text-stone/80">LEED Green Associate <span className="text-stone/40">[2026]</span></li>
               <li className="text-sm font-light text-stone/80">Golden Key Award <span className="text-stone/40">[2018, 2019, 2020, 2023, 2024]</span></li>
@@ -172,7 +172,7 @@ export default function Home() {
       <FadeIn>
         <section className="px-6 md:px-16 pb-20 max-w-5xl mx-auto">
           <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
-            <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">Academic Achievements</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Academic Achievements</p>
             <div className="space-y-6">
               <div className="flex gap-4">
                 <span className="text-sm font-light text-stone/40 w-24 shrink-0">2026</span>

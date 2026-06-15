@@ -9,7 +9,7 @@ export default function MissionPage() {
           <div className="space-y-16">
 
             <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
-              <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">Mission Statement</p>
+              <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Mission Statement</p>
               <div className="space-y-6">
                 <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
                   I value loyalty, respect, and joy, and I strive to bring these qualities into everything I do. I believe life shouldn't always be taken too seriously, which is why I embrace a spirit of curiosity and playfulness, while also staying true to myself rather than simply following the crowd.
@@ -24,7 +24,7 @@ export default function MissionPage() {
             </div>
 
             <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
-              <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">Normative Position</p>
+              <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Normative Position</p>
               <div className="space-y-6">
                 <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
                   My approach to interior architecture is anchored in craftsmanship and shaped by context. I believe design should grow from an intimate understanding of place, culture, users and materials—creating spaces that resonate with their surroundings and support human wellbeing. Architecture moves at the pace of culture, and enduring design begins with thoughtful, efficient, and responsible construction.
@@ -39,13 +39,13 @@ export default function MissionPage() {
             </div>
 
             <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
-              <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">Personal</p>
+              <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Personal</p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                 {/* Self Awareness */}
                 <div className="relative pt-8 pb-4">
                   <span className="absolute top-0 left-0 text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>01</span>
                   <div className="relative z-10 pt-6">
-                    <p className="text-sm tracking-[0.15em] uppercase text-sage mb-4 -ml-4">Self Awareness</p>
+                    <p className="text-sm tracking-[0.15em] uppercase text-sage font-semibold mb-4 -ml-4">Self Awareness</p>
                     <p className="text-[10px] tracking-widest uppercase text-stone/35 mb-1">Clifton Strengths</p>
                     <p className="text-sm font-light text-stone/70 leading-relaxed mb-4">Achiever · Futuristic · Input · Belief · Positivity</p>
                     <p className="text-[10px] tracking-widest uppercase text-stone/35 mb-1">Myers-Briggs</p>
@@ -56,7 +56,7 @@ export default function MissionPage() {
                 <div className="relative pt-8 pb-4">
                   <span className="absolute top-0 left-0 text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>02</span>
                   <div className="relative z-10 pt-6">
-                    <p className="text-sm tracking-[0.15em] uppercase text-sage mb-4 -ml-4">Hobbies &amp; Interests</p>
+                    <p className="text-sm tracking-[0.15em] uppercase text-sage font-semibold mb-4 -ml-4">Hobbies &amp; Interests</p>
                     <ul className="list-disc list-outside ml-4 space-y-1">
                       <li className="text-sm font-light text-stone/70">Health &amp; Fitness</li>
                       <li className="text-sm font-light text-stone/70">Outdoor Adventure</li>
@@ -69,7 +69,7 @@ export default function MissionPage() {
                 <div className="relative pt-8 pb-4">
                   <span className="absolute top-0 left-0 text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>03</span>
                   <div className="relative z-10 pt-6">
-                    <p className="text-sm tracking-[0.15em] uppercase text-sage mb-4 -ml-4">Values</p>
+                    <p className="text-sm tracking-[0.15em] uppercase text-sage font-semibold mb-4 -ml-4">Values</p>
                     <ul className="list-disc list-outside ml-4 space-y-1">
                       <li className="text-sm font-light text-stone/70">Human Wellbeing</li>
                       <li className="text-sm font-light text-stone/70">Sustainability</li>
