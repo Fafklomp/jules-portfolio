@@ -1,19 +1,43 @@
+import { SiAutodeskrevit, SiAutocad, SiSketchup, SiTwinmotion, SiAffinitydesigner, SiNotion, SiMiro } from 'react-icons/si'
+import { TbBrandAdobePhotoshop, TbBrandAdobeIndesign, TbBrandAdobeIllustrator, TbBrandAdobe } from 'react-icons/tb'
+import { FaFilePowerpoint, FaFileWord } from 'react-icons/fa'
+
+const skillIcons = {
+  // 3D Modelling
+  'Revit':                { icon: SiAutodeskrevit,          color: '#0696D7' },
+  'AutoCAD':              { icon: SiAutocad,                color: '#E51050' },
+  'SketchUp':             { icon: SiSketchup,               color: '#005F9E' },
+  // Rendering
+  'Twinmotion':           { icon: SiTwinmotion,             color: '#0078D4' },
+  // Graphics
+  'Adobe Photoshop':      { icon: TbBrandAdobePhotoshop,    color: '#31A8FF' },
+  'Adobe InDesign':       { icon: TbBrandAdobeIndesign,     color: '#FF3366' },
+  'Adobe Illustrator':    { icon: TbBrandAdobeIllustrator,  color: '#FF9A00' },
+  'Affinity Designer':    { icon: SiAffinitydesigner,       color: '#1B72BE' },
+  // Docs
+  'Adobe Creative Cloud': { icon: TbBrandAdobe,             color: '#FF0000' },
+  'Microsoft PowerPoint': { icon: FaFilePowerpoint,         color: '#D24726' },
+  'Microsoft Word':       { icon: FaFileWord,               color: '#2B579A' },
+  'Notion':               { icon: SiNotion,                 color: '#000000' },
+  'Miro':                 { icon: SiMiro,                   color: '#FFD02F' },
+}
+
 const skillGroups = [
   {
     category: '3D Modelling & 2D Drawings',
-    skills: ['AutoCAD', 'Revit', 'SketchUp', 'Rhino', 'ArchiCAD'],
+    skills: ['Revit', 'AutoCAD', 'SketchUp'],
   },
   {
     category: 'Rendering',
-    skills: ['V-Ray', 'Enscape', 'Lumion', 'Twinmotion', 'Corona Renderer'],
+    skills: ['Enscape', 'Twinmotion', 'Lumion'],
   },
   {
     category: 'Graphics & Vector Editing',
-    skills: ['Adobe Photoshop', 'Adobe Illustrator', 'Adobe InDesign', 'Canva'],
+    skills: ['Adobe Photoshop', 'Adobe InDesign', 'Adobe Illustrator', 'Affinity Designer'],
   },
   {
     category: 'Docs',
-    skills: ['Microsoft Office', 'Google Workspace', 'Notion'],
+    skills: ['Adobe Creative Cloud', 'Microsoft PowerPoint', 'Microsoft Word', 'Notion', 'Miro'],
   },
 ]
 
@@ -35,14 +59,18 @@ export default function Skills() {
           <div key={category} className="grid md:grid-cols-[240px_1fr] gap-3 md:gap-16 items-start">
             <p className="text-xs tracking-[0.15em] uppercase text-stone/40 md:pt-2">{category}</p>
             <div className="flex flex-wrap gap-2">
-              {skills.map(skill => (
-                <span
-                  key={skill}
-                  className="px-3.5 py-1 rounded-full text-xs font-light border border-stone/15 text-stone/60 hover:border-terra hover:text-terra transition-colors duration-200 cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
+              {skills.map(skill => {
+                const entry = skillIcons[skill]
+                return (
+                  <span
+                    key={skill}
+                    className="flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-light border border-stone/15 text-stone/60 hover:border-terra hover:text-terra transition-colors duration-200 cursor-default"
+                  >
+                    {entry && <entry.icon className="text-sm shrink-0" style={{ color: entry.color }} />}
+                    {skill}
+                  </span>
+                )
+              })}
             </div>
           </div>
         ))}

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import Hero from '../components/Hero'
 import Skills from '../components/Skills'
 import FadeIn from '../components/FadeIn'
 import PageTransition from '../components/PageTransition'
@@ -51,8 +50,6 @@ export default function Home() {
 
   return (
     <PageTransition>
-      <Hero />
-
       {/* About Me */}
       <FadeIn>
         <section id="about" className="px-6 md:px-16 pt-8 pb-20 max-w-5xl mx-auto">
