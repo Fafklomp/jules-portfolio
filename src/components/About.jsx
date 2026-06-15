@@ -4,14 +4,14 @@ export default function About() {
       <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
         <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">About Me</p>
         <div className="space-y-4">
-          <p className="text-base md:text-lg font-light leading-relaxed text-stone/80">
+          <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
             My name is Jules, a South African trained Interior Architect passionate about crafting
             spaces through the lens of human wellbeing and sustainability. After gaining three years
             of professional practice, earning my LEED Green Associate credential, and graduating
             Cum Laude with my Honours in Interior Architecture, I have developed a strong commitment
             to designing interiors that exceed client expectations.
           </p>
-          <p className="text-base md:text-lg font-light leading-relaxed text-stone/80">
+          <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
             My work spans luxury residential and hospitality projects across the world, where I have
             had the creative freedom to explore bespoke design solutions and refine my ability to
             craft detail-driven spaces that engage and inspire those who experience them. My design

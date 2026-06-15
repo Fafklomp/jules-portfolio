@@ -39,6 +39,12 @@ export default function Contact() {
           </p>
           <p className="text-xs tracking-widest uppercase text-stone/35">Direct email</p>
           <p className="text-sm text-stone/50 mt-1">juliaktucker@gmail.com</p>
+
+          <p className="text-xs tracking-widest uppercase text-stone/35 mt-6">WhatsApp</p>
+          <p className="text-sm text-stone/50 mt-1">+27 76 231 9510</p>
+
+          <p className="text-xs tracking-widest uppercase text-stone/35 mt-6">Tel</p>
+          <p className="text-sm text-stone/50 mt-1">+1 206 396 0583</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-7">
