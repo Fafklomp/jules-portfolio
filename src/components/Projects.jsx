@@ -136,7 +136,7 @@ const _unused = [
   },
 ]
 
-const filters = ['All', 'Residential', 'Hospitality']
+const filters = ['All', 'Work Projects', 'University Projects']
 
 const gridVariants = {
   hidden: {},

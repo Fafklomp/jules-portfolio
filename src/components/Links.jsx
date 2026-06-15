@@ -4,12 +4,7 @@ const links = [
     href: 'https://www.linkedin.com/in/juliatucker-profile/',
     description: 'Professional profile',
   },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/Fafklomp/my-portfolio',
-    description: 'Code & projects',
-  },
-  {
+{
     label: 'Email',
     href: 'mailto:juliaktucker@gmail.com',
     description: 'Get in touch',

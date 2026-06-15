@@ -8,16 +8,37 @@ export default function MissionPage() {
         <section className="px-6 md:px-16 pt-32 pb-24 max-w-5xl mx-auto">
           <div className="space-y-16">
 
+            {/* 5 Pillars banner */}
+            <div className="flex justify-between gap-4 border-b border-stone/10 pb-8">
+              {[
+                { label: 'Storytelling'  },
+                { label: 'Wellbeing'     },
+                { label: 'Sustainability'},
+                { label: 'Context'       },
+                { label: 'Craftsmanship' },
+              ].map(({ label }) => (
+                <div key={label} className="relative">
+                  {/* Picture placeholder */}
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-stone/10 bg-stone/5 shrink-0" />
+                  {/* Label overlaid top-left of sphere */}
+                  <span
+                    className="absolute top-2 left-1 text-xl md:text-2xl font-bold whitespace-nowrap leading-tight"
+                    style={{ fontFamily: 'var(--font-display)', color: '#2d2e8c' }}
+                  >{label}</span>
+                </div>
+              ))}
+            </div>
+
             <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
               <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Mission Statement</p>
               <div className="space-y-6">
-                <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
                   I value loyalty, respect, and joy, and I strive to bring these qualities into everything I do. I believe life shouldn't always be taken too seriously, which is why I embrace a spirit of curiosity and playfulness, while also staying true to myself rather than simply following the crowd.
                 </p>
-                <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
                   Creativity, spontaneity, and originality are part of who I am, and I hope to channel these traits into meaningful design work that contributes positively to both people and the environment.
                 </p>
-                <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
                   I aspire to travel, broaden my perspective, and connect with inspiring people along the way. I am committed to stepping outside of my comfort zone, living a healthy and balanced life, and facing challenges with resilience. In doing so, I aim not only to grow personally but also to encourage and uplift those around me.
                 </p>
               </div>
@@ -26,13 +47,13 @@ export default function MissionPage() {
             <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
               <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Normative Position</p>
               <div className="space-y-6">
-                <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
                   My approach to interior architecture is anchored in craftsmanship and shaped by context. I believe design should grow from an intimate understanding of place, culture, users and materials—creating spaces that resonate with their surroundings and support human wellbeing. Architecture moves at the pace of culture, and enduring design begins with thoughtful, efficient, and responsible construction.
                 </p>
-                <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
                   While emerging technologies fascinate me and broaden our creative possibilities, they should never distance the designer from the act of making. I value a hands-on, collaborative process that weaves together local skills and contemporary innovations, ensuring each project remains both tactile and relevant.
                 </p>
-                <p className="text-sm md:text-base font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
                   In a globalized world, I champion a circular design ethos—where knowledge, skills, and materials are continuously shared, reused, and reimagined.
                 </p>
               </div>

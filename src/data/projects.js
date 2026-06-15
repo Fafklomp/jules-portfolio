@@ -2,7 +2,7 @@ const projects = [
   {
     id: 1,
     name: 'The Alderton',
-    category: 'Hospitality',
+    category: 'Work',
     location: 'Marrakech, Morocco',
     year: '2023',
     area: '4,200 sq ft',
@@ -15,7 +15,7 @@ const projects = [
   {
     id: 2,
     name: 'Kensington Private Residence',
-    category: 'Residential',
+    category: 'Work',
     location: 'London, UK',
     year: '2023',
     area: '6,800 sq ft',
@@ -28,7 +28,7 @@ const projects = [
   {
     id: 3,
     name: 'Villa Sorano',
-    category: 'Residential',
+    category: 'Work',
     location: 'Umbria, Italy',
     year: '2022',
     area: '9,100 sq ft',
@@ -41,7 +41,7 @@ const projects = [
   {
     id: 4,
     name: 'Aster Spa & Wellness',
-    category: 'Hospitality',
+    category: 'Work',
     location: 'Zurich, Switzerland',
     year: '2022',
     area: '3,500 sq ft',
@@ -54,7 +54,7 @@ const projects = [
   {
     id: 5,
     name: 'Notting Hill Apartment',
-    category: 'Residential',
+    category: 'Work',
     location: 'London, UK',
     year: '2021',
     area: '1,900 sq ft',
@@ -67,7 +67,7 @@ const projects = [
   {
     id: 6,
     name: 'Maison Larue',
-    category: 'Hospitality',
+    category: 'Work',
     location: 'Lyon, France',
     year: '2021',
     area: '5,600 sq ft',
@@ -80,7 +80,7 @@ const projects = [
   {
     id: 7,
     name: 'Château de Vigne',
-    category: 'Hospitality',
+    category: 'Work',
     location: 'Bordeaux, France',
     year: '2024',
     area: '7,800 sq ft',
@@ -93,7 +93,7 @@ const projects = [
   {
     id: 8,
     name: 'Belgravia Family Home',
-    category: 'Residential',
+    category: 'Work',
     location: 'London, UK',
     year: '2024',
     area: '8,200 sq ft',
@@ -106,7 +106,7 @@ const projects = [
   {
     id: 9,
     name: 'The Meridian Club',
-    category: 'Hospitality',
+    category: 'Work',
     location: 'Cape Town, South Africa',
     year: '2023',
     area: '5,100 sq ft',
@@ -119,7 +119,7 @@ const projects = [
   {
     id: 10,
     name: 'Portofino Villa',
-    category: 'Residential',
+    category: 'Work',
     location: 'Portofino, Italy',
     year: '2024',
     area: '4,600 sq ft',

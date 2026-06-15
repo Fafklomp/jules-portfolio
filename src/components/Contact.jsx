@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { SiWhatsapp } from 'react-icons/si'
+import { MdEmail, MdPhone } from 'react-icons/md'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -37,14 +39,20 @@ export default function Contact() {
             Interested in working together or have a project in mind? Fill in the form
             and it will open your email client with everything pre-filled.
           </p>
-          <p className="text-xs tracking-widest uppercase text-stone/35">Direct email</p>
-          <p className="text-sm text-stone/50 mt-1">juliaktucker@gmail.com</p>
+          <div className="flex items-center gap-3 mt-1">
+            <MdEmail size={22} style={{ color: '#fdbf69' }} />
+            <a href="mailto:juliaktucker@gmail.com" className="text-sm text-stone/50 hover:text-stone transition-colors duration-200">juliaktucker@gmail.com</a>
+          </div>
 
-          <p className="text-xs tracking-widest uppercase text-stone/35 mt-6">WhatsApp</p>
-          <p className="text-sm text-stone/50 mt-1">+27 76 231 9510</p>
+          <div className="flex items-center gap-3 mt-5">
+            <SiWhatsapp size={22} style={{ color: '#fdbf69' }} />
+            <a href="https://wa.me/27762319510" target="_blank" rel="noopener noreferrer" className="text-sm text-stone/50 hover:text-stone transition-colors duration-200">+27 76 231 9510</a>
+          </div>
 
-          <p className="text-xs tracking-widest uppercase text-stone/35 mt-6">Tel</p>
-          <p className="text-sm text-stone/50 mt-1">+1 206 396 0583</p>
+          <div className="flex items-center gap-3 mt-5">
+            <MdPhone size={22} style={{ color: '#fdbf69' }} />
+            <a href="tel:+12063960583" className="text-sm text-stone/50 hover:text-stone transition-colors duration-200">+1 206 396 0583</a>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-7">

@@ -4,7 +4,7 @@ import PageTransition from '../components/PageTransition'
 import ProjectModal from '../components/ProjectModal'
 import projects from '../data/projects'
 
-const filters = ['All', 'Residential', 'Hospitality']
+const filters = ['All', 'Work', 'University']
 
 const gridVariants = {
   hidden: {},

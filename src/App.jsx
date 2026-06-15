@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import ProjectsPage from './pages/ProjectsPage'
 import MissionPage from './pages/MissionPage'
+import BeyondPage from './pages/BeyondPage'
 import ContactPage from './pages/ContactPage'
 import Footer from './components/Footer'
 
@@ -15,6 +16,7 @@ function AnimatedRoutes() {
         <Route path="/"         element={<Home />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/mission"   element={<MissionPage />} />
+        <Route path="/beyond"    element={<BeyondPage />} />
         <Route path="/contact"   element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
