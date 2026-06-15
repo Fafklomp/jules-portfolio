@@ -1,7 +1,32 @@
+import { useState } from 'react'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'
 import FadeIn from '../components/FadeIn'
 import PageTransition from '../components/PageTransition'
+
+function WorkEntry({ dates, company, role, children }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="flex gap-4">
+      <div className="text-sm font-light text-stone/40 w-24 shrink-0">
+        {dates.map((d, i) => <p key={i}>{d}</p>)}
+      </div>
+      <div className="flex-1" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+        <div className="cursor-default">
+          <p className={`text-sm font-light transition-colors duration-200 ${open ? 'text-terra' : 'text-stone/80'}`}>
+            {company}
+          </p>
+          <p className="text-sm font-light text-stone/50">{role}</p>
+        </div>
+        {open && (
+          <div className="mt-3 space-y-3">
+            {children}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
 
 export default function Home() {
   return (
@@ -25,6 +50,41 @@ export default function Home() {
         </section>
       </FadeIn>
 
+      {/* Work Experience */}
+      <FadeIn>
+        <section className="px-6 md:px-16 pb-20 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
+            <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">Work Experience</p>
+            <div className="space-y-6">
+              <WorkEntry dates={['Jul 2024 –', 'Jun 2026']} company="Silvio Rech and Lesley Carstens" role="Interior Architect · Johannesburg, South Africa">
+                <p className="text-xs font-light text-stone/70 leading-relaxed">During my time here, I collaborated with a team of five interior designers and five architects on the design of a luxury resort in the Seychelles, which featured a beach restaurant, pool deck, 21 villas, and a spa. While I contributed to the interior design of the various buildings, my primary focus was the spa and wellness center — a $10 million project — where I worked closely with one interior designer and three architects. My interior design colleague and I were responsible for the complete interior design scope of the spa. My focus included custom joinery and FF&amp;E, furniture layouts, reflected ceiling plans, and coordination with electrical and plumbing systems. I also prepared schedules, tender documentation, and 3D visualizations, while developing client presentations and liaising with contractors to ensure seamless project delivery. The project was executed using Revit, Enscape, Lumion, and SketchUp.</p>
+                <p className="text-xs font-light text-stone/70 leading-relaxed">I also had the opportunity to travel to Namibia toward the end of 2025 for a client project, working on a Games Area that included an indoor pickle and padel court, game rooms, a gym, and a pavilion.</p>
+              </WorkEntry>
+
+              <WorkEntry dates={['May 2022 –', 'Feb 2023']} company="Superyachts" role="Stewardess · Mediterranean &amp; Caribbean Sea">
+                <p className="text-xs font-light text-stone/70 leading-relaxed">After a year in architectural practice, I embarked on a journey working aboard superyachts to gain global experiences and broaden both my design and life perspective. During this time, I worked on five different superyachts — three motor and two sailing — traveling through the Mediterranean between France, Italy, and Spain. In my final season before returning to university for my postgraduate degree, I was based in the Caribbean, sailing between the islands from Antigua to Barbados. I gained experience working both collaboratively with a team of stewardesses and independently, honing my skills in teamwork and self-reliance. This chapter reignited my creativity and strengthened my commitment to designing human-centred, memorable, and sustainable spaces.</p>
+              </WorkEntry>
+
+              <WorkEntry dates={['Apr 2021 –', 'Dec 2021']} company="Luxury Frontiers" role="Junior Interior Designer · Johannesburg, South Africa">
+                <p className="text-xs font-light text-stone/70 leading-relaxed">After graduating with distinction in my undergraduate degree, I sought work that would challenge me to advance my technical and software skills. At Luxury Frontiers, I assisted in the design and execution of world-class hospitality resorts and lodges [which have received multiple awards] refining my technical expertise, attention to detail, and ability to perform under pressure. I worked on two projects — a resort and tented camp in Puerto Rico and Saudi Arabia — within an interior team of seven, comprising two senior designers and five juniors on a six-month probation period. At the end of this period, three of us, including myself, were offered permanent contracts. This role also provided valuable experience in cross-disciplinary coordination, effective communication, and adaptability.</p>
+              </WorkEntry>
+
+              <WorkEntry dates={['Dec 2016 –', 'Jan 2017']} company="Lifestyle Health" role="Sales Assistant · Ballito, South Africa">
+                <p className="text-xs font-light text-stone/70 leading-relaxed">Worked alongside one other sales assistant to serve customers during my summer holiday, offering advice and guidance on the store's health products.</p>
+              </WorkEntry>
+
+              <WorkEntry dates={['Dec 2017 –', 'Jan 2018']} company="Origins Home and Decor" role="Sales Assistant · Ballito, South Africa">
+                <p className="text-xs font-light text-stone/70 leading-relaxed">During my summer holiday, I welcomed customers into the store, offering guidance on home and décor products while ensuring the space remained inviting and well-presented. This experience taught me how to confidently discuss and sell products, building both my communication and customer service skills.</p>
+              </WorkEntry>
+
+              <WorkEntry dates={['Jul 2018 –', 'Aug 2018']} company="Charles Taylor Architects" role="Intern · Ballito, South Africa">
+                <p className="text-xs font-light text-stone/70 leading-relaxed">During the July holidays, I interned at CTA and went to various site visits and client meetings, as well as shadowed and assisted the Interior Architects in corporate and residential design projects.</p>
+              </WorkEntry>
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+
       {/* Info + Education */}
       <FadeIn>
         <section className="px-6 md:px-16 pb-20 max-w-5xl mx-auto">
@@ -42,7 +102,7 @@ export default function Home() {
                   ['',                'US B1/B2 (exp. 2033)'],
                 ].map(([label, value]) => (
                   <div key={label} className="flex gap-4">
-                    <dt className="text-sm font-light text-stone/40 w-36 shrink-0">{label}</dt>
+                    <dt className="text-sm font-light text-stone/40 w-24 shrink-0">{label}</dt>
                     <dd className="text-sm font-light text-stone/80">{value}</dd>
                   </div>
                 ))}
@@ -86,6 +146,28 @@ export default function Home() {
 
       <FadeIn><Skills /></FadeIn>
 
+      {/* Certificates */}
+      <FadeIn>
+        <section className="px-6 md:px-16 pb-20 max-w-5xl mx-auto border-t border-stone/10 pt-16">
+          <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
+            <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">Certificates</p>
+            <ul className="list-disc list-outside ml-4 space-y-2">
+              <li className="text-sm font-light text-stone/80">LEED Green Associate <span className="text-stone/40">[2026]</span></li>
+              <li className="text-sm font-light text-stone/80">Golden Key Award <span className="text-stone/40">[2018, 2019, 2020, 2023, 2024]</span></li>
+              <li className="text-sm font-light text-stone/80">Bachelor of Interior Architecture Honours with Distinction <span className="text-stone/40">[2023]</span></li>
+              <li className="text-sm font-light text-stone/80">Bachelor of Science Interior Architecture with Distinction <span className="text-stone/40">[2021]</span></li>
+              <li className="text-sm font-light text-stone/80">Academic Honorary Colours <span className="text-stone/40">[2021]</span></li>
+              <li className="text-sm font-light text-stone/80">Grade A in Adobe Photoshop through Keyline <span className="text-stone/40">[2020]</span></li>
+              <li className="text-sm font-light text-stone/80">Uys &amp; White Prize for highest average across all modules <span className="text-stone/40">[2019]</span></li>
+              <li className="text-sm font-light text-stone/80">Department of Architecture Prize for best design student in Interior Architecture <span className="text-stone/40">[2019]</span></li>
+              <li className="text-sm font-light text-stone/80">Revit Fundamentals and Revit Architecture certification through Modena <span className="text-stone/40">[2018]</span></li>
+              <li className="text-sm font-light text-stone/80">Variety of Udemy courses of completion including Twinmotion, SketchUp and Revit</li>
+              <li className="text-sm font-light text-stone/80">Variety of LinkedIn Learning courses of completion including Entrepreneurship, Project Management, Leadership, Brand Development and Team Work</li>
+            </ul>
+          </div>
+        </section>
+      </FadeIn>
+
       {/* Academic Achievements */}
       <FadeIn>
         <section className="px-6 md:px-16 pb-20 max-w-5xl mx-auto">
@@ -93,13 +175,13 @@ export default function Home() {
             <p className="text-xs tracking-[0.2em] uppercase text-sage pt-1">Academic Achievements</p>
             <div className="space-y-6">
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-36 shrink-0">2026</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2026</span>
                 <ul className="list-disc list-outside ml-4 space-y-1">
                   <li className="text-sm font-light text-stone/80">Achieved my LEED Green Associate Credential</li>
                 </ul>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-36 shrink-0">2024</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2024</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">Masters Research Thesis</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
@@ -109,7 +191,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-36 shrink-0">2023</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2023</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">Hons Year Interior Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
@@ -118,7 +200,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-36 shrink-0">2020</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2020</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">3rd Year Interior Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
@@ -127,7 +209,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-36 shrink-0">2019</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2019</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">2nd Year Interior Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
@@ -141,7 +223,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-36 shrink-0">2018</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2018</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">1st Year Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">

@@ -5,7 +5,8 @@ import { useScroll } from 'framer-motion'
 const navLinks = [
   { label: 'Projects', to: '/projects' },
   { label: 'About',   to: '/'         },
-  { label: 'Contact', to: '/contact'  },
+  { label: 'Mission', to: '/mission' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 export default function Nav() {

@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion'
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import ProjectsPage from './pages/ProjectsPage'
+import MissionPage from './pages/MissionPage'
 import ContactPage from './pages/ContactPage'
 import Footer from './components/Footer'
 
@@ -13,7 +14,8 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/"         element={<Home />} />
         <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/contact"  element={<ContactPage />} />
+        <Route path="/mission"   element={<MissionPage />} />
+        <Route path="/contact"   element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
   )
