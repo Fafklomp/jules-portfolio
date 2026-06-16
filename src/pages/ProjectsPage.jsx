@@ -1,8 +1,46 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useRef } from 'react'
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import ProjectModal from '../components/ProjectModal'
 import projects from '../data/projects'
+
+const heroImages = [
+  '/projects-hero-1.jpg',
+  '/projects-hero-2.jpg',
+  '/projects-hero-3.jpg',
+]
+
+function ProjectsHero() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end end'],
+  })
+  const scale  = useTransform(scrollYProgress, [0, 1], [1, 0.1])
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+
+  return (
+    <div ref={ref} className="h-[200vh]">
+      <div className="sticky top-0 h-screen overflow-hidden">
+        <motion.div
+          style={{ scale, y: imageY }}
+          className="flex gap-2 origin-top w-full h-full"
+        >
+          {heroImages.map((src, i) => (
+            <div key={i} className="flex-1 overflow-hidden">
+              <img
+                src={src}
+                alt=""
+                aria-hidden="true"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
+  )
+}
 
 const filters = ['All', 'Work', 'University']
 
@@ -65,7 +103,8 @@ export default function ProjectsPage() {
 
   return (
     <PageTransition>
-      <section className="pt-32 pb-24 px-6 md:px-16 max-w-5xl mx-auto">
+      <ProjectsHero />
+      <section className="pt-8 pb-24 px-6 md:px-16 max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
             <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-2">Selected Work</p>
