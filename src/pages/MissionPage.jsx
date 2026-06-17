@@ -30,12 +30,43 @@ export default function MissionPage() {
                         className="w-full h-full object-cover"
                       />
                     )}
+                    {label === 'Context' && (
+                      <video
+                        src="/context-video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover scale-[2] -translate-y-8"
+                      />
+                    )}
+                    {label === 'Craftsmanship' && (
+                      <video
+                        src="/context.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover scale-[2] -translate-y-8"
+                      />
+                    )}
                   </div>
-                  {/* Label overlaid top-left of sphere */}
-                  <span
-                    className="absolute top-2 left-1 text-xl md:text-2xl font-bold whitespace-nowrap leading-tight"
-                    style={{ fontFamily: 'var(--font-display)', color: '#2d2e8c' }}
-                  >{label}</span>
+                  {/* Curved label around sphere */}
+                  <svg
+                    className="absolute pointer-events-none"
+                    style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '180%', height: '180%' }}
+                    viewBox="0 0 160 160"
+                    overflow="visible"
+                  >
+                    <defs>
+                      <path id={`arc-${label}`} d="M 22,80 A 58,58 0 1,1 138,80" />
+                    </defs>
+                    <text fontSize="10" fontWeight="600" letterSpacing="2.5" fill="#2d2e8c" fontFamily="var(--font-display)" transform="rotate(-20, 80, 80)">
+                      <textPath href={`#arc-${label}`} startOffset="50%" textAnchor="middle">
+                        {label}
+                      </textPath>
+                    </text>
+                  </svg>
                 </div>
               ))}
             </div>
