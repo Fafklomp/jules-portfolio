@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
-import { useScroll } from 'framer-motion'
+import { NavLink, Link } from 'react-router-dom'
 
 const navLinks = [
   { label: 'Projects', to: '/projects' },
@@ -11,30 +9,12 @@ const navLinks = [
 ]
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false)
-  const { scrollY } = useScroll()
-  const location = useLocation()
-  const isHome = location.pathname === '/'
-
-  useEffect(() => {
-    return scrollY.on('change', v => setScrolled(v > 40))
-  }, [scrollY])
-
-  // On non-home pages always show background; on home only after scroll
-  const showBg = !isHome || scrolled
-
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        showBg ? 'bg-offwhite/90 backdrop-blur-md border-b border-stone/10' : ''
-      }`}
-    >
+return (
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <nav className="max-w-5xl mx-auto px-6 md:px-16 h-14 flex items-center justify-between">
         <Link
           to="/"
-          className={`text-sm font-light tracking-widest uppercase transition-colors duration-200 ${
-            showBg ? 'text-stone/60 hover:text-stone' : 'text-offwhite/70 hover:text-offwhite'
-          }`}
+          className="text-sm font-light tracking-widest uppercase transition-colors duration-200 text-stone/60 hover:text-stone"
         >
           Jules Tucker
         </Link>
@@ -44,13 +24,11 @@ export default function Nav() {
             <li key={label}>
               <NavLink
                 to={to}
-                className={({ isActive }) => {
-                  const base = 'text-xs tracking-widest uppercase transition-colors duration-200'
-                  const color = showBg
-                    ? (isActive ? 'text-stone' : 'text-stone/50 hover:text-stone')
-                    : (isActive ? 'text-offwhite' : 'text-offwhite/70 hover:text-offwhite')
-                  return `${base} ${color}`
-                }}
+                className={({ isActive }) =>
+                  `text-xs tracking-widest uppercase transition-colors duration-200 ${
+                    isActive ? 'text-stone' : 'text-stone/50 hover:text-stone'
+                  }`
+                }
               >
                 {label}
               </NavLink>

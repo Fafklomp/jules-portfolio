@@ -1,7 +1,8 @@
-import { useState, useRef } from 'react'
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import ProjectModal from '../components/ProjectModal'
+import ImageBanner from '../components/ImageBanner'
 import projects from '../data/projects'
 
 const heroImages = [
@@ -10,33 +11,51 @@ const heroImages = [
   '/projects-hero-3.jpg',
 ]
 
+const slideVariants = {
+  enter: (dir) => ({ x: dir > 0 ? '100%' : '-100%', opacity: 0 }),
+  center: { x: 0, opacity: 1, transition: { duration: 0.9, ease: [0.25, 0.1, 0.25, 1] } },
+  exit: (dir) => ({ x: dir > 0 ? '-100%' : '100%', opacity: 0, transition: { duration: 0.9, ease: [0.25, 0.1, 0.25, 1] } }),
+}
+
 function ProjectsHero() {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end end'],
-  })
-  const scale  = useTransform(scrollYProgress, [0, 1], [1, 0.1])
-  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+  const [index, setIndex] = useState(0)
+  const [dir, setDir] = useState(1)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setDir(1)
+      setIndex(i => (i + 1) % heroImages.length)
+    }, 4000)
+    return () => clearInterval(id)
+  }, [])
 
   return (
-    <div ref={ref} className="h-[200vh]">
-      <div className="sticky top-0 h-screen overflow-hidden">
-        <motion.div
-          style={{ scale, y: imageY }}
-          className="flex gap-2 origin-top w-full h-full"
-        >
-          {heroImages.map((src, i) => (
-            <div key={i} className="flex-1 overflow-hidden">
-              <img
-                src={src}
-                alt=""
-                aria-hidden="true"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-        </motion.div>
+    <div className="h-screen overflow-hidden relative">
+      <AnimatePresence initial={false} custom={dir}>
+        <motion.img
+          key={index}
+          custom={dir}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          src={heroImages[index]}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </AnimatePresence>
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {heroImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => { setDir(i > index ? 1 : -1); setIndex(i) }}
+            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === index ? 'bg-offwhite scale-125' : 'bg-offwhite/40'}`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
       </div>
     </div>
   )
@@ -103,7 +122,7 @@ export default function ProjectsPage() {
 
   return (
     <PageTransition>
-      <ProjectsHero />
+      <ImageBanner />
       <section className="pt-8 pb-24 px-6 md:px-16 max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>

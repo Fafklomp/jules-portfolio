@@ -18,8 +18,19 @@ export default function MissionPage() {
                 { label: 'Craftsmanship' },
               ].map(({ label }) => (
                 <div key={label} className="relative">
-                  {/* Picture placeholder */}
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-stone/10 bg-stone/5 shrink-0" />
+                  {/* Circle */}
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-stone/10 bg-stone/5 shrink-0 overflow-hidden">
+                    {label === 'Storytelling' && (
+                      <video
+                        src="/storytelling.mov"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
                   {/* Label overlaid top-left of sphere */}
                   <span
                     className="absolute top-2 left-1 text-xl md:text-2xl font-bold whitespace-nowrap leading-tight"

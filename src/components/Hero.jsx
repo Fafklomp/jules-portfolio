@@ -1,58 +1,43 @@
-import { useRef, useState, useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
 import photo from '../assets/photo.jpg'
 
 export default function Hero() {
-  const ref = useRef(null)
-  const containerRef = useRef(null)
-  const [textOffset, setTextOffset] = useState(0)
-
-  useEffect(() => {
-    const measure = () => {
-      if (containerRef.current) {
-        const imageCenter = containerRef.current.offsetHeight / 2
-        const viewportCenter = window.innerHeight / 2
-        setTextOffset(viewportCenter - imageCenter)
-      }
-    }
-    measure()
-    window.addEventListener('resize', measure)
-    return () => window.removeEventListener('resize', measure)
-  }, [])
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end end'],
-  })
-
-  const scale  = useTransform(scrollYProgress, [0, 1], [1, 0.1])
-  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
-  const textY  = useTransform(scrollYProgress, [0, 1], [0, textOffset])
-
   return (
-    <div ref={ref} className="h-[200vh] max-w-5xl mx-auto">
-      <div ref={containerRef} className="sticky top-0 overflow-hidden rounded-sm">
-        <motion.img
-          src={photo}
-          alt=""
-          aria-hidden="true"
-          style={{ scale, y: imageY }}
-          className="w-full h-auto block origin-top"
-        />
-        <motion.div
-          style={{ y: textY }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-        >
-          <h1
-            className="text-7xl md:text-9xl font-bold leading-none tracking-tight mb-2 text-offwhite"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Jules Tucker
-          </h1>
-          <p className="text-4xl md:text-5xl font-light italic text-offwhite max-w-md leading-none mb-0">
-            Interior Designer
-          </p>
-        </motion.div>
+    <div className="px-6 md:px-16 pt-20 pb-16 max-w-5xl mx-auto">
+      <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-end">
+
+        {/* Sticky photo */}
+        <div className="md:sticky md:top-20 shrink-0">
+          <img
+            src={photo}
+            alt="Jules Tucker"
+            className="w-56 md:w-80 rounded-sm block"
+          />
+        </div>
+
+        {/* Name + position + about */}
+        <div className="flex flex-col justify-start space-y-6">
+          <div>
+            <h1
+              className="text-5xl md:text-7xl font-light leading-tight mb-3"
+              style={{ fontFamily: 'var(--font-display)', color: '#2d2e8c', fontStyle: 'italic' }}
+            >
+              Jules Tucker
+            </h1>
+            <p className="text-base md:text-lg font-light tracking-wide text-stone/60">
+              Interior Designer
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+              My name is Jules, a South African trained Interior Architect passionate about crafting spaces through the lens of human wellbeing and sustainability. After gaining three years of professional experience, earning my LEED Green Associate credential, and graduating Cum Laude with my Honours in Interior Architecture, I have developed a strong commitment to designing interiors that exceed client expectations.
+            </p>
+            <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+              My work spans luxury residential and hospitality projects across the world, where I have had the creative freedom to explore bespoke design solutions and refine my ability to craft detail-driven spaces that engage and inspire. My design approach blends aesthetics, comfort and brand identity to create meaningful, human-centred environments. I am committed to delivering spaces that positively impact both their users and the environment.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   )
