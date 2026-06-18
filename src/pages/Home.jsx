@@ -104,7 +104,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <span className="text-sm font-light text-stone/40 w-20 shrink-0">2023</span>
                   <div>
-                    <p className="text-xs font-light text-stone/80">University of Pretoria, Pretoria, SA</p>
+                    <p className="text-sm font-light text-stone/80">University of Pretoria, Pretoria, SA</p>
                     <p className="text-xs font-light text-stone/50">B.Hons Interior Architecture</p>
                     <p className="text-xs font-light text-stone/50">Degree</p>
                   </div>
@@ -112,7 +112,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <span className="text-sm font-light text-stone/40 w-20 shrink-0">2018–2020</span>
                   <div>
-                    <p className="text-xs font-light text-stone/80">University of Pretoria, Pretoria, SA</p>
+                    <p className="text-sm font-light text-stone/80">University of Pretoria, Pretoria, SA</p>
                     <p className="text-xs font-light text-stone/50">B.Sc. Interior Architecture</p>
                     <p className="text-xs font-light text-stone/50">Degree</p>
                   </div>
@@ -120,7 +120,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <span className="text-sm font-light text-stone/40 w-20 shrink-0">2013–2017</span>
                   <div>
-                    <p className="text-xs font-light text-stone/80">Epworth High School, Pietermaritzburg, SA</p>
+                    <p className="text-sm font-light text-stone/80">Epworth High School, Pietermaritzburg, SA</p>
                     <p className="text-xs font-light text-stone/50">Matriculation Certificate for Academics</p>
                     <p className="text-xs font-light text-stone/50">IEB Curriculum</p>
                   </div>
