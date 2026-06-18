@@ -1,20 +1,51 @@
+import { useRef } from 'react'
+import { motion, useAnimationFrame, useMotionValue } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import FadeIn from '../components/FadeIn'
 import { SiInstagram } from 'react-icons/si'
 
+const photographyImages = [
+  'JULIA TUCKER_0260_00010.JPG',
+  'JULIA TUCKER_0260_00012.JPG',
+  'JULIA TUCKER_0260_00026.JPG',
+  ...Array.from({ length: 45 }, (_, i) => i === 0 ? 'unnamed.jpg' : `unnamed (${i}).jpg`),
+].map(f => `/photography/${f}`)
+
+function PhotoBanner({ images, speed = 40 }) {
+  const x = useMotionValue(0)
+  const containerRef = useRef(null)
+
+  useAnimationFrame((_, delta) => {
+    const container = containerRef.current
+    if (!container) return
+    const halfWidth = container.scrollWidth / 2
+    const next = x.get() - (speed * delta) / 1000
+    x.set(next <= -halfWidth ? 0 : next)
+  })
+
+  const doubled = [...images, ...images]
+
+  return (
+    <div className="w-full overflow-hidden">
+      <motion.div ref={containerRef} style={{ x }} className="flex gap-3 w-max items-stretch h-64">
+        {doubled.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt=""
+            aria-hidden="true"
+            className="h-full w-auto object-cover flex-shrink-0 rounded-sm"
+          />
+        ))}
+      </motion.div>
+    </div>
+  )
+}
+
 const sections = [
-  {
-    title: 'Art',
-    instagram: 'https://www.instagram.com/artwrksju/',
-  },
-  {
-    title: 'Photography',
-    instagram: 'https://www.instagram.com/journalsju/',
-  },
-  {
-    title: 'Hands-On Making',
-    instagram: 'https://www.instagram.com/designsju/',
-  },
+  { title: 'Art',           instagram: 'https://www.instagram.com/artwrksju/'  },
+  { title: 'Photography',   instagram: 'https://www.instagram.com/journalsju/' },
+  { title: 'Hands-On Making', instagram: 'https://www.instagram.com/designsju/' },
 ]
 
 export default function BeyondPage() {
@@ -54,10 +85,14 @@ export default function BeyondPage() {
                     <SiInstagram size={28} />
                   </a>
                 </div>
-                {/* Photo grid placeholder */}
-                <div className="min-h-[120px] rounded-sm border border-stone/10 flex items-center justify-center">
-                  <p className="text-xs tracking-widest uppercase text-stone/20">Photos coming soon</p>
-                </div>
+
+                {title === 'Photography' ? (
+                  <PhotoBanner images={photographyImages} />
+                ) : (
+                  <div className="min-h-[120px] rounded-sm border border-stone/10 flex items-center justify-center">
+                    <p className="text-xs tracking-widest uppercase text-stone/20">Photos coming soon</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
