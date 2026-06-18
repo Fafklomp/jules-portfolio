@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Nav from './components/Nav'
 import Home from './pages/Home'
@@ -13,7 +13,8 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/"         element={<Home />} />
+        <Route path="/"         element={<Navigate to="/projects" replace />} />
+        <Route path="/about"    element={<Home />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/mission"   element={<MissionPage />} />
         <Route path="/beyond"    element={<BeyondPage />} />
