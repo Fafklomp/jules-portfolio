@@ -9,6 +9,7 @@ const photographyImages = [
   'JULIA TUCKER_0260_00012.JPG',
   'JULIA TUCKER_0260_00026.JPG',
   ...Array.from({ length: 45 }, (_, i) => i === 0 ? 'unnamed.jpg' : `unnamed (${i}).jpg`),
+  '1.jpg',
 ].map(f => `/photography/${f}`)
 
 const artImages = [
@@ -30,6 +31,8 @@ const artImages = [
   'unnamed (46).jpg',
   'unnamed.jpg',
 ].map(f => `/art/${f}`)
+
+const handsonImages = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','ss.jpg','sss.jpg'].map(f => `/handson/${f}`)
 
 
 function PhotoBanner({ images, speed = 40 }) {
@@ -112,9 +115,7 @@ export default function BeyondPage() {
                 ) : title === 'Art' ? (
                   <PhotoBanner images={artImages} />
                 ) : (
-                  <div className="min-h-[120px] rounded-sm border border-stone/10 flex items-center justify-center">
-                    <p className="text-xs tracking-widest uppercase text-stone/20">Photos coming soon</p>
-                  </div>
+                  <PhotoBanner images={handsonImages} />
                 )}
               </div>
             ))}
