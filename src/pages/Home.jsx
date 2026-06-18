@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { MdTouchApp } from 'react-icons/md'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'
 import FadeIn from '../components/FadeIn'
@@ -26,9 +27,7 @@ function WorkEntry({ dates, company, role, children }) {
           </p>
           <p className="text-sm font-light text-stone/50">{role}</p>
           {!open && (
-            <p className="text-[10px] tracking-widest uppercase text-stone/25 mt-1">
-              hover or tap for details ↓
-            </p>
+            <MdTouchApp size={18} style={{ color: '#fdbf69' }} className="mt-1 opacity-70" />
           )}
         </div>
         {open && (
