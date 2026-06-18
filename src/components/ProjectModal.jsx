@@ -59,11 +59,14 @@ export default function ProjectModal({ project, onClose }) {
           </p>
 
           <h3
-            className="text-4xl md:text-5xl font-light leading-tight mb-2"
+            className="text-4xl md:text-5xl font-light leading-tight mb-1"
             style={{ fontFamily: 'var(--font-display)', color: '#2d2e8c', fontStyle: 'italic' }}
           >
             {project.name}
           </h3>
+          {project.subtitle && (
+            <p className="text-base font-light text-stone/50 mb-1">{project.subtitle}</p>
+          )}
           <p className="text-sm text-stone/50 mb-8">{project.location}</p>
 
           <div className="grid grid-cols-3 gap-4 py-6 border-y border-stone/10 mb-8">

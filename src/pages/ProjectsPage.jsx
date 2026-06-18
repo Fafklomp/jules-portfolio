@@ -96,11 +96,14 @@ function ProjectCard({ project, onClick }) {
       <div className="flex items-start justify-between gap-4">
         <div>
           <h3
-            className="text-xl md:text-2xl font-light group-hover:text-terra transition-colors duration-200 leading-snug mb-1"
+            className="text-xl md:text-2xl font-light group-hover:text-terra transition-colors duration-200 leading-snug"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             {project.name}
           </h3>
+          {project.subtitle && (
+            <p className="text-sm font-light text-stone/50 mb-1">{project.subtitle}</p>
+          )}
           <p className="text-xs tracking-wide text-stone/40">{project.location}</p>
         </div>
         <div className="text-right shrink-0">
