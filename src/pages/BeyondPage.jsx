@@ -1,4 +1,15 @@
 import { useRef } from 'react'
+
+function PH({ children }) {
+  return (
+    <span className="relative inline-block">
+      <svg aria-hidden="true" className="absolute inset-0 w-full h-full" viewBox="0 0 120 24" preserveAspectRatio="none" style={{ top: '10%', height: '85%' }}>
+        <path d="M2,18 C10,8 20,4 40,6 C60,8 80,5 100,7 C112,8 118,12 118,16 C118,20 110,22 90,21 C70,20 40,21 20,20 C8,19 2,21 2,18 Z" fill="#fdbf69" opacity="0.7"/>
+      </svg>
+      <span className="relative">{children}</span>
+    </span>
+  )
+}
 import { motion, useAnimationFrame, useMotionValue } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import FadeIn from '../components/FadeIn'
@@ -83,13 +94,13 @@ export default function BeyondPage() {
             <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Additional Creative Fields</p>
             <div className="space-y-6">
               <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
-                In my free time, I love exploring my creativity through painting, photography, and hands-on making, from pottery and model building to CNC projects.
+                In my free time, I love exploring my <PH>creativity</PH> through <PH>painting</PH>, <PH>photography</PH>, and <PH>hands-on making</PH>, from <PH>pottery</PH> and <PH>model building</PH> to <PH>CNC projects</PH>.
               </p>
               <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
-                Painting landscapes lets me capture moments and places that left an impression on me, turning memory into art. Working with my hands allows me to experiment and bring ideas to life in a tactile way. Photography, especially while traveling, helps me notice fleeting moments, people, and landscapes (recently, I've been drawn to the textured, timeless quality of film).
+                Painting <PH>landscapes</PH> lets me capture moments and places that left an impression on me, turning memory into art. Working with my hands allows me to experiment and bring ideas to life in a <PH>tactile</PH> way. Photography, especially while <PH>travelling</PH>, helps me notice fleeting moments, people, and landscapes (recently, I've been drawn to the textured, timeless quality of film).
               </p>
               <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
-                These hobbies give me space to switch off, let my mind wander and recharge, while continuously inspiring the way I approach design.
+                These hobbies give me space to switch off, let my mind <PH>wander</PH> and <PH>recharge</PH>, while continuously inspiring the way I approach design.
               </p>
             </div>
           </div>
