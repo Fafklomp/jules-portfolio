@@ -1,6 +1,17 @@
 import PageTransition from '../components/PageTransition'
 import FadeIn from '../components/FadeIn'
 
+function PH({ children }) {
+  return (
+    <span className="relative inline-block">
+      <svg aria-hidden="true" className="absolute inset-0 w-full h-full" viewBox="0 0 120 24" preserveAspectRatio="none" style={{ top: '10%', height: '85%' }}>
+        <path d="M2,18 C10,8 20,4 40,6 C60,8 80,5 100,7 C112,8 118,12 118,16 C118,20 110,22 90,21 C70,20 40,21 20,20 C8,19 2,21 2,18 Z" fill="#fdbf69" opacity="0.7"/>
+      </svg>
+      <span className="relative">{children}</span>
+    </span>
+  )
+}
+
 export default function MissionPage() {
   return (
     <PageTransition>
@@ -45,13 +56,13 @@ export default function MissionPage() {
               <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Mission Statement</p>
               <div className="space-y-6">
                 <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
-                  I value loyalty, respect, and joy, and I strive to bring these qualities into everything I do. I believe life shouldn't always be taken too seriously, which is why I embrace a spirit of curiosity and playfulness, while also staying true to myself rather than simply following the crowd.
+                  I value <PH>loyalty</PH>, <PH>respect</PH>, and <PH>joy</PH>, and I strive to bring these qualities into everything I do. I believe life shouldn't always be taken too seriously, which is why I embrace a spirit of <PH>curiosity</PH> and <PH>playfulness</PH>, while also staying true to myself rather than simply following the crowd.
                 </p>
                 <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
-                  Creativity, spontaneity, and originality are part of who I am, and I hope to channel these traits into meaningful design work that contributes positively to both people and the environment.
+                  <PH>Creativity</PH>, <PH>spontaneity</PH>, and <PH>originality</PH> are part of who I am, and I hope to channel these traits into <PH>meaningful</PH> design work that contributes positively to both <PH>people and the environment</PH>.
                 </p>
                 <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
-                  I aspire to travel, broaden my perspective, and connect with inspiring people along the way. I am committed to stepping outside of my comfort zone, living a healthy and balanced life, and facing challenges with resilience. In doing so, I aim not only to grow personally but also to encourage and uplift those around me.
+                  I aspire to <PH>travel</PH>, broaden my perspective, and <PH>connect</PH> with inspiring people along the way. I am committed to stepping outside of my comfort zone, living a healthy and balanced life, and facing challenges with resilience. In doing so, I aim not only to grow personally but also to encourage and <PH>uplift</PH> those around me.
                 </p>
               </div>
             </div>
