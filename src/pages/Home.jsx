@@ -25,6 +25,11 @@ function WorkEntry({ dates, company, role, children }) {
             {pinned && <span className="ml-2 text-xs text-terra/50">●</span>}
           </p>
           <p className="text-sm font-light text-stone/50">{role}</p>
+          {!open && (
+            <p className="text-[10px] tracking-widest uppercase text-stone/25 mt-1">
+              hover or tap for details ↓
+            </p>
+          )}
         </div>
         {open && (
           <div className="mt-3 space-y-3">
