@@ -91,7 +91,7 @@ export default function Home() {
                   <dt className="text-sm font-light text-stone/40 w-24 shrink-0">Passport / Visa</dt>
                   <dd className="text-sm font-light text-stone/80 space-y-1">
                     <p>British Passport (exp. 2029)</p>
-                    <p>US B1/B2 (exp. 2033)</p>
+                    <p>US B1/B2 Visa (exp. 2033)</p>
                   </dd>
                 </div>
               </dl>
