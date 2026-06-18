@@ -36,8 +36,7 @@ export default function Contact() {
       <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-start">
         <div>
           <p className="text-sm font-light leading-relaxed text-stone/60 mb-8">
-            Interested in working together or have a project in mind? Fill in the form
-            and it will open your email client with everything pre-filled.
+            I would love to connect and explore how my interior design background could fit your team.
           </p>
           <div className="flex items-center gap-3 mt-1">
             <MdEmail size={22} style={{ color: '#fdbf69' }} />
