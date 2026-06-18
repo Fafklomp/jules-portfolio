@@ -20,36 +20,6 @@ export default function MissionPage() {
                 <div key={label} className="relative">
                   {/* Circle */}
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-stone/10 bg-stone/5 shrink-0 overflow-hidden">
-                    {label === 'Storytelling' && (
-                      <video
-                        src="/storytelling.mov"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover"
-                      />
-                    )}
-                    {label === 'Context' && (
-                      <video
-                        src="/context-video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover scale-[2] -translate-y-8"
-                      />
-                    )}
-                    {label === 'Craftsmanship' && (
-                      <video
-                        src="/context.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover scale-[2] -translate-y-8"
-                      />
-                    )}
                   </div>
                   {/* Curved label around sphere */}
                   <svg
