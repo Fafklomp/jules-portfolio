@@ -160,7 +160,7 @@ export default function Home() {
               <div className="flex gap-4">
                 <span className="text-sm font-light text-stone/40 w-24 shrink-0">2026</span>
                 <ul className="list-disc list-outside ml-4 space-y-1">
-                  <li className="text-sm font-light text-stone/80">Achieved my LEED Green Associate Credential</li>
+                  <li className="text-xs font-light text-stone/80">Achieved my LEED Green Associate Credential</li>
                 </ul>
               </div>
               <div className="flex gap-4">
@@ -168,8 +168,8 @@ export default function Home() {
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">Masters Research Thesis</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
-                    <li className="text-sm font-light text-stone/50"><strong>Distinction</strong></li>
-                    <li className="text-sm font-light text-stone/50">Topic: Innovative Learning Environments</li>
+                    <li className="text-xs font-light text-stone/50"><strong>Distinction</strong></li>
+                    <li className="text-xs font-light text-stone/50">Topic: Innovative Learning Environments</li>
                   </ul>
                 </div>
               </div>
@@ -178,7 +178,7 @@ export default function Home() {
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">Hons Year Interior Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
-                    <li className="text-sm font-light text-stone/50"><strong>Distinctions</strong> in all subjects (av. 76%)</li>
+                    <li className="text-xs font-light text-stone/50"><strong>Distinctions</strong> in all subjects (av. 76%)</li>
                   </ul>
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function Home() {
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">3rd Year Interior Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
-                    <li className="text-sm font-light text-stone/50"><strong>Distinctions</strong> in all subjects (av. 79%)</li>
+                    <li className="text-xs font-light text-stone/50"><strong>Distinctions</strong> in all subjects (av. 79%)</li>
                   </ul>
                 </div>
               </div>
@@ -196,12 +196,12 @@ export default function Home() {
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">2nd Year Interior Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
-                    <li className="text-sm font-light text-stone/50"><strong>Distinctions</strong> in all subjects (av. 79.9%)</li>
-                    <li className="text-sm font-light text-stone/50">Uys &amp; White Prize — highest average across all modules in all three architectural programs in 2nd year</li>
-                    <li className="text-sm font-light text-stone/50">Department of Architecture Prize — best design student in Interior Architecture in 2nd year (85%)</li>
-                    <li className="text-sm font-light text-stone/50">2nd Year Interior Architecture Class Representative</li>
-                    <li className="text-sm font-light text-stone/50">Nerina House Residence Head Mentor for Architecture</li>
-                    <li className="text-sm font-light text-stone/50">Nerina House Residence Flat Representative</li>
+                    <li className="text-xs font-light text-stone/50"><strong>Distinctions</strong> in all subjects (av. 79.9%)</li>
+                    <li className="text-xs font-light text-stone/50">Uys &amp; White Prize — highest average across all modules in all three architectural programs in 2nd year</li>
+                    <li className="text-xs font-light text-stone/50">Department of Architecture Prize — best design student in Interior Architecture in 2nd year (85%)</li>
+                    <li className="text-xs font-light text-stone/50">2nd Year Interior Architecture Class Representative</li>
+                    <li className="text-xs font-light text-stone/50">Nerina House Residence Head Mentor for Architecture</li>
+                    <li className="text-xs font-light text-stone/50">Nerina House Residence Flat Representative</li>
                   </ul>
                 </div>
               </div>
@@ -210,9 +210,9 @@ export default function Home() {
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">1st Year Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
-                    <li className="text-sm font-light text-stone/50"><strong>Distinctions</strong> in all subjects (Design 80%)</li>
-                    <li className="text-sm font-light text-stone/50">Awarded a place on the Golden Key International Honour Society</li>
-                    <li className="text-sm font-light text-stone/50">Tuks Res Women Leadership Academy Certificate for active participation in uplifting women</li>
+                    <li className="text-xs font-light text-stone/50"><strong>Distinctions</strong> in all subjects (Design 80%)</li>
+                    <li className="text-xs font-light text-stone/50">Awarded a place on the Golden Key International Honour Society</li>
+                    <li className="text-xs font-light text-stone/50">Tuks Res Women Leadership Academy Certificate for active participation in uplifting women</li>
                   </ul>
                 </div>
               </div>
