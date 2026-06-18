@@ -11,6 +11,27 @@ const photographyImages = [
   ...Array.from({ length: 45 }, (_, i) => i === 0 ? 'unnamed.jpg' : `unnamed (${i}).jpg`),
 ].map(f => `/photography/${f}`)
 
+const artImages = [
+  '079.jpg',
+  '2018-08-10 01.46.28 1.jpg',
+  '2020-03-30 04.26.15 1.jpg',
+  '2020-04-15 04.30.12 1.jpg',
+  '2020-05-09 04.45.23 1.jpg',
+  '2020-07-19 04.17.06 1.jpg',
+  '2020-07-20 12.46.09 1.jpg',
+  '2020-08-11 08.32.59 1.jpg',
+  '2021-02-10-055407564.jpg',
+  'IMG_4265.JPG',
+  'IMG_4471.JPG',
+  'IMG_6074.JPG',
+  'LUMF5501.JPG',
+  'XAZJE5949.JPG',
+  'nklxc.JPG',
+  'unnamed (46).jpg',
+  'unnamed.jpg',
+].map(f => `/art/${f}`)
+
+
 function PhotoBanner({ images, speed = 40 }) {
   const x = useMotionValue(0)
   const containerRef = useRef(null)
@@ -88,6 +109,8 @@ export default function BeyondPage() {
 
                 {title === 'Photography' ? (
                   <PhotoBanner images={photographyImages} />
+                ) : title === 'Art' ? (
+                  <PhotoBanner images={artImages} />
                 ) : (
                   <div className="min-h-[120px] rounded-sm border border-stone/10 flex items-center justify-center">
                     <p className="text-xs tracking-widest uppercase text-stone/20">Photos coming soon</p>
