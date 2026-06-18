@@ -90,7 +90,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <dt className="text-sm font-light text-stone/40 w-24 shrink-0">Passport / Visa</dt>
                   <dd className="text-sm font-light text-stone/80 space-y-1">
-                    <p>British (exp. 2029)</p>
+                    <p>British Passport (exp. 2029)</p>
                     <p>US B1/B2 (exp. 2033)</p>
                   </dd>
                 </div>
