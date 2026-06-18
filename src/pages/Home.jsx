@@ -78,17 +78,22 @@ export default function Home() {
               <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-6">Info</p>
               <dl className="space-y-2">
                 {[
-                  ['Location',        'London United Kingdom'],
-                  ['Age',             '27 (18/04/1999)'],
-                  ['Nationality',     'South African'],
-                  ['Passport / Visa', 'British (exp. 2029)'],
-                  ['',                'US B1/B2 (exp. 2033)'],
+                  ['Location',    'London United Kingdom'],
+                  ['Age',         '27 (18/04/1999)'],
+                  ['Nationality', 'South African'],
                 ].map(([label, value]) => (
                   <div key={label} className="flex gap-4">
                     <dt className="text-sm font-light text-stone/40 w-24 shrink-0">{label}</dt>
                     <dd className="text-sm font-light text-stone/80">{value}</dd>
                   </div>
                 ))}
+                <div className="flex gap-4">
+                  <dt className="text-sm font-light text-stone/40 w-24 shrink-0">Passport / Visa</dt>
+                  <dd className="text-sm font-light text-stone/80 space-y-1">
+                    <p>British (exp. 2029)</p>
+                    <p>US B1/B2 (exp. 2033)</p>
+                  </dd>
+                </div>
               </dl>
             </div>
 
