@@ -5,16 +5,24 @@ import FadeIn from '../components/FadeIn'
 import PageTransition from '../components/PageTransition'
 
 function WorkEntry({ dates, company, role, children }) {
-  const [open, setOpen] = useState(false)
+  const [hovered, setHovered] = useState(false)
+  const [pinned, setPinned] = useState(false)
+  const open = hovered || pinned
   return (
     <div className="flex gap-4">
       <div className="text-sm font-light text-stone/40 w-24 shrink-0">
         {dates.map((d, i) => <p key={i}>{d}</p>)}
       </div>
-      <div className="flex-1" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} onClick={() => setOpen(o => !o)}>
-        <div className="cursor-pointer md:cursor-default">
+      <div
+        className="flex-1"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onClick={() => setPinned(p => !p)}
+      >
+        <div className="cursor-pointer">
           <p className={`text-sm font-light transition-colors duration-200 ${open ? 'text-terra' : 'text-stone/80'}`}>
             {company}
+            {pinned && <span className="ml-2 text-xs text-terra/50">●</span>}
           </p>
           <p className="text-sm font-light text-stone/50">{role}</p>
         </div>
