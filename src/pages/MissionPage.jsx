@@ -71,13 +71,13 @@ export default function MissionPage() {
               <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Normative Position</p>
               <div className="space-y-6">
                 <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
-                  My approach to interior architecture is <PH>anchored in craftsmanship and shaped by context</PH>. I believe design should grow from an intimate understanding of place, culture, users and materials—creating spaces that <PH>resonate with their surroundings and support human wellbeing</PH>. Architecture moves at the pace of culture, and enduring design begins with thoughtful, efficient, and responsible construction.
+                  My approach to interior architecture is <PH>anchored in craftsmanship and shaped by context</PH>. I believe design should grow from an intimate understanding of place, culture, users and materials. Creating spaces that <PH>resonate with their surroundings and support human wellbeing</PH>. Architecture moves at the pace of culture, and enduring design begins with thoughtful, efficient, and responsible construction.
                 </p>
                 <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
                   While emerging technologies fascinate me and broaden our creative possibilities, they should never distance the designer from the act of making. I value a hands-on, collaborative process that weaves together <PH>local skills and contemporary innovations</PH>, ensuring each project remains both tactile and relevant.
                 </p>
                 <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
-                  In a globalized world, I champion a <PH>circular design</PH> ethos—where knowledge, skills, and materials are continuously shared, reused, and reimagined.
+                  In a globalized world, I champion a <PH>circular design</PH> ethos. Where knowledge, skills, and materials are continuously shared, reused, and reimagined.
                 </p>
               </div>
             </div>
