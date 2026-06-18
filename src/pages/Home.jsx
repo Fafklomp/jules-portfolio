@@ -159,9 +159,12 @@ export default function Home() {
             <div className="space-y-6">
               <div className="flex gap-4">
                 <span className="text-sm font-light text-stone/40 w-24 shrink-0">2026</span>
-                <ul className="list-disc list-outside ml-4 space-y-1">
-                  <li className="text-xs font-light text-stone/80">Achieved my LEED Green Associate Credential</li>
-                </ul>
+                <div>
+                  <p className="text-sm font-light text-stone/80 mb-1">LEED GA</p>
+                  <ul className="list-disc list-outside ml-4 space-y-1">
+                    <li className="text-xs font-light text-stone/50">Achieved my LEED Green Associate Credential</li>
+                  </ul>
+                </div>
               </div>
               <div className="flex gap-4">
                 <span className="text-sm font-light text-stone/40 w-24 shrink-0">2024</span>
