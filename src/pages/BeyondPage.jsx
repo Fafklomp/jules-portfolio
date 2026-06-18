@@ -51,7 +51,7 @@ function PhotoBanner({ images, speed = 40 }) {
 
   return (
     <div className="w-full overflow-hidden">
-      <motion.div ref={containerRef} style={{ x }} className="flex gap-3 w-max items-stretch h-64">
+      <motion.div ref={containerRef} style={{ x }} className="flex gap-3 w-max items-stretch h-48 md:h-64">
         {doubled.map((src, i) => (
           <img
             key={i}

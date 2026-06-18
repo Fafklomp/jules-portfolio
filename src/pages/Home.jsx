@@ -11,8 +11,8 @@ function WorkEntry({ dates, company, role, children }) {
       <div className="text-sm font-light text-stone/40 w-24 shrink-0">
         {dates.map((d, i) => <p key={i}>{d}</p>)}
       </div>
-      <div className="flex-1" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-        <div className="cursor-default">
+      <div className="flex-1" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} onClick={() => setOpen(o => !o)}>
+        <div className="cursor-pointer md:cursor-default">
           <p className={`text-sm font-light transition-colors duration-200 ${open ? 'text-terra' : 'text-stone/80'}`}>
             {company}
           </p>

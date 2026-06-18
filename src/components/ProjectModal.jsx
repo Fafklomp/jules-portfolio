@@ -82,7 +82,7 @@ export default function ProjectModal({ project, onClose }) {
             ))}
           </div>
 
-          <p className="text-base leading-relaxed text-stone/80 mb-8">
+          <p className="text-sm md:text-base leading-relaxed text-stone/80 mb-8">
             {project.description}
           </p>
 

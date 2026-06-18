@@ -28,7 +28,7 @@ export default function ImageBanner({ speed = 40 }) {
         {images.map((src, i) => (
           <div
             key={i}
-            className="h-72 w-[28rem] flex-shrink-0 overflow-hidden rounded-sm"
+            className="h-48 md:h-72 w-[18rem] md:w-[28rem] flex-shrink-0 overflow-hidden rounded-sm"
           >
             <img
               src={src}

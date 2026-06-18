@@ -9,7 +9,7 @@ export default function MissionPage() {
           <div className="space-y-16">
 
             {/* 5 Pillars banner */}
-            <div className="flex justify-between gap-4 border-b border-stone/10 pb-8">
+            <div className="flex flex-wrap justify-center gap-6 md:flex-nowrap md:justify-between border-b border-stone/10 pb-8">
               {[
                 { label: 'Storytelling'  },
                 { label: 'Wellbeing'     },
@@ -19,7 +19,7 @@ export default function MissionPage() {
               ].map(({ label }) => (
                 <div key={label} className="relative">
                   {/* Circle */}
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-stone/10 bg-stone/5 shrink-0 overflow-hidden">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full border border-stone/10 bg-stone/5 shrink-0 overflow-hidden">
                   </div>
                   {/* Curved label around sphere */}
                   <svg

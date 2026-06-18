@@ -2,7 +2,7 @@ import photo from '../assets/photo.jpg'
 
 export default function Hero() {
   return (
-    <div className="px-6 md:px-16 pt-20 pb-16 max-w-5xl mx-auto">
+    <div className="px-6 md:px-16 pt-24 md:pt-20 pb-16 max-w-5xl mx-auto">
       <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-end">
 
         {/* Sticky photo */}
