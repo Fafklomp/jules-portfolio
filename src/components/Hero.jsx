@@ -30,7 +30,7 @@ export default function Hero() {
 
           <div className="space-y-4">
             <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
-              My name is Jules, a South African trained Interior Architect passionate about <span style={{ color: '#fdbf69' }}>storytelling</span> and crafting spaces through the lens of human wellbeing &amp; sustainability. After gaining three years of professional experience, earning my LEED Green Associate credential, and graduating Cum Laude with my Honours in Interior Architecture, I have developed a strong commitment to designing interiors that exceed client expectations.
+              My name is Jules, a South African trained Interior Architect passionate about <span style={{ backgroundColor: '#fdbf69', padding: '0 3px' }}>storytelling</span> and crafting spaces through the lens of human wellbeing &amp; sustainability. After gaining three years of professional experience, earning my LEED Green Associate credential, and graduating Cum Laude with my Honours in Interior Architecture, I have developed a strong commitment to designing interiors that exceed client expectations.
             </p>
             <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
               My work spans luxury residential and hospitality projects across the world, where I have had the creative freedom to explore bespoke design solutions and refine my ability to craft detail-driven spaces that engage and inspire. My design approach blends aesthetics, comfort and brand identity to create meaningful, human-centred environments that tell stories. I am committed to delivering spaces that positively impact both their users and the environment.
