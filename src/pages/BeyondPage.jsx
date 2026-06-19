@@ -16,32 +16,15 @@ import FadeIn from '../components/FadeIn'
 import { SiInstagram } from 'react-icons/si'
 
 const photographyImages = [
-  'JULIA TUCKER_0260_00010.JPG',
-  'JULIA TUCKER_0260_00012.JPG',
-  'JULIA TUCKER_0260_00026.JPG',
-  ...Array.from({ length: 45 }, (_, i) => i === 0 ? 'unnamed.jpg' : `unnamed (${i}).jpg`),
-  '1.jpg',
+  '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.JPG', '9.JPG',
+  '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg',
+  '18.jpg', '19.jpg', '20.jpg', '21.jpg', '23.jpg', '24.JPG', '25.jpg', '26.jpg',
+  'unnamed.jpg', 'unnamed (3).jpg', 'unnamed (5).jpg', 'unnamed (6).jpg',
+  'unnamed (11).jpg', 'unnamed (14).jpg', 'unnamed (15).jpg', 'unnamed (18).jpg',
+  'unnamed (20).jpg', 'unnamed (21).jpg', 'unnamed (30).jpg', 'unnamed (32).jpg',
+  'unnamed (33).jpg', 'unnamed (38).jpg', 'unnamed (40).jpg', 'unnamed (45).jpg',
 ].map(f => `/photography/${f}`)
 
-const artImages = [
-  '079.jpg',
-  '2018-08-10 01.46.28 1.jpg',
-  '2020-03-30 04.26.15 1.jpg',
-  '2020-04-15 04.30.12 1.jpg',
-  '2020-05-09 04.45.23 1.jpg',
-  '2020-07-19 04.17.06 1.jpg',
-  '2020-07-20 12.46.09 1.jpg',
-  '2020-08-11 08.32.59 1.jpg',
-  '2021-02-10-055407564.jpg',
-  'IMG_4265.JPG',
-  'IMG_4471.JPG',
-  'IMG_6074.JPG',
-  'LUMF5501.JPG',
-  'XAZJE5949.JPG',
-  'nklxc.JPG',
-  'unnamed (46).jpg',
-  'unnamed.jpg',
-].map(f => `/art/${f}`)
 
 const handsonImages = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','ss.jpg','sss.jpg'].map(f => `/handson/${f}`)
 
@@ -76,6 +59,13 @@ function PhotoBanner({ images, speed = 40 }) {
     </div>
   )
 }
+
+const artImages = [
+  '1.jpg', '2.jpg', '3.jpg', '4.JPG', '5.JPG', '6.jpg', '7.jpg', '8.JPG', '9.JPG',
+  '10.jpg', '11.JPG', '12.jpg',
+  '2020-03-30 04.26.15 1.jpg', '2020-05-09 04.45.23 1.jpg', '2020-07-19 04.17.06 1.jpg',
+  'IMG_4265.JPG', 'unnamed (46).jpg',
+].map(f => `/art/${f}`)
 
 const sections = [
   { title: 'Art',           instagram: 'https://www.instagram.com/artwrksju/'  },
@@ -121,10 +111,10 @@ export default function BeyondPage() {
                   </a>
                 </div>
 
-                {title === 'Photography' ? (
-                  <PhotoBanner images={photographyImages} />
-                ) : title === 'Art' ? (
+                {title === 'Art' ? (
                   <PhotoBanner images={artImages} />
+                ) : title === 'Photography' ? (
+                  <PhotoBanner images={photographyImages} />
                 ) : (
                   <PhotoBanner images={handsonImages} />
                 )}
