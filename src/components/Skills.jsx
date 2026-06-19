@@ -54,7 +54,7 @@ export default function Skills() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
         {skillGroups.map(({ category, skills }) => (
           <div key={category}>
             <p className="text-xs tracking-[0.15em] uppercase mb-4" style={{ color: '#2d2e8c' }}>{category}</p>
