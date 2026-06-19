@@ -86,6 +86,15 @@ export default function ProjectModal({ project, onClose }) {
             {project.description}
           </p>
 
+          {project.myRole && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-3">My Role</p>
+              {project.myRole.split('\n\n').map((para, i) => (
+                <p key={i} className="text-xs leading-relaxed text-stone/80 mb-4 last:mb-0">{para}</p>
+              ))}
+            </div>
+          )}
+
           <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
               <span
@@ -96,6 +105,19 @@ export default function ProjectModal({ project, onClose }) {
               </span>
             ))}
           </div>
+
+          {project.software && (
+            <div className="mt-8 pt-6 border-t border-stone/10">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-3">Software</p>
+              <div className="flex flex-wrap gap-2">
+                {project.software.map(s => (
+                  <span key={s} className="text-xs tracking-widest uppercase text-sage border border-sage/30 px-3 py-1">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </motion.div>
     </motion.div>

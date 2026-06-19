@@ -7,11 +7,13 @@ const projects = [
     location: 'Seychelles',
     year: '2026',
     area: '4,200 sq ft',
-    role: 'Lead Designer',
+    role: 'Interior Architect',
     image: '/projects/alderton.jpg',
     description:
       'A 24-suite boutique riad reimagined for a European hospitality group. The brief called for a balance between Moroccan craft traditions and a spare, contemporary sensibility — hand-laid zellige, raw plaster walls, and bespoke ironwork throughout.',
     tags: ['Boutique Hotel', 'Heritage Restoration', 'FF&E'],
+    software: ['Revit', 'Enscape', 'Lumion', 'SketchUp', 'InDesign'],
+    myRole: 'I was responsible for the interior design of the Spa (budget of $10 million), working alongside my interior designer colleague. My scope included the schematic design, custom design and detailing of the joinery and FF&E, furniture selection and layout, reflected ceiling plans, and coordination of plumbing and electrical layouts. I also prepared room, door, and window schedules (with custom door details), vanity basin matrix, tender documentation, and 3D renderings and visualisations.\n\nIn addition, I developed client presentations, responded to RFIs, and maintained communication with contractors and the wider project team to ensure the seamless delivery of the Spa interiors.',
   },
   {
     id: 2,
@@ -21,11 +23,13 @@ const projects = [
     location: 'Puerto Rico',
     year: '2021',
     area: '6,800 sq ft',
-    role: 'Principal Designer',
+    role: 'Junior Interior Designer',
     image: '/projects/kensington.jpg',
     description:
       'Full refurbishment of a five-storey Victorian townhouse for a private client. The project involved structural alterations to open the lower ground floor to a landscaped garden, alongside a complete interior scheme drawing on English country and Italian modernism.',
     tags: ['Full Refurbishment', 'Listed Building', 'Bespoke Furniture'],
+    software: ['Revit', 'Affinity Designer', 'Procreate'],
+    myRole: 'I contributed to the conceptualisation of spaces by producing sketches and mood boards that captured the design vision. Assisted in developing functional and aesthetic furniture layouts, and played a key role in the design of bespoke joinery and custom FF&E pieces. I also prepared detailed technical drawings and comprehensive tender documentation to support the construction process, while also assisting in the creation of design presentations to effectively communicate ideas to clients and contractors.',
   },
   {
     id: 3,
@@ -40,6 +44,7 @@ const projects = [
     description:
       'A 16th-century farmhouse conversion for a family splitting time between New York and Italy. Natural stone floors were preserved throughout; new additions were kept deliberately understated — linen, terracotta, aged oak — to honour the existing fabric.',
     tags: ['Heritage Property', 'Stone Restoration', 'Landscape Integration'],
+    software: ['Revit', 'Twinmotion', 'Affinity Designer', 'Procreate'],
   },
   {
     id: 4,
@@ -54,6 +59,7 @@ const projects = [
     description:
       'Concept and FF&E direction for a members-only urban spa. The palette was drawn from Swiss alpine landscapes — stone, birch, deep moss — with a material language that emphasised warmth and tactility over the clinical feel typical of urban wellness spaces.',
     tags: ['Wellness', 'Members Club', 'Material Concept'],
+    software: ['Revit', 'Affinity Designer', 'Procreate'],
   },
   {
     id: 5,
@@ -68,6 +74,7 @@ const projects = [
     description:
       'Redesign of a lateral apartment for a young couple relocating from Paris. The brief prioritised a relaxed, lived-in quality — a palette of warm whites, aged brass, and vintage French furniture sourced alongside a full bespoke joinery package.',
     tags: ['Apartment', 'French Influence', 'Joinery'],
+    software: ['QGIS', 'Procreate', 'Affinity Designer', 'Epicollect', 'Adobe Photoshop'],
   },
   {
     id: 6,
@@ -82,6 +89,7 @@ const projects = [
     description:
       "Interior concept for a twelve-room maison d'hôtes set within a classified 18th-century building. The scheme layered period architectural detail with contemporary French craft — ceramic lighting, woven textiles, and hand-dyed wallcoverings produced by regional artisans.",
     tags: ["Maison d'Hôtes", 'Heritage', 'Artisan Craft'],
+    software: ['AutoCAD', 'Adobe Photoshop', 'Adobe Illustrator'],
   },
 ]
 
