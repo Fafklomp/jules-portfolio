@@ -6,12 +6,12 @@ const projects = [
     category: 'Work',
     location: 'Seychelles',
     year: '2026',
-    area: '4,200 sq ft',
+    area: '?',
     role: 'Interior Architect',
     image: '/projects/alderton.jpg',
     description:
-      'A 24-suite boutique riad reimagined for a European hospitality group. The brief called for a balance between Moroccan craft traditions and a spare, contemporary sensibility — hand-laid zellige, raw plaster walls, and bespoke ironwork throughout.',
-    tags: ['Boutique Hotel', 'Heritage Restoration', 'FF&E'],
+      'A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.',
+    tags: ['Luxury Hospitality', 'Tropical Resort Design', 'Spa & Wellness', 'Custom Joinery', 'Architecture & Interior Architecture'],
     software: ['Revit', 'Enscape', 'Lumion', 'SketchUp', 'InDesign'],
     myRole: 'I was responsible for the interior design of the Spa (budget of $10 million), working alongside my interior designer colleague. My scope included the schematic design, custom design and detailing of the joinery and FF&E, furniture selection and layout, reflected ceiling plans, and coordination of plumbing and electrical layouts. I also prepared room, door, and window schedules (with custom door details), vanity basin matrix, tender documentation, and 3D renderings and visualisations.\n\nIn addition, I developed client presentations, responded to RFIs, and maintained communication with contractors and the wider project team to ensure the seamless delivery of the Spa interiors.',
   },
@@ -22,7 +22,7 @@ const projects = [
     category: 'Work',
     location: 'Puerto Rico',
     year: '2021',
-    area: '6,800 sq ft',
+    area: '?',
     role: 'Junior Interior Designer',
     image: '/projects/kensington.jpg',
     description:
@@ -38,7 +38,7 @@ const projects = [
     category: 'University',
     location: 'Sunnyside, South Africa',
     year: '2023',
-    area: '9,100 sq ft',
+    area: '?',
     role: 'Lead Designer',
     image: '/projects/villa-sorano.jpg',
     description:
@@ -53,7 +53,7 @@ const projects = [
     category: 'University',
     location: 'University of Pretoria, South Africa',
     year: '2023',
-    area: '3,500 sq ft',
+    area: '?',
     role: 'Interior Consultant',
     image: '/projects/aster-spa.jpg',
     description:
@@ -68,7 +68,7 @@ const projects = [
     category: 'University',
     location: 'Hatfield Precinct, South Africa',
     year: '2023',
-    area: '1,900 sq ft',
+    area: '?',
     role: 'Principal Designer',
     image: '/projects/notting-hill.jpg',
     description:
@@ -83,7 +83,7 @@ const projects = [
     category: 'University',
     location: 'Pretoria, South Africa',
     year: '2020',
-    area: '5,600 sq ft',
+    area: '?',
     role: 'Lead Designer',
     image: '/projects/maison-larue.jpg',
     description:
