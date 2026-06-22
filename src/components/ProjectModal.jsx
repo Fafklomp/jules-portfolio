@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 function PH({ children }) {
   return (
@@ -25,16 +25,29 @@ const panel = {
 }
 
 export default function ProjectModal({ project, onClose }) {
+  const [enlargedImg, setEnlargedImg] = useState(null)
+
   useEffect(() => {
-    const handler = (e) => { if (e.key === 'Escape') onClose() }
+    const handler = (e) => {
+      if (e.key === 'Escape') { enlargedImg ? setEnlargedImg(null) : onClose() }
+    }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
-  }, [onClose])
+  }, [onClose, enlargedImg])
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
     return () => { document.body.style.overflow = '' }
   }, [])
+
+  const Img = ({ src, alt, className }) => (
+    <img
+      src={src}
+      alt={alt}
+      className={`${className} cursor-zoom-in`}
+      onClick={() => setEnlargedImg(src)}
+    />
+  )
 
   return (
     <motion.div
@@ -161,7 +174,7 @@ export default function ProjectModal({ project, onClose }) {
             <div className="mb-8">
               <p className="text-xs tracking-widest uppercase text-stone/40 mb-2">Materiality</p>
               <p className="text-xs leading-relaxed text-stone/60 italic mb-4">The material palette celebrates the natural beauty of the site, incorporating locally sourced elements such as rockwork and the golden, swaying Alang Alang grass, creating a harmonious connection between the architecture and its surroundings.</p>
-              <div className="grid grid-cols-3 sm:grid-cols-9 gap-3">
+              <div className="grid grid-cols-9 gap-1 sm:gap-3">
                 {[
                   { name: 'Internal Rockwork', img: 'swatch-2.webp' },
                   { name: 'Alang Alang',        img: 'swatch-1.webp' },
@@ -175,7 +188,7 @@ export default function ProjectModal({ project, onClose }) {
                 ].map(({ name, img }) => (
                   <div key={name} className="flex flex-col items-center gap-2">
                     <img src={`/projects/tropical-spa/swatches/${img}`} alt={name} className="w-full aspect-square object-cover rounded-sm" />
-                    <p className="text-xs text-center text-stone/60 leading-tight">{name}</p>
+                    <p className="text-[8px] sm:text-xs text-center text-stone/60 leading-tight">{name}</p>
                   </div>
                 ))}
               </div>
@@ -189,19 +202,10 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="text-stone/25 mr-1">01</span>Treatment Room
               </p>
               <p className="text-xs text-stone/40 italic mb-4 ml-4">Double treatment room</p>
-              <img
-                src="/projects/tropical-spa/treatment-1.webp"
-                alt="Double treatment room"
-                className="w-full h-auto rounded-sm mb-2"
-              />
+              <Img src="/projects/tropical-spa/treatment-1.webp" alt="Double treatment room" className="w-full h-auto rounded-sm mb-2" />
               <div className="grid grid-cols-2 gap-2 mb-4">
                 {[2, 3, 4, 5].map(n => (
-                  <img
-                    key={n}
-                    src={`/projects/tropical-spa/treatment-${n}.webp`}
-                    alt={`Double treatment room view ${n}`}
-                    className="w-full h-auto rounded-sm"
-                  />
+                  <Img key={n} src={`/projects/tropical-spa/treatment-${n}.webp`} alt={`Double treatment room view ${n}`} className="w-full h-auto rounded-sm" />
                 ))}
               </div>
               <a
@@ -224,8 +228,8 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="text-stone/25 mr-1">02</span>Relaxation Area
               </p>
               <p className="text-xs text-stone/40 italic mb-4 ml-4">Changeroom 01</p>
-              <img src="/projects/tropical-spa/relaxation-2.webp" alt="Relaxation area view 1" className="w-full h-auto rounded-sm mb-2" />
-              <img src="/projects/tropical-spa/relaxation-3.webp" alt="Relaxation area view 2" className="w-full h-auto rounded-sm mb-4" />
+              <Img src="/projects/tropical-spa/relaxation-2.webp" alt="Relaxation area view 1" className="w-full h-auto rounded-sm mb-2" />
+              <Img src="/projects/tropical-spa/relaxation-3.webp" alt="Relaxation area view 2" className="w-full h-auto rounded-sm mb-4" />
               <a
                 href="/projects/tropical-spa/relaxation-changeroom-01.pdf"
                 download
@@ -246,8 +250,8 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="text-stone/25 mr-1">03</span>Gym
               </p>
               <p className="text-xs text-stone/40 italic mb-4 ml-4">Changeroom 02</p>
-              <img src="/projects/tropical-spa/gym-1.webp" alt="Gym changeroom 02" className="w-full h-auto rounded-sm mb-2" />
-              <img src="/projects/tropical-spa/gym-2.webp" alt="Gym changeroom 02 view 2" className="w-full h-auto rounded-sm mb-4" />
+              <Img src="/projects/tropical-spa/gym-1.webp" alt="Gym changeroom 02" className="w-full h-auto rounded-sm mb-2" />
+              <Img src="/projects/tropical-spa/gym-2.webp" alt="Gym changeroom 02 view 2" className="w-full h-auto rounded-sm mb-4" />
               <a
                 href="/projects/tropical-spa/gym-changeroom-02.pdf"
                 download
@@ -290,6 +294,27 @@ export default function ProjectModal({ project, onClose }) {
 
         </div>
       </motion.div>
+
+      <AnimatePresence>
+        {enlargedImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 cursor-zoom-out p-4"
+            onClick={() => setEnlargedImg(null)}
+          >
+            <motion.img
+              src={enlargedImg}
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="max-w-full max-h-full object-contain rounded-sm"
+              onClick={e => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }

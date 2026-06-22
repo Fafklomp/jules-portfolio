@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import ProjectModal from '../components/ProjectModal'
 import ImageBanner from '../components/ImageBanner'
-import Footer from '../components/Footer'
 import projects from '../data/projects'
 
 const heroImages = [
@@ -172,7 +171,6 @@ export default function ProjectsPage() {
         </AnimatePresence>
       </section>
 
-      <Footer />
 
       <AnimatePresence>
         {selectedProject && (

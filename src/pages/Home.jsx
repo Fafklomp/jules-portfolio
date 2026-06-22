@@ -3,7 +3,6 @@ import { MdTouchApp } from 'react-icons/md'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'
 import FadeIn from '../components/FadeIn'
-import Footer from '../components/Footer'
 import PageTransition from '../components/PageTransition'
 
 function WorkEntry({ dates, company, role, children }) {
@@ -146,7 +145,6 @@ export default function Home() {
       </FadeIn>
 
       <FadeIn><Skills /></FadeIn>
-      <FadeIn><Footer /></FadeIn>
 
       {/* Certificates */}
       <FadeIn>
