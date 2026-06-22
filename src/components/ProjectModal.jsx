@@ -192,7 +192,7 @@ export default function ProjectModal({ project, onClose }) {
                 alt="Double treatment room"
                 className="w-full h-auto rounded-sm mb-2"
               />
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-2 mb-4">
                 {[2, 3, 4, 5].map(n => (
                   <img
                     key={n}
@@ -202,6 +202,16 @@ export default function ProjectModal({ project, onClose }) {
                   />
                 ))}
               </div>
+              <a
+                href="/projects/tropical-spa/double-treatment-room.pdf"
+                download
+                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-sage border border-sage/30 px-4 py-2 hover:bg-sage/5 transition-colors duration-150"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+                </svg>
+                Download Technical Drawing
+              </a>
             </div>
           )}
 
