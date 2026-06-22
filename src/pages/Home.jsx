@@ -15,6 +15,9 @@ function WorkEntry({ dates, company, role, children }) {
       <div className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">
         {dates.map((d, i) => <p key={i}>{d}</p>)}
       </div>
+      {!open && (
+        <MdTouchApp size={18} style={{ color: '#fdbf69' }} className="mt-1 opacity-70 shrink-0" />
+      )}
       <div
         className="flex-1"
         onMouseEnter={() => setHovered(true)}
@@ -27,9 +30,6 @@ function WorkEntry({ dates, company, role, children }) {
             {pinned && <span className="ml-2 text-xs text-terra/50">●</span>}
           </p>
           <p className="text-sm font-light text-stone/50">{role}</p>
-          {!open && (
-            <MdTouchApp size={18} style={{ color: '#fdbf69' }} className="mt-1 opacity-70" />
-          )}
         </div>
         {open && (
           <div className="mt-3 space-y-3">

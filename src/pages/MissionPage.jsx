@@ -20,7 +20,7 @@ export default function MissionPage() {
           <div className="space-y-16">
 
             {/* 5 Pillars banner */}
-            <div className="flex flex-wrap justify-center gap-6 md:flex-nowrap md:justify-between border-b border-stone/10 pb-8">
+            <div className="flex flex-nowrap justify-between gap-2 md:gap-6 border-b border-stone/10 pb-8">
               {[
                 { label: 'Storytelling'  },
                 { label: 'Wellbeing'     },
@@ -30,7 +30,7 @@ export default function MissionPage() {
               ].map(({ label }) => (
                 <div key={label} className="relative">
                   {/* Circle */}
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full border border-stone/10 bg-stone/5 shrink-0 overflow-hidden">
+                  <div className="w-14 h-14 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full border border-stone/10 bg-stone/5 shrink-0 overflow-hidden">
                     {label === 'Storytelling' && (
                       <video src="/storytelling.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover" />
                     )}
@@ -93,7 +93,7 @@ export default function MissionPage() {
 
             <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
               <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Personal</p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <div className="grid grid-cols-3 gap-4 md:gap-8">
                 {/* Self Awareness */}
                 <div className="relative pt-8 pb-4">
                   <span className="absolute top-0 left-0 text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>01</span>
