@@ -184,9 +184,11 @@ export default function ProjectModal({ project, onClose }) {
 
           {project.id === 1 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-4">
-                <span className="text-stone/25 mr-2">01</span>Double Treatment Room
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                <span className="text-stone/25 mr-1">01</span>Treatment Room
               </p>
+              <p className="text-xs text-stone/40 italic mb-4 ml-4">Double treatment room</p>
               <img
                 src="/projects/tropical-spa/treatment-1.webp"
                 alt="Double treatment room"
@@ -212,6 +214,38 @@ export default function ProjectModal({ project, onClose }) {
                 </svg>
                 Download Technical Drawing
               </a>
+            </div>
+          )}
+
+          {project.id === 1 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                <span className="text-stone/25 mr-1">02</span>Relaxation Area
+              </p>
+              <p className="text-xs text-stone/40 italic mb-4 ml-4">Changeroom 01</p>
+              <img src="/projects/tropical-spa/relaxation-2.webp" alt="Relaxation area view 1" className="w-full h-auto rounded-sm mb-2" />
+              <img src="/projects/tropical-spa/relaxation-3.webp" alt="Relaxation area view 2" className="w-full h-auto rounded-sm mb-4" />
+              <a
+                href="/projects/tropical-spa/relaxation-changeroom-01.pdf"
+                download
+                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-sage border border-sage/30 px-4 py-2 hover:bg-sage/5 transition-colors duration-150"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+                </svg>
+                Download Technical Drawing
+              </a>
+            </div>
+          )}
+
+          {project.id === 1 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                <span className="text-stone/25 mr-1">03</span>Gym
+              </p>
+              <p className="text-xs text-stone/40 italic mb-4 ml-4">Changeroom 02</p>
             </div>
           )}
 
