@@ -11,7 +11,7 @@ function WorkEntry({ dates, company, role, children }) {
   const open = hovered || pinned
   return (
     <div className="flex gap-4">
-      <div className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">
+      <div className="text-xs font-light text-stone/40 w-8 md:w-20 shrink-0 leading-snug">
         {dates.map((d, i) => <p key={i}>{d}</p>)}
       </div>
       {!open && (

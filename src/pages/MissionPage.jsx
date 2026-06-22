@@ -96,7 +96,7 @@ export default function MissionPage() {
               <div className="grid grid-cols-3 gap-4 md:gap-8">
                 {/* Self Awareness */}
                 <div className="relative pt-8 pb-4">
-                  <span className="absolute top-0 left-0 text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>01</span>
+                  <span className="absolute top-0 left-0 text-[3rem] sm:text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>01</span>
                   <div className="relative z-10 pt-6">
                     <p className="text-xs tracking-[0.15em] uppercase text-sage font-semibold mb-4 -ml-4">Self Awareness</p>
                     <p className="text-[10px] tracking-widest uppercase text-stone/35 mb-1">Clifton Strengths</p>
@@ -107,7 +107,7 @@ export default function MissionPage() {
                 </div>
                 {/* Hobbies & Interests */}
                 <div className="relative pt-8 pb-4">
-                  <span className="absolute top-0 left-0 text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>02</span>
+                  <span className="absolute top-0 left-0 text-[3rem] sm:text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>02</span>
                   <div className="relative z-10 pt-6">
                     <p className="text-xs tracking-[0.15em] uppercase text-sage font-semibold mb-4 -ml-4">Hobbies &amp; Interests</p>
                     <ul className="list-disc list-outside ml-4 space-y-1">
@@ -120,7 +120,7 @@ export default function MissionPage() {
                 </div>
                 {/* Values */}
                 <div className="relative pt-8 pb-4">
-                  <span className="absolute top-0 left-0 text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>03</span>
+                  <span className="absolute top-0 left-0 text-[3rem] sm:text-[8rem] leading-none text-stone/5 select-none" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 900 }}>03</span>
                   <div className="relative z-10 pt-6">
                     <p className="text-xs tracking-[0.15em] uppercase text-sage font-semibold mb-4 -ml-4">Values</p>
                     <ul className="list-disc list-outside ml-4 space-y-1">
