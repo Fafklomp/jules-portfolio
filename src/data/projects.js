@@ -6,7 +6,7 @@ const projects = [
     category: 'Work',
     location: 'Seychelles',
     year: '2026',
-    area: '?',
+    area: '~800m²',
     role: 'Interior Architect',
     image: '/projects/alderton.jpg',
     description:
