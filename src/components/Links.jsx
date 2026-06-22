@@ -4,7 +4,7 @@ const links = [
     href: 'https://www.linkedin.com/in/juliatucker-profile/',
     description: 'Professional profile',
   },
-{
+  {
     label: 'Email',
     href: 'mailto:juliaktucker@gmail.com',
     description: 'Get in touch',
