@@ -163,18 +163,18 @@ export default function ProjectModal({ project, onClose }) {
               <p className="text-xs leading-relaxed text-stone/60 italic mb-4">The material palette celebrates the natural beauty of the site, incorporating locally sourced elements such as rockwork and the golden, swaying Alang Alang grass, creating a harmonious connection between the architecture and its surroundings.</p>
               <div className="grid grid-cols-3 sm:grid-cols-9 gap-3">
                 {[
-                  { name: 'Internal Rockwork', color: '#a89880' },
-                  { name: 'Alang Alang', color: '#c9b87a' },
-                  { name: 'White Marble', color: '#f0ece6' },
-                  { name: 'Iroko / Teak', color: '#8B6344' },
-                  { name: 'Granite', color: '#7a7a72' },
-                  { name: 'Rough Plaster', color: '#d6cebc' },
-                  { name: 'External Rockwork', color: '#6e6258' },
-                  { name: 'Ergon Oros', color: '#b5a898' },
-                  { name: 'Green Marble', color: '#6b7d6a' },
-                ].map(({ name, color }) => (
+                  { name: 'Internal Rockwork', img: 'swatch-2.webp' },
+                  { name: 'Alang Alang',        img: 'swatch-1.webp' },
+                  { name: 'White Marble',        img: 'swatch-3.webp' },
+                  { name: 'Iroko / Teak',        img: 'swatch-4.webp' },
+                  { name: 'Granite',             img: 'swatch-5.webp' },
+                  { name: 'Rough Plaster',       img: 'swatch-6.webp' },
+                  { name: 'External Rockwork',   img: 'swatch-7.webp' },
+                  { name: 'Ergon Oros',          img: 'swatch-8.webp' },
+                  { name: 'Green Marble',        img: 'swatch-9.webp' },
+                ].map(({ name, img }) => (
                   <div key={name} className="flex flex-col items-center gap-2">
-                    <div className="w-full aspect-square rounded-sm" style={{ backgroundColor: color }} />
+                    <img src={`/projects/tropical-spa/swatches/${img}`} alt={name} className="w-full aspect-square object-cover rounded-sm" />
                     <p className="text-xs text-center text-stone/60 leading-tight">{name}</p>
                   </div>
                 ))}
@@ -246,6 +246,18 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="text-stone/25 mr-1">03</span>Gym
               </p>
               <p className="text-xs text-stone/40 italic mb-4 ml-4">Changeroom 02</p>
+              <img src="/projects/tropical-spa/gym-1.webp" alt="Gym changeroom 02" className="w-full h-auto rounded-sm mb-2" />
+              <img src="/projects/tropical-spa/gym-2.webp" alt="Gym changeroom 02 view 2" className="w-full h-auto rounded-sm mb-4" />
+              <a
+                href="/projects/tropical-spa/gym-changeroom-02.pdf"
+                download
+                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-sage border border-sage/30 px-4 py-2 hover:bg-sage/5 transition-colors duration-150"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+                </svg>
+                Download Technical Drawing
+              </a>
             </div>
           )}
 

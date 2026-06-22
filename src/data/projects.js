@@ -8,7 +8,7 @@ const projects = [
     year: '2026',
     area: '~800m²',
     role: 'Interior Architect',
-    image: '/projects/alderton.jpg',
+    image: '/projects/alderton.webp',
     description:
       'A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.',
     tags: ['Luxury Hospitality', 'Tropical Resort Design', 'Spa & Wellness', 'Custom Joinery', 'Architecture & Interior Architecture'],
