@@ -112,25 +112,10 @@ export default function ProjectModal({ project, onClose }) {
             ) : project.description}
           </p>
 
-          {project.myRole && (
-            <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-3">My Role</p>
-              {project.id === 1 ? (
-                <>
-                  <p className="text-xs leading-relaxed text-stone/80 mb-4">I was responsible for the interior design of the Spa (budget of $10 million), working alongside my interior designer colleague. My scope included the <PH>schematic design, custom design and detailing of the joinery and FF&E, furniture selection and layout, reflected ceiling plans, and coordination of plumbing and electrical layouts.</PH> I also prepared room, door, and window schedules (with custom door details), vanity basin matrix, tender documentation, and 3D renderings and visualisations.</p>
-                  <p className="text-xs leading-relaxed text-stone/80">In addition, I developed client presentations, responded to RFIs, and maintained communication with contractors and the wider project team to ensure the seamless delivery of the Spa interiors.</p>
-                </>
-              ) : (
-                project.myRole.split('\n\n').map((para, i) => (
-                  <p key={i} className="text-xs leading-relaxed text-stone/80 mb-4 last:mb-0">{para}</p>
-                ))
-              )}
-            </div>
-          )}
-
           {project.id === 1 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-3">Floor Plan</p>
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1">Floor Plan</p>
+              <p className="text-xs text-stone/40 italic mb-3">(concealed for confidentiality purposes)</p>
               <svg viewBox="0 0 9693 4374" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto rounded-sm" style={{fontFamily:"'Poppins', system-ui, sans-serif"}}>
                 <g transform="matrix(1,0,0,1,-17957.001442,-3593.152831)">
                   <g transform="matrix(1,0,0,1,-15354.998558,-372.847169)">
@@ -169,6 +154,70 @@ export default function ProjectModal({ project, onClose }) {
                   </g>
                 </g>
               </svg>
+            </div>
+          )}
+
+          {project.id === 1 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-2">Materiality</p>
+              <p className="text-xs leading-relaxed text-stone/60 italic mb-4">The material palette celebrates the natural beauty of the site, incorporating locally sourced elements such as rockwork and the golden, swaying Alang Alang grass, creating a harmonious connection between the architecture and its surroundings.</p>
+              <div className="grid grid-cols-3 sm:grid-cols-9 gap-3">
+                {[
+                  { name: 'Internal Rockwork', color: '#a89880' },
+                  { name: 'Alang Alang', color: '#c9b87a' },
+                  { name: 'White Marble', color: '#f0ece6' },
+                  { name: 'Iroko / Teak', color: '#8B6344' },
+                  { name: 'Granite', color: '#7a7a72' },
+                  { name: 'Rough Plaster', color: '#d6cebc' },
+                  { name: 'External Rockwork', color: '#6e6258' },
+                  { name: 'Ergon Oros', color: '#b5a898' },
+                  { name: 'Green Marble', color: '#6b7d6a' },
+                ].map(({ name, color }) => (
+                  <div key={name} className="flex flex-col items-center gap-2">
+                    <div className="w-full aspect-square rounded-sm" style={{ backgroundColor: color }} />
+                    <p className="text-xs text-center text-stone/60 leading-tight">{name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {project.id === 1 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-4">
+                <span className="text-stone/25 mr-2">01</span>Double Treatment Room
+              </p>
+              <img
+                src="/projects/tropical-spa/treatment-1.webp"
+                alt="Double treatment room"
+                className="w-full h-auto rounded-sm mb-2"
+              />
+              <div className="grid grid-cols-2 gap-2">
+                {[2, 3, 4, 5].map(n => (
+                  <img
+                    key={n}
+                    src={`/projects/tropical-spa/treatment-${n}.webp`}
+                    alt={`Double treatment room view ${n}`}
+                    className="w-full h-auto rounded-sm"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {project.myRole && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-3">My Role</p>
+              {project.id === 1 ? (
+                <>
+                  <p className="text-xs leading-relaxed text-stone/80 mb-4">I was responsible for the interior design of the Spa (budget of $10 million), working alongside my interior designer colleague. My scope included the <PH>schematic design, custom design and detailing of the joinery and FF&E, furniture selection and layout, reflected ceiling plans, and coordination of plumbing and electrical layouts.</PH> I also prepared room, door, and window schedules (with custom door details), vanity basin matrix, tender documentation, and 3D renderings and visualisations.</p>
+                  <p className="text-xs leading-relaxed text-stone/80">In addition, I developed client presentations, responded to RFIs, and maintained communication with contractors and the wider project team to ensure the seamless delivery of the Spa interiors.</p>
+                </>
+              ) : (
+                project.myRole.split('\n\n').map((para, i) => (
+                  <p key={i} className="text-xs leading-relaxed text-stone/80 mb-4 last:mb-0">{para}</p>
+                ))
+              )}
             </div>
           )}
 
