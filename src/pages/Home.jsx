@@ -11,7 +11,7 @@ function WorkEntry({ dates, company, role, children }) {
   const open = hovered || pinned
   return (
     <div className="flex gap-4">
-      <div className="text-xs font-light text-stone/40 w-8 md:w-20 shrink-0 leading-snug">
+      <div className="text-xs font-light text-stone/40 w-20 shrink-0 leading-snug">
         {dates.map((d, i) => <p key={i}>{d}</p>)}
       </div>
       {!open && (
@@ -31,7 +31,7 @@ function WorkEntry({ dates, company, role, children }) {
           <p className="text-sm font-light text-stone/50">{role}</p>
         </div>
         {open && (
-          <div className="mt-3 space-y-3">
+          <div className="mt-3 space-y-3" onClick={(e) => { e.stopPropagation(); setPinned(false) }}>
             {children}
           </div>
         )}
@@ -95,12 +95,12 @@ export default function Home() {
                   ['Nationality', 'South African'],
                 ].map(([label, value]) => (
                   <div key={label} className="flex gap-4">
-                    <dt className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">{label}</dt>
+                    <dt className="text-sm font-light text-stone/40 w-24 shrink-0">{label}</dt>
                     <dd className="text-sm font-light text-stone/80">{value}</dd>
                   </div>
                 ))}
                 <div className="flex gap-4">
-                  <dt className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">Passport / Visa</dt>
+                  <dt className="text-sm font-light text-stone/40 w-24 shrink-0">Passport / Visa</dt>
                   <dd className="text-sm font-light text-stone/80 space-y-1">
                     <p>British Passport (exp. 2029)</p>
                     <p>US B1/B2 Visa (exp. 2033)</p>
@@ -175,7 +175,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Academic Achievements</p>
             <div className="space-y-6">
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">2026</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2026</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">LEED GA</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
@@ -184,7 +184,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">2024</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2024</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">Masters Research Thesis</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
@@ -194,7 +194,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">2023</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2023</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">Hons Year Interior Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
@@ -203,7 +203,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">2020</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2020</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">3rd Year Interior Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
@@ -212,7 +212,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">2019</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2019</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">2nd Year Interior Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
@@ -226,7 +226,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <span className="text-sm font-light text-stone/40 w-10 md:w-24 shrink-0">2018</span>
+                <span className="text-sm font-light text-stone/40 w-24 shrink-0">2018</span>
                 <div>
                   <p className="text-sm font-light text-stone/80 mb-1">1st Year Architecture</p>
                   <ul className="list-disc list-outside ml-4 space-y-1">
