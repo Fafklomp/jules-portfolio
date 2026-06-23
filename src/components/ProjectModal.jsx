@@ -1,6 +1,38 @@
 import { useEffect, useRef, useState } from 'react'
 import { MdTouchApp } from 'react-icons/md'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useAnimationFrame, useMotionValue } from 'framer-motion'
+
+const PERSP_IMAGES = [
+  '/projects/jungle-resort/persp-a.webp',
+  '/projects/jungle-resort/persp-b.webp',
+  '/projects/jungle-resort/persp-c.webp',
+  '/projects/jungle-resort/persp-d.webp',
+  '/projects/jungle-resort/persp-e.webp',
+]
+
+function PerspBanner({ speed = 35 }) {
+  const x = useMotionValue(0)
+  const containerRef = useRef(null)
+  const doubled = [...PERSP_IMAGES, ...PERSP_IMAGES]
+
+  useAnimationFrame((_, delta) => {
+    const container = containerRef.current
+    if (!container) return
+    const halfWidth = container.scrollWidth / 2
+    const next = x.get() - (speed * delta) / 1000
+    x.set(next <= -halfWidth ? 0 : next)
+  })
+
+  return (
+    <div className="w-full overflow-hidden mt-1">
+      <motion.div ref={containerRef} style={{ x }} className="flex gap-3 w-max items-stretch h-48">
+        {doubled.map((src, i) => (
+          <img key={i} src={src} alt="" aria-hidden="true" className="h-full w-auto object-cover rounded-sm flex-shrink-0" />
+        ))}
+      </motion.div>
+    </div>
+  )
+}
 
 function PH({ children }) {
   return (
@@ -175,9 +207,17 @@ export default function ProjectModal({ project, onClose }) {
               </div>
               <p className="text-[10px] font-light text-stone/35 italic mb-4">(renders were produced by an internal employee. My contribution was towards the interior design of each of these buildings).</p>
               <div className="grid grid-cols-2 gap-2">
-                <Img src="/projects/jungle-resort/floorplan.webp" alt="Resort floor plan" className="w-full h-auto rounded-sm" />
-                <Img src="/projects/jungle-resort/floorplan-2.webp" alt="Resort floor plan 2" className="w-full h-auto rounded-sm" />
+                <div>
+                  <Img src="/projects/jungle-resort/floorplan.webp" alt="Resort floor plan" className="w-full h-auto rounded-sm" />
+                  <p className="text-[9px] font-light text-stone/35 italic mt-1">ground floor plan - NTS</p>
+                </div>
+                <div>
+                  <Img src="/projects/jungle-resort/floorplan-2.webp" alt="Resort floor plan 2" className="w-full h-auto rounded-sm" />
+                  <p className="text-[9px] font-light text-stone/35 italic mt-1">first floor plan - NTS</p>
+                </div>
               </div>
+              <p className="text-xs tracking-wide lowercase font-bold italic mt-6" style={{ color: '#fdbf69' }}>perspectives</p>
+              <PerspBanner />
             </div>
           )}
 
