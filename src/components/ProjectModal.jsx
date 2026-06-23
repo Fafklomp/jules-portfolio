@@ -224,7 +224,9 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">02</span>Resort Accommodation Units
               </p>
-              <Img src="/projects/jungle-resort/accommodation.webp" alt="Resort accommodation floor plan" className="w-full h-auto mt-3 rounded-sm" />
+              <p className="text-xs font-light leading-relaxed text-stone/70 mt-1">The Resort Interior colour palette is inspired by the vibrant colours of the flowers native to the Puerto Rican rainforest. These forms are celebrated through the natural patterns and lively colours scattered through the Orocovis rainforest.</p>
+              <Img src="/projects/jungle-resort/accommodation.webp" alt="Resort accommodation floor plan" className="w-full h-auto rounded-sm" />
+              <p className="text-[9px] font-light text-stone/35 italic mt-1">ground floor plan - NTS</p>
             </div>
           )}
 
