@@ -247,12 +247,14 @@ export default function ProjectModal({ project, onClose }) {
                   </div>
                 ))}
               </div>
+              <p className="text-xs tracking-wide lowercase font-light italic mt-6" style={{ color: '#fdbf69' }}>Bedroom</p>
+              <Img src="/projects/jungle-resort/bedroom.webp" alt="Bedroom sketch" className="w-full h-auto mt-3 rounded-sm" />
             </div>
           )}
 
           {project.id === 1 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widests uppercase text-stone/40 mb-1">Floor Plan</p>
+              <p className="text-xs tracking-wide lowercase font-light italic mb-1" style={{ color: '#fdbf69' }}>Floor Plan</p>
               <p className="text-xs text-stone/40 italic mb-3">(concealed for confidentiality purposes)</p>
               <svg viewBox="0 0 9693 4374" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto rounded-sm" style={{fontFamily:"'Poppins', system-ui, sans-serif"}}>
                 <g transform="matrix(1,0,0,1,-17957.001442,-3593.152831)">
@@ -297,7 +299,7 @@ export default function ProjectModal({ project, onClose }) {
 
           {project.id === 1 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widests uppercase text-stone/40 mb-2">Materiality</p>
+              <p className="text-xs tracking-wide lowercase font-light italic mb-2" style={{ color: '#fdbf69' }}>Materiality</p>
               <p className="text-xs leading-relaxed text-stone/60 mb-4">The material palette celebrates the natural beauty of the site, incorporating locally sourced elements such as rockwork and the golden, swaying Alang Alang grass, creating a harmonious connection between the architecture and its surroundings.</p>
               <div className="grid grid-cols-9 gap-1 sm:gap-3">
                 {[
