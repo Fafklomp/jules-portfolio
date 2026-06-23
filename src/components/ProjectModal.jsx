@@ -224,9 +224,21 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">02</span>Resort Accommodation Units
               </p>
-              <p className="text-xs font-light leading-relaxed text-stone/70 mt-1">The Resort Interior colour palette is inspired by the vibrant colours of the flowers native to the Puerto Rican rainforest. These forms are celebrated through the natural patterns and lively colours scattered through the Orocovis rainforest.</p>
+              <p className="text-xs font-light leading-relaxed text-stone/70 mt-3">The Resort Interior colour palette is inspired by the vibrant colours of the flowers native to the Puerto Rican rainforest. These forms are celebrated through the natural patterns and lively colours scattered through the Orocovis rainforest.</p>
               <Img src="/projects/jungle-resort/accommodation.webp" alt="Resort accommodation floor plan" className="w-full h-auto rounded-sm" />
               <p className="text-[9px] font-light text-stone/35 italic mt-1">ground floor plan - NTS</p>
+              <p className="text-xs tracking-wide lowercase font-light italic mt-6" style={{ color: '#fdbf69' }}>Materiality</p>
+              <div className="grid grid-cols-10 gap-1 sm:gap-3 mt-3">
+                {[
+                  'Timber Floor Insert', 'Ceiling Texture', 'Shower Tiles', 'Parota Timber Furniture', 'Colour Details',
+                  'Daybed Upholstery', 'Exterior Balustrade', 'Textured Timber Wardrobe', 'Natural Upholstery', 'Cementitious Finish',
+                ].map((name) => (
+                  <div key={name} className="flex flex-col items-center gap-2">
+                    <div className="w-full aspect-square rounded-sm bg-stone/10" />
+                    <p className="text-[6px] sm:text-[8px] text-center text-stone/60 leading-tight italic">{name}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
@@ -293,7 +305,7 @@ export default function ProjectModal({ project, onClose }) {
                 ].map(({ name, img }) => (
                   <div key={name} className="flex flex-col items-center gap-2">
                     <img src={`/projects/tropical-spa/swatches/${img}`} alt={name} className="w-full aspect-square object-cover rounded-sm" />
-                    <p className="text-[8px] sm:text-xs text-center text-stone/60 leading-tight italic">{name}</p>
+                    <p className="text-[6px] sm:text-[8px] text-center text-stone/60 leading-tight italic">{name}</p>
                   </div>
                 ))}
               </div>
