@@ -2,32 +2,30 @@ import { useEffect, useRef, useState } from 'react'
 import { MdTouchApp } from 'react-icons/md'
 import { motion, AnimatePresence, useAnimationFrame, useMotionValue } from 'framer-motion'
 
-const PERSP_IMAGES = [
-  '/projects/jungle-resort/persp-a.webp',
-  '/projects/jungle-resort/persp-b.webp',
-  '/projects/jungle-resort/persp-c.webp',
-  '/projects/jungle-resort/persp-d.webp',
-  '/projects/jungle-resort/persp-e.webp',
-]
-
-function PerspBanner({ speed = 35 }) {
+function PerspBanner({ speed = 30 }) {
   const x = useMotionValue(0)
-  const containerRef = useRef(null)
-  const doubled = [...PERSP_IMAGES, ...PERSP_IMAGES]
+  const imgRef = useRef(null)
 
   useAnimationFrame((_, delta) => {
-    const container = containerRef.current
-    if (!container) return
-    const halfWidth = container.scrollWidth / 2
+    const img = imgRef.current
+    if (!img) return
+    const imgWidth = img.naturalWidth / img.naturalHeight * img.offsetHeight
     const next = x.get() - (speed * delta) / 1000
-    x.set(next <= -halfWidth ? 0 : next)
+    x.set(next <= -imgWidth ? 0 : next)
   })
 
   return (
     <div className="w-full overflow-hidden mt-1">
-      <motion.div ref={containerRef} style={{ x }} className="flex gap-3 w-max items-stretch h-48">
-        {doubled.map((src, i) => (
-          <img key={i} src={src} alt="" aria-hidden="true" className="h-full w-auto object-cover rounded-sm flex-shrink-0" />
+      <motion.div style={{ x }} className="flex w-max">
+        {[0, 1].map(n => (
+          <img
+            key={n}
+            ref={n === 0 ? imgRef : null}
+            src="/projects/jungle-resort/perspectives-strip.webp"
+            alt=""
+            aria-hidden="true"
+            className="h-36 w-auto flex-shrink-0 object-contain"
+          />
         ))}
       </motion.div>
     </div>
