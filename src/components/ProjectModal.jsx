@@ -249,6 +249,8 @@ export default function ProjectModal({ project, onClose }) {
               </div>
               <p className="text-xs tracking-wide lowercase font-light italic mt-6" style={{ color: '#fdbf69' }}>Bedroom</p>
               <Img src="/projects/jungle-resort/bedroom.webp" alt="Bedroom sketch" className="w-full h-auto mt-3 rounded-sm" />
+              <Img src="/projects/jungle-resort/bedroom-elevation.webp" alt="Bedroom elevation" className="w-full h-auto mt-2 rounded-sm" />
+              <p className="text-[9px] font-light text-stone/35 italic mt-1">bed elevation - NTS</p>
             </div>
           )}
 
