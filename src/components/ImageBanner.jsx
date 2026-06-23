@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState, useCallback } from 'react'
 import { motion, useAnimationFrame, useMotionValue } from 'framer-motion'
 
 const bannerImages = Array.from({ length: 13 }, (_, i) => `/banner/${i + 1}.webp`)
@@ -6,8 +6,13 @@ const bannerImages = Array.from({ length: 13 }, (_, i) => `/banner/${i + 1}.webp
 export default function ImageBanner({ speed = 40 }) {
   const x = useMotionValue(0)
   const containerRef = useRef(null)
+  const isDragging = useRef(false)
+  const dragStartX = useRef(0)
+  const dragStartMotionX = useRef(0)
+  const [cursor, setCursor] = useState('grab')
 
   useAnimationFrame((_, delta) => {
+    if (isDragging.current) return
     const container = containerRef.current
     if (!container) return
     const halfWidth = container.scrollWidth / 2
@@ -15,11 +20,41 @@ export default function ImageBanner({ speed = 40 }) {
     x.set(next <= -halfWidth ? 0 : next)
   })
 
-  // Duplicate images for seamless loop
+  const onMouseDown = useCallback((e) => {
+    isDragging.current = true
+    dragStartX.current = e.clientX
+    dragStartMotionX.current = x.get()
+    setCursor('grabbing')
+  }, [x])
+
+  const onMouseMove = useCallback((e) => {
+    if (!isDragging.current) return
+    const container = containerRef.current
+    if (!container) return
+    const halfWidth = container.scrollWidth / 2
+    let next = dragStartMotionX.current + (e.clientX - dragStartX.current)
+    // wrap
+    if (next <= -halfWidth) next += halfWidth
+    if (next > 0) next -= halfWidth
+    x.set(next)
+  }, [x])
+
+  const onMouseUp = useCallback(() => {
+    isDragging.current = false
+    setCursor('grab')
+  }, [])
+
   const images = [...bannerImages, ...bannerImages]
 
   return (
-    <div className="w-full overflow-hidden pt-14 pb-4">
+    <div
+      className="w-full overflow-hidden pt-14 pb-4 select-none"
+      style={{ cursor }}
+      onMouseDown={onMouseDown}
+      onMouseMove={onMouseMove}
+      onMouseUp={onMouseUp}
+      onMouseLeave={onMouseUp}
+    >
       <motion.div
         ref={containerRef}
         style={{ x }}
@@ -34,7 +69,8 @@ export default function ImageBanner({ speed = 40 }) {
               src={src}
               alt=""
               aria-hidden="true"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover pointer-events-none"
+              draggable={false}
             />
           </div>
         ))}
