@@ -15,7 +15,7 @@ function PerspBanner({ speed = 30 }) {
   })
 
   return (
-    <div className="w-full overflow-hidden mt-1">
+    <div className="w-full overflow-hidden mt-3">
       <motion.div style={{ x }} className="flex w-max">
         {[0, 1].map(n => (
           <img
