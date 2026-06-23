@@ -1,41 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { MdTouchApp } from 'react-icons/md'
-import { motion, AnimatePresence, useAnimationFrame, useMotionValue } from 'framer-motion'
-
-const PERSP_IMAGES = [
-  { src: '/projects/jungle-resort/persp-a.webp', label: '01  entrance ramp' },
-  { src: '/projects/jungle-resort/persp-b.webp', label: null },
-  { src: '/projects/jungle-resort/persp-c.webp', label: null },
-  { src: '/projects/jungle-resort/persp-d.webp', label: null },
-  { src: '/projects/jungle-resort/persp-e.webp', label: null },
-]
-
-function PerspBanner({ speed = 35 }) {
-  const x = useMotionValue(0)
-  const containerRef = useRef(null)
-  const doubled = [...PERSP_IMAGES, ...PERSP_IMAGES]
-
-  useAnimationFrame((_, delta) => {
-    const container = containerRef.current
-    if (!container) return
-    const halfWidth = container.scrollWidth / 2
-    const next = x.get() - (speed * delta) / 1000
-    x.set(next <= -halfWidth ? 0 : next)
-  })
-
-  return (
-    <div className="w-full overflow-hidden mt-1">
-      <motion.div ref={containerRef} style={{ x }} className="flex gap-3 w-max items-end h-48">
-        {doubled.map(({ src, label }, i) => (
-          <div key={i} className="flex flex-col h-full flex-shrink-0">
-            {label && <p className="text-[10px] font-light text-stone/40 uppercase tracking-widest mb-1 whitespace-nowrap">{label}</p>}
-            <img src={src} alt="" aria-hidden="true" className="flex-1 w-auto object-cover rounded-sm min-h-0" />
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  )
-}
+import { motion, AnimatePresence } from 'framer-motion'
 
 function PH({ children }) {
   return (
@@ -204,25 +169,15 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">01</span>Resort Main Area
               </p>
-              <p className="text-[10px] font-light text-stone/40 uppercase tracking-widest mb-2"><span className="text-stone/25 mr-1">01</span>entrance ramp</p>
               <div className="grid grid-cols-2 gap-2 mb-2">
                 <Img src="/projects/jungle-resort/resort-2.webp" alt="Resort main area aerial" className="w-full h-auto rounded-sm" />
                 <Img src="/projects/jungle-resort/resort-1.webp" alt="Resort main area" className="w-full h-auto rounded-sm" />
               </div>
               <p className="text-[10px] font-light text-stone/35 italic mb-4">(renders were produced by an internal employee. My contribution was towards the interior design of each of these buildings).</p>
               <div className="grid grid-cols-2 gap-2">
-                <div>
-                  <Img src="/projects/jungle-resort/floorplan.webp" alt="Resort floor plan" className="w-full h-auto rounded-sm mb-1" />
-                  <p className="text-[10px] font-light text-stone/40 italic">ground floor plan - NTS</p>
-                </div>
-                <div>
-                  <Img src="/projects/jungle-resort/floorplan-2.webp" alt="Resort floor plan 2" className="w-full h-auto rounded-sm mb-1" />
-                  <p className="text-[10px] font-light text-stone/40 italic">first floor plan - NTS</p>
-                </div>
+                <Img src="/projects/jungle-resort/floorplan.webp" alt="Resort floor plan" className="w-full h-auto rounded-sm" />
+                <Img src="/projects/jungle-resort/floorplan-2.webp" alt="Resort floor plan 2" className="w-full h-auto rounded-sm" />
               </div>
-              <p className="text-xs tracking-wide lowercase font-bold italic mt-6" style={{ color: '#fdbf69' }}>Perspectives</p>
-              <p className="text-[10px] font-light text-stone/40 uppercase tracking-widest mt-2 mb-1"><span className="text-stone/25 mr-1">01</span>entrance ramp</p>
-              <PerspBanner />
             </div>
           )}
 
