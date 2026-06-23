@@ -168,7 +168,7 @@ export default function ProjectModal({ project, onClose }) {
                 <Img src="/projects/jungle-resort/resort-2.webp" alt="Resort main area aerial" className="w-full h-auto rounded-sm" />
                 <Img src="/projects/jungle-resort/resort-1.webp" alt="Resort main area" className="w-full h-auto rounded-sm" />
               </div>
-              <p className="text-[10px] font-light text-stone/35 italic">(renders were produced by an internal employee. My contribution was towards the interior design of each of these buildings).</p>
+              <p className="text-[10px] font-light text-stone/35 italic mb-4">(renders were produced by an internal employee. My contribution was towards the interior design of each of these buildings).</p>
             </div>
           )}
 
