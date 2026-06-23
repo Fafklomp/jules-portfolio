@@ -26,8 +26,8 @@ const projects = [
     role: 'Junior Interior Designer',
     image: '/projects/kensington.jpg',
     description:
-      'Full refurbishment of a five-storey Victorian townhouse for a private client. The project involved structural alterations to open the lower ground floor to a landscaped garden, alongside a complete interior scheme drawing on English country and Italian modernism.',
-    tags: ['Full Refurbishment', 'Listed Building', 'Bespoke Furniture'],
+      'A jungle resort and accommodation development in the rainforests of Puerto Rico, featuring organic, canopy-inspired forms for the main resort building and accommodation units that blend seamlessly into the lush landscape. The interior draws inspiration from the colouring, rhythm and movement of the humming birds exploration through the rainforest.',
+    tags: ['Luxury Hospitality', 'Jungle Resort Design', 'High-End Accommodation Units', 'Biophilic Design', 'Custom Joinery', 'Architecture & Interior Architecture'],
     software: ['Revit', 'Affinity Designer', 'Procreate', 'Adobe Photoshop'],
     myRole: 'I contributed to the conceptualisation of spaces by producing sketches and mood boards that captured the design vision. Assisted in developing functional and aesthetic furniture layouts, and played a key role in the design of bespoke joinery and custom FF&E pieces. I also prepared detailed technical drawings and comprehensive tender documentation to support the construction process, while also assisting in the creation of design presentations to effectively communicate ideas to clients and contractors.',
   },

@@ -129,7 +129,7 @@ export default function ProjectModal({ project, onClose }) {
           <div className="grid grid-cols-3 gap-4 pt-6 border-t border-stone/10 mb-0">
             {[
               { label: 'Year', value: project.year },
-              { label: 'Area', value: project.area },
+              ...(project.id !== 2 ? [{ label: 'Area', value: project.area }] : []),
               { label: 'Role', value: project.role },
             ].map(({ label, value }) => (
               <div key={label}>
@@ -157,6 +157,15 @@ export default function ProjectModal({ project, onClose }) {
               <>A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</>
             ) : project.description}
           </p>
+
+          {project.id === 2 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                <span className="text-stone/25 mr-1">01</span>Resort Main Area
+              </p>
+            </div>
+          )}
 
           {project.id === 1 && (
             <div className="mb-8">
