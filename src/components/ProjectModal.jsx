@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { MdTouchApp } from 'react-icons/md'
 import { motion, AnimatePresence } from 'framer-motion'
 
 function PH({ children }) {
@@ -93,7 +94,7 @@ export default function ProjectModal({ project, onClose }) {
 
       <motion.div
         variants={panel}
-        className="relative bg-offwhite w-full md:max-w-2xl md:rounded-sm max-h-[90vh] overflow-y-auto shadow-2xl"
+        className="relative bg-offwhite w-full md:max-w-2xl rounded-sm max-h-[90vh] overflow-y-auto shadow-2xl"
       >
         <button
           onClick={onClose}
@@ -117,7 +118,10 @@ export default function ProjectModal({ project, onClose }) {
           {project.subtitle && (
             <p className="text-base font-light text-stone/50 mb-1">{project.subtitle}</p>
           )}
-          <p className="text-sm text-stone/50 mb-8">{project.location}</p>
+          <p className="text-sm text-stone/50 mb-3">{project.location}</p>
+          {project.id === 1 && (
+            <p className="text-[10px] font-light text-stone/35 italic mb-3">(disclaimer: the design of this project is copyright and remains the property of Silvio Rech & Lesley Carstens).</p>
+          )}
 
           <div className="grid grid-cols-3 gap-4 pt-6 border-t border-stone/10 mb-0">
             {[
@@ -137,7 +141,7 @@ export default function ProjectModal({ project, onClose }) {
               <p className="text-xs tracking-widest uppercase text-stone/40 mb-3">Software</p>
               <div className="flex flex-wrap gap-2">
                 {project.software.map(s => (
-                  <span key={s} className="text-xs tracking-widest uppercase text-sage border border-sage/30 px-3 py-1">
+                  <span key={s} className="text-xs tracking-wide lowercase text-sage border border-sage/30 px-3 py-1 rounded-sm">
                     {s}
                   </span>
                 ))}
@@ -237,7 +241,7 @@ export default function ProjectModal({ project, onClose }) {
               <a
                 href="/projects/tropical-spa/double-treatment-room.pdf"
                 download
-                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 hover:bg-sage/5 transition-colors duration-150"
+                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 rounded-sm hover:bg-sage/5 transition-colors duration-150"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
@@ -259,7 +263,7 @@ export default function ProjectModal({ project, onClose }) {
               <a
                 href="/projects/tropical-spa/relaxation-changeroom-01.pdf"
                 download
-                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 hover:bg-sage/5 transition-colors duration-150"
+                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 rounded-sm hover:bg-sage/5 transition-colors duration-150"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
@@ -281,7 +285,7 @@ export default function ProjectModal({ project, onClose }) {
               <a
                 href="/projects/tropical-spa/gym-changeroom-02.pdf"
                 download
-                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 hover:bg-sage/5 transition-colors duration-150"
+                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 rounded-sm hover:bg-sage/5 transition-colors duration-150"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
@@ -311,12 +315,26 @@ export default function ProjectModal({ project, onClose }) {
             {project.tags.map(tag => (
               <span
                 key={tag}
-                className="text-xs tracking-widests uppercase text-sage border border-sage/30 px-3 py-1"
+                className="text-xs tracking-wide lowercase text-sage border border-sage/30 px-3 py-1 rounded-sm"
               >
                 {tag}
               </span>
             ))}
           </div>
+
+          {project.id === 1 && (
+            <div className="mt-5">
+              <a
+                href="https://drive.google.com/drive/u/0/folders/1RIk5xZZ-Xg_da6_nBqM_DZxSUOm_EoQJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+              >
+                View More
+                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
+              </a>
+            </div>
+          )}
 
         </div>
       </motion.div>
