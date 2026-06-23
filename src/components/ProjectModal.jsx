@@ -32,6 +32,7 @@ function PerspBanner({ speed = 30 }) {
   )
 }
 
+
 function PH({ children }) {
   return (
     <span className="relative inline">
@@ -214,7 +215,7 @@ export default function ProjectModal({ project, onClose }) {
                   <p className="text-[9px] font-light text-stone/35 italic mt-1">first floor plan - NTS</p>
                 </div>
               </div>
-              <p className="text-xs tracking-wide lowercase font-bold italic mt-6" style={{ color: '#fdbf69' }}>perspectives</p>
+              <p className="text-xs tracking-wide lowercase font-light italic mt-6" style={{ color: '#fdbf69' }}>perspectives</p>
               <PerspBanner />
             </div>
           )}
