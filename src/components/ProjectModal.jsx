@@ -170,7 +170,7 @@ export default function ProjectModal({ project, onClose }) {
               ))}
             </div>
             {project.id === 2 && (
-              <img src="/projects/jungle-resort/hummingbird.webp" alt="Hummingbird" className="absolute top-0 right-0 h-40 w-auto object-contain pointer-events-none" />
+              <img src="/projects/jungle-resort/hummingbird.webp" alt="Hummingbird" className="absolute top-0 right-0 h-24 md:h-40 w-auto object-contain pointer-events-none" />
             )}
           </div>
 
