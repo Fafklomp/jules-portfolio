@@ -20,26 +20,25 @@ export default function ImageBanner({ speed = 40 }) {
     x.set(next <= -halfWidth ? 0 : next)
   })
 
-  const onMouseDown = useCallback((e) => {
+  const startDrag = useCallback((clientX) => {
     isDragging.current = true
-    dragStartX.current = e.clientX
+    dragStartX.current = clientX
     dragStartMotionX.current = x.get()
     setCursor('grabbing')
   }, [x])
 
-  const onMouseMove = useCallback((e) => {
+  const moveDrag = useCallback((clientX) => {
     if (!isDragging.current) return
     const container = containerRef.current
     if (!container) return
     const halfWidth = container.scrollWidth / 2
-    let next = dragStartMotionX.current + (e.clientX - dragStartX.current)
-    // wrap
+    let next = dragStartMotionX.current + (clientX - dragStartX.current)
     if (next <= -halfWidth) next += halfWidth
     if (next > 0) next -= halfWidth
     x.set(next)
   }, [x])
 
-  const onMouseUp = useCallback(() => {
+  const endDrag = useCallback(() => {
     isDragging.current = false
     setCursor('grab')
   }, [])
@@ -50,10 +49,13 @@ export default function ImageBanner({ speed = 40 }) {
     <div
       className="w-full overflow-hidden pt-14 pb-4 select-none"
       style={{ cursor }}
-      onMouseDown={onMouseDown}
-      onMouseMove={onMouseMove}
-      onMouseUp={onMouseUp}
-      onMouseLeave={onMouseUp}
+      onMouseDown={(e) => startDrag(e.clientX)}
+      onMouseMove={(e) => moveDrag(e.clientX)}
+      onMouseUp={endDrag}
+      onMouseLeave={endDrag}
+      onTouchStart={(e) => startDrag(e.touches[0].clientX)}
+      onTouchMove={(e) => { e.preventDefault(); moveDrag(e.touches[0].clientX) }}
+      onTouchEnd={endDrag}
     >
       <motion.div
         ref={containerRef}
