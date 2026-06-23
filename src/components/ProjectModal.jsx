@@ -166,12 +166,12 @@ export default function ProjectModal({ project, onClose }) {
               ].map(({ label, value }) => (
                 <div key={label}>
                   <p className="text-xs tracking-widest uppercase text-stone/40 mb-1">{label}</p>
-                  <p className="text-sm text-stone">{value}</p>
+                  <p className="text-sm text-stone whitespace-nowrap">{value}</p>
                 </div>
               ))}
             </div>
             {project.id === 2 && (
-              <img src="/projects/jungle-resort/hummingbird.webp" alt="Hummingbird" className="absolute top-0 right-0 h-24 md:h-40 w-auto object-contain pointer-events-none" />
+              <img src="/projects/jungle-resort/hummingbird.webp" alt="Hummingbird" className="absolute top-0 right-0 h-40 w-auto object-contain pointer-events-none hidden md:block" />
             )}
           </div>
 
