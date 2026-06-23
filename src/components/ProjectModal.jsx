@@ -126,17 +126,22 @@ export default function ProjectModal({ project, onClose }) {
             <p className="text-[10px] font-light text-stone/35 italic mb-3">(disclaimer: the design of this project is copyright and remains the property of Luxury Frontiers).</p>
           )}
 
-          <div className="grid grid-cols-3 gap-4 pt-6 border-t border-stone/10 mb-0">
-            {[
-              { label: 'Year', value: project.year },
-              ...(project.id !== 2 ? [{ label: 'Area', value: project.area }] : []),
-              { label: 'Role', value: project.role },
-            ].map(({ label, value }) => (
-              <div key={label}>
-                <p className="text-xs tracking-widest uppercase text-stone/40 mb-1">{label}</p>
-                <p className="text-sm text-stone">{value}</p>
-              </div>
-            ))}
+          <div className="relative pt-6 border-t border-stone/10 mb-0">
+            <div className="grid grid-cols-3 gap-4">
+              {[
+                { label: 'Year', value: project.year },
+                ...(project.id !== 2 ? [{ label: 'Area', value: project.area }] : []),
+                { label: 'Role', value: project.role },
+              ].map(({ label, value }) => (
+                <div key={label}>
+                  <p className="text-xs tracking-widest uppercase text-stone/40 mb-1">{label}</p>
+                  <p className="text-sm text-stone">{value}</p>
+                </div>
+              ))}
+            </div>
+            {project.id === 2 && (
+              <img src="/projects/jungle-resort/hummingbird.webp" alt="Hummingbird" className="absolute top-0 right-0 h-40 w-auto object-contain pointer-events-none" />
+            )}
           </div>
 
           {project.software && (
