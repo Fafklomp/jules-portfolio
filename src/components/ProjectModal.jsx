@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 function PH({ children }) {
@@ -24,12 +24,35 @@ const panel = {
   exit: { opacity: 0, y: 32, transition: { duration: 0.22, ease: 'easeIn' } },
 }
 
+const TREATMENT_GALLERY = [
+  '/projects/tropical-spa/treatment-1.webp',
+  '/projects/tropical-spa/treatment-2.webp',
+  '/projects/tropical-spa/treatment-3.webp',
+  '/projects/tropical-spa/treatment-4.webp',
+  '/projects/tropical-spa/treatment-5.webp',
+]
+
 export default function ProjectModal({ project, onClose }) {
+  // enlargedImg = { src, gallery: string[] | null, index: number }
   const [enlargedImg, setEnlargedImg] = useState(null)
+  const touchStartX = useRef(null)
+
+  function openEnlarged(src, gallery = null, index = 0) {
+    setEnlargedImg({ src, gallery, index })
+  }
+
+  function navigateEnlarged(dir) {
+    if (!enlargedImg?.gallery) return
+    const newIndex = enlargedImg.index + dir
+    if (newIndex < 0 || newIndex >= enlargedImg.gallery.length) return
+    setEnlargedImg({ ...enlargedImg, src: enlargedImg.gallery[newIndex], index: newIndex })
+  }
 
   useEffect(() => {
     const handler = (e) => {
       if (e.key === 'Escape') { enlargedImg ? setEnlargedImg(null) : onClose() }
+      if (e.key === 'ArrowLeft')  navigateEnlarged(-1)
+      if (e.key === 'ArrowRight') navigateEnlarged(1)
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
@@ -40,14 +63,17 @@ export default function ProjectModal({ project, onClose }) {
     return () => { document.body.style.overflow = '' }
   }, [])
 
-  const Img = ({ src, alt, className }) => (
+  const Img = ({ src, alt, className, gallery = null, galleryIndex = 0 }) => (
     <img
       src={src}
       alt={alt}
       className={`${className} cursor-zoom-in`}
-      onClick={() => setEnlargedImg(src)}
+      onClick={() => openEnlarged(src, gallery, galleryIndex)}
     />
   )
+
+  const hasPrev = enlargedImg?.gallery && enlargedImg.index > 0
+  const hasNext = enlargedImg?.gallery && enlargedImg.index < enlargedImg.gallery.length - 1
 
   return (
     <motion.div
@@ -121,13 +147,13 @@ export default function ProjectModal({ project, onClose }) {
 
           <p className="text-sm md:text-base leading-relaxed text-stone/80 mb-8">
             {project.id === 1 ? (
-              <>A <PH>luxury spa and wellness center</PH> on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</>
+              <>A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</>
             ) : project.description}
           </p>
 
           {project.id === 1 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1">Floor Plan</p>
+              <p className="text-xs tracking-widests uppercase text-stone/40 mb-1">Floor Plan</p>
               <p className="text-xs text-stone/40 italic mb-3">(concealed for confidentiality purposes)</p>
               <svg viewBox="0 0 9693 4374" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto rounded-sm" style={{fontFamily:"'Poppins', system-ui, sans-serif"}}>
                 <g transform="matrix(1,0,0,1,-17957.001442,-3593.152831)">
@@ -172,7 +198,7 @@ export default function ProjectModal({ project, onClose }) {
 
           {project.id === 1 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-2">Materiality</p>
+              <p className="text-xs tracking-widests uppercase text-stone/40 mb-2">Materiality</p>
               <p className="text-xs leading-relaxed text-stone/60 italic mb-4">The material palette celebrates the natural beauty of the site, incorporating locally sourced elements such as rockwork and the golden, swaying Alang Alang grass, creating a harmonious connection between the architecture and its surroundings.</p>
               <div className="grid grid-cols-9 gap-1 sm:gap-3">
                 {[
@@ -197,23 +223,23 @@ export default function ProjectModal({ project, onClose }) {
 
           {project.id === 1 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+              <p className="text-xs tracking-widests uppercase text-stone/40 mb-1 flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">01</span>Treatment Room
               </p>
               <p className="text-xs text-stone/40 italic mb-4 ml-4">Double treatment room</p>
-              <Img src="/projects/tropical-spa/treatment-1.webp" alt="Double treatment room" className="w-full h-auto rounded-sm mb-2" />
+              <Img src="/projects/tropical-spa/treatment-1.webp" alt="Double treatment room" className="w-full h-auto rounded-sm mb-2" gallery={TREATMENT_GALLERY} galleryIndex={0} />
               <div className="grid grid-cols-2 gap-2 mb-4">
-                {[2, 3, 4, 5].map(n => (
-                  <Img key={n} src={`/projects/tropical-spa/treatment-${n}.webp`} alt={`Double treatment room view ${n}`} className="w-full h-auto rounded-sm" />
+                {[2, 3, 4, 5].map((n, i) => (
+                  <Img key={n} src={`/projects/tropical-spa/treatment-${n}.webp`} alt={`Double treatment room view ${n}`} className="w-full h-auto rounded-sm" gallery={TREATMENT_GALLERY} galleryIndex={i + 1} />
                 ))}
               </div>
               <a
                 href="/projects/tropical-spa/double-treatment-room.pdf"
                 download
-                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-sage border border-sage/30 px-4 py-2 hover:bg-sage/5 transition-colors duration-150"
+                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 hover:bg-sage/5 transition-colors duration-150"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
                 </svg>
                 Download Technical Drawing
@@ -223,7 +249,7 @@ export default function ProjectModal({ project, onClose }) {
 
           {project.id === 1 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+              <p className="text-xs tracking-widests uppercase text-stone/40 mb-1 flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">02</span>Relaxation Area
               </p>
@@ -233,9 +259,9 @@ export default function ProjectModal({ project, onClose }) {
               <a
                 href="/projects/tropical-spa/relaxation-changeroom-01.pdf"
                 download
-                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-sage border border-sage/30 px-4 py-2 hover:bg-sage/5 transition-colors duration-150"
+                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 hover:bg-sage/5 transition-colors duration-150"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
                 </svg>
                 Download Technical Drawing
@@ -245,7 +271,7 @@ export default function ProjectModal({ project, onClose }) {
 
           {project.id === 1 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+              <p className="text-xs tracking-widests uppercase text-stone/40 mb-1 flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">03</span>Gym
               </p>
@@ -255,9 +281,9 @@ export default function ProjectModal({ project, onClose }) {
               <a
                 href="/projects/tropical-spa/gym-changeroom-02.pdf"
                 download
-                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-sage border border-sage/30 px-4 py-2 hover:bg-sage/5 transition-colors duration-150"
+                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 hover:bg-sage/5 transition-colors duration-150"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
                 </svg>
                 Download Technical Drawing
@@ -267,7 +293,7 @@ export default function ProjectModal({ project, onClose }) {
 
           {project.myRole && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-3">My Role</p>
+              <p className="text-xs tracking-widests uppercase text-stone/40 mb-3">My Role</p>
               {project.id === 1 ? (
                 <>
                   <p className="text-xs leading-relaxed text-stone/80 mb-4">I was responsible for the interior design of the Spa (budget of $10 million), working alongside my interior designer colleague. My scope included the <PH>schematic design, custom design and detailing of the joinery and FF&E, furniture selection and layout, reflected ceiling plans, and coordination of plumbing and electrical layouts.</PH> I also prepared room, door, and window schedules (with custom door details), vanity basin matrix, tender documentation, and 3D renderings and visualisations.</p>
@@ -301,17 +327,75 @@ export default function ProjectModal({ project, onClose }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 cursor-zoom-out p-4"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4"
             onClick={() => setEnlargedImg(null)}
+            onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX }}
+            onTouchEnd={(e) => {
+              if (touchStartX.current === null) return
+              const diff = touchStartX.current - e.changedTouches[0].clientX
+              if (Math.abs(diff) > 50) navigateEnlarged(diff > 0 ? 1 : -1)
+              touchStartX.current = null
+            }}
           >
             <motion.img
-              src={enlargedImg}
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              className="max-w-full max-h-full object-contain rounded-sm"
+              key={enlargedImg.src}
+              src={enlargedImg.src}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="max-w-full max-h-full object-contain rounded-sm cursor-default"
               onClick={e => e.stopPropagation()}
             />
+
+            {/* Prev arrow */}
+            {hasPrev && (
+              <button
+                onClick={(e) => { e.stopPropagation(); navigateEnlarged(-1) }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors duration-150 p-2"
+                aria-label="Previous image"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+            )}
+
+            {/* Next arrow */}
+            {hasNext && (
+              <button
+                onClick={(e) => { e.stopPropagation(); navigateEnlarged(1) }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors duration-150 p-2"
+                aria-label="Next image"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            )}
+
+            {/* Dot indicators */}
+            {enlargedImg.gallery && (
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                {enlargedImg.gallery.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={(e) => { e.stopPropagation(); setEnlargedImg({ ...enlargedImg, src: enlargedImg.gallery[i], index: i }) }}
+                    className={`w-1.5 h-1.5 rounded-full transition-colors duration-150 ${i === enlargedImg.index ? 'bg-white' : 'bg-white/30'}`}
+                    aria-label={`Go to image ${i + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Close button */}
+            <button
+              onClick={() => setEnlargedImg(null)}
+              className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors duration-150 text-xl leading-none"
+              aria-label="Close"
+            >
+              ✕
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useAnimationFrame, useMotionValue } from 'framer-motion'
 
-const bannerImages = Array.from({ length: 14 }, (_, i) => `/banner/img${i + 1}.jpg`)
+const bannerImages = Array.from({ length: 13 }, (_, i) => `/banner/${i + 1}.webp`)
 
 export default function ImageBanner({ speed = 40 }) {
   const x = useMotionValue(0)

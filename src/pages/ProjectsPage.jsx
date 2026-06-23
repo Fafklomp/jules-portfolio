@@ -1,65 +1,9 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import ProjectModal from '../components/ProjectModal'
 import ImageBanner from '../components/ImageBanner'
 import projects from '../data/projects'
-
-const heroImages = [
-  '/projects-hero-1.jpg',
-  '/projects-hero-2.jpg',
-  '/projects-hero-3.jpg',
-]
-
-const slideVariants = {
-  enter: (dir) => ({ x: dir > 0 ? '100%' : '-100%', opacity: 0 }),
-  center: { x: 0, opacity: 1, transition: { duration: 0.9, ease: [0.25, 0.1, 0.25, 1] } },
-  exit: (dir) => ({ x: dir > 0 ? '-100%' : '100%', opacity: 0, transition: { duration: 0.9, ease: [0.25, 0.1, 0.25, 1] } }),
-}
-
-function ProjectsHero() {
-  const [index, setIndex] = useState(0)
-  const [dir, setDir] = useState(1)
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setDir(1)
-      setIndex(i => (i + 1) % heroImages.length)
-    }, 4000)
-    return () => clearInterval(id)
-  }, [])
-
-  return (
-    <div className="h-screen overflow-hidden relative">
-      <AnimatePresence initial={false} custom={dir}>
-        <motion.img
-          key={index}
-          custom={dir}
-          variants={slideVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          src={heroImages[index]}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </AnimatePresence>
-
-      {/* Dot indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {heroImages.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => { setDir(i > index ? 1 : -1); setIndex(i) }}
-            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === index ? 'bg-offwhite scale-125' : 'bg-offwhite/40'}`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
 
 const filters = ['All', 'Work', 'University']
 
