@@ -39,11 +39,10 @@ const projects = [
     location: 'Sunnyside, South Africa',
     year: '2023',
     area: '?',
-    role: 'Lead Designer',
-    image: '/projects/villa-sorano.jpg',
+    image: '/projects/closed-loop-incubator.webp',
     description:
-      'A 16th-century farmhouse conversion for a family splitting time between New York and Italy. Natural stone floors were preserved throughout; new additions were kept deliberately understated — linen, terracotta, aged oak — to honour the existing fabric.',
-    tags: ['Heritage Property', 'Stone Restoration', 'Landscape Integration'],
+      'An adaptive reuse project transforming an existing deteriorated building in Sunnyside, South Africa into a fashion incubator supporting the area\'s circular fashion economy. The design closes the loop between local fashion communities and textile waste through three connected spaces (a design development area, a maker space for repairing and repurposing textiles, and a public retail center). This proposed programme and design supports the fostering of community connection, skill-sharing, and spatial agency through exposed joinery and adaptable, human-scaled interiors.',
+    tags: ['Adaptive Reuse', 'Retail & Makerspace', 'Circular Fashion Economy', 'Design for Disassembly', 'Spatial Agency'],
     software: ['Revit', 'Twinmotion', 'Affinity Designer', 'Procreate'],
   },
   {

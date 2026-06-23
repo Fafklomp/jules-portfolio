@@ -163,7 +163,7 @@ export default function ProjectModal({ project, onClose }) {
                 { label: 'Year', value: project.year },
                 ...(project.id !== 2 ? [{ label: 'Area', value: project.area }] : []),
                 { label: 'Role', value: project.role },
-              ].map(({ label, value }) => (
+              ].filter(({ value }) => value).map(({ label, value }) => (
                 <div key={label}>
                   <p className="text-xs tracking-widest uppercase text-stone/40 mb-1">{label}</p>
                   <p className="text-sm text-stone whitespace-nowrap">{value}</p>
@@ -446,6 +446,19 @@ export default function ProjectModal({ project, onClose }) {
                 className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
               >
                 View More
+                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
+              </a>
+            </div>
+          )}
+
+          {project.id === 3 && (
+            <div className="mt-5">
+              <a
+                href="/projects/closed-loop-incubator.pdf"
+                download
+                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+              >
+                View Project
                 <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
               </a>
             </div>
