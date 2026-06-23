@@ -217,6 +217,8 @@ export default function ProjectModal({ project, onClose }) {
               </div>
               <p className="text-xs tracking-wide lowercase font-light italic mt-6" style={{ color: '#fdbf69' }}>perspectives</p>
               <PerspBanner />
+              <p className="text-xs tracking-wide lowercase font-light italic mt-8" style={{ color: '#fdbf69' }}>Look &amp; Feel</p>
+              <img src="/projects/jungle-resort/look-feel.webp" alt="Look and feel" className="w-full h-auto mt-3 rounded-sm" />
             </div>
           )}
 
