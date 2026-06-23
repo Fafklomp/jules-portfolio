@@ -218,7 +218,8 @@ export default function ProjectModal({ project, onClose }) {
               <p className="text-xs tracking-wide lowercase font-light italic mt-6" style={{ color: '#fdbf69' }}>perspectives</p>
               <PerspBanner />
               <p className="text-xs tracking-wide lowercase font-light italic mt-8" style={{ color: '#fdbf69' }}>Look &amp; Feel</p>
-              <img src="/projects/jungle-resort/look-feel.webp" alt="Look and feel" className="w-full h-auto mt-3 rounded-sm" />
+              <p className="text-xs font-light leading-relaxed text-stone/70 mt-2 mb-3">The design features a natural material palette, rich in organic textures and earthy tones, complemented by vibrant pops of colour. This contrast brings energy and visual interest to the space, while allowing the warmth and authenticity of the natural materials to remain the foundation of the overall aesthetic.</p>
+              <img src="/projects/jungle-resort/look-feel.webp" alt="Look and feel" className="w-full h-auto rounded-sm" />
             </div>
           )}
 
@@ -270,7 +271,7 @@ export default function ProjectModal({ project, onClose }) {
           {project.id === 1 && (
             <div className="mb-8">
               <p className="text-xs tracking-widests uppercase text-stone/40 mb-2">Materiality</p>
-              <p className="text-xs leading-relaxed text-stone/60 italic mb-4">The material palette celebrates the natural beauty of the site, incorporating locally sourced elements such as rockwork and the golden, swaying Alang Alang grass, creating a harmonious connection between the architecture and its surroundings.</p>
+              <p className="text-xs leading-relaxed text-stone/60 mb-4">The material palette celebrates the natural beauty of the site, incorporating locally sourced elements such as rockwork and the golden, swaying Alang Alang grass, creating a harmonious connection between the architecture and its surroundings.</p>
               <div className="grid grid-cols-9 gap-1 sm:gap-3">
                 {[
                   { name: 'Internal Rockwork', img: 'swatch-2.webp' },
@@ -285,7 +286,7 @@ export default function ProjectModal({ project, onClose }) {
                 ].map(({ name, img }) => (
                   <div key={name} className="flex flex-col items-center gap-2">
                     <img src={`/projects/tropical-spa/swatches/${img}`} alt={name} className="w-full aspect-square object-cover rounded-sm" />
-                    <p className="text-[8px] sm:text-xs text-center text-stone/60 leading-tight">{name}</p>
+                    <p className="text-[8px] sm:text-xs text-center text-stone/60 leading-tight italic">{name}</p>
                   </div>
                 ))}
               </div>
@@ -298,7 +299,7 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">01</span>Treatment Room
               </p>
-              <p className="text-xs text-stone/40 italic mb-4 ml-4">Double treatment room</p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Double treatment room</p>
               <Img src="/projects/tropical-spa/treatment-1.webp" alt="Double treatment room" className="w-full h-auto rounded-sm mb-2" gallery={TREATMENT_GALLERY} galleryIndex={0} />
               <div className="grid grid-cols-2 gap-2 mb-4">
                 {[2, 3, 4, 5].map((n, i) => (
@@ -324,7 +325,7 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">02</span>Relaxation Area
               </p>
-              <p className="text-xs text-stone/40 italic mb-4 ml-4">Changeroom 01</p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Changeroom 01</p>
               <Img src="/projects/tropical-spa/relaxation-2.webp" alt="Relaxation area view 1" className="w-full h-auto rounded-sm mb-2" />
               <Img src="/projects/tropical-spa/relaxation-3.webp" alt="Relaxation area view 2" className="w-full h-auto rounded-sm mb-4" />
               <a
@@ -346,7 +347,7 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">03</span>Gym
               </p>
-              <p className="text-xs text-stone/40 italic mb-4 ml-4">Changeroom 02</p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Changeroom 02</p>
               <Img src="/projects/tropical-spa/gym-1.webp" alt="Gym changeroom 02" className="w-full h-auto rounded-sm mb-2" />
               <Img src="/projects/tropical-spa/gym-2.webp" alt="Gym changeroom 02 view 2" className="w-full h-auto rounded-sm mb-4" />
               <a
