@@ -27,7 +27,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <main className="min-h-screen" style={{ backgroundColor: '#F7F4EF' }}>
+      <main className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#F7F4EF' }}>
         <Nav />
         <AnimatedRoutes />
         <Footer />
