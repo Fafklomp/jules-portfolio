@@ -160,10 +160,15 @@ export default function ProjectModal({ project, onClose }) {
 
           {project.id === 2 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">01</span>Resort Main Area
               </p>
+              <div className="grid grid-cols-2 gap-2 mb-2">
+                <Img src="/projects/jungle-resort/resort-2.webp" alt="Resort main area aerial" className="w-full h-auto rounded-sm" />
+                <Img src="/projects/jungle-resort/resort-1.webp" alt="Resort main area" className="w-full h-auto rounded-sm" />
+              </div>
+              <p className="text-[10px] font-light text-stone/35 italic">(renders were produced by an internal employee. My contribution was towards the interior design of each of these buildings).</p>
             </div>
           )}
 
