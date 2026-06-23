@@ -251,6 +251,7 @@ export default function ProjectModal({ project, onClose }) {
               <Img src="/projects/jungle-resort/bedroom.webp" alt="Bedroom sketch" className="w-full h-auto mt-3 rounded-sm" />
               <Img src="/projects/jungle-resort/bedroom-elevation.webp" alt="Bedroom elevation" className="w-full h-auto mt-2 rounded-sm" />
               <p className="text-[9px] font-light text-stone/35 italic mt-1">bed elevation - NTS</p>
+              <Img src="/projects/jungle-resort/bedroom-render.webp" alt="Bedroom render" className="w-full h-auto mt-2 rounded-sm" />
             </div>
           )}
 
