@@ -220,6 +220,11 @@ export default function ProjectModal({ project, onClose }) {
               <p className="text-xs tracking-wide lowercase font-light italic mt-8" style={{ color: '#fdbf69' }}>Look &amp; Feel</p>
               <p className="text-xs font-light leading-relaxed text-stone/70 mt-2 mb-3">The design features a natural material palette, rich in organic textures and earthy tones, complemented by vibrant pops of colour. This contrast brings energy and visual interest to the space, while allowing the warmth and authenticity of the natural materials to remain the foundation of the overall aesthetic.</p>
               <img src="/projects/jungle-resort/look-feel.webp" alt="Look and feel" className="w-full h-auto rounded-sm" />
+              <p className="text-xs tracking-widest uppercase text-stone/40 mt-8 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                <span className="text-stone/25 mr-1">02</span>Resort Accommodation Units
+              </p>
+              <Img src="/projects/jungle-resort/accommodation.webp" alt="Resort accommodation floor plan" className="w-full h-auto mt-3 rounded-sm" />
             </div>
           )}
 
