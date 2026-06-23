@@ -12,7 +12,7 @@ const projects = [
     description:
       'A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.',
     tags: ['Luxury Hospitality', 'Tropical Resort Design', 'Spa & Wellness', 'Custom Joinery', 'Architecture & Interior Architecture'],
-    software: ['Revit', 'Enscape', 'Lumion', 'SketchUp', 'InDesign'],
+    software: ['Revit', 'Enscape', 'Lumion', 'SketchUp', 'InDesign', 'Adobe Photoshop'],
     myRole: 'I was responsible for the interior design of the Spa (budget of $10 million), working alongside my interior designer colleague. My scope included the schematic design, custom design and detailing of the joinery and FF&E, furniture selection and layout, reflected ceiling plans, and coordination of plumbing and electrical layouts. I also prepared room, door, and window schedules (with custom door details), vanity basin matrix, tender documentation, and 3D renderings and visualisations.\n\nIn addition, I developed client presentations, responded to RFIs, and maintained communication with contractors and the wider project team to ensure the seamless delivery of the Spa interiors.',
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     description:
       'Full refurbishment of a five-storey Victorian townhouse for a private client. The project involved structural alterations to open the lower ground floor to a landscaped garden, alongside a complete interior scheme drawing on English country and Italian modernism.',
     tags: ['Full Refurbishment', 'Listed Building', 'Bespoke Furniture'],
-    software: ['Revit', 'Affinity Designer', 'Procreate'],
+    software: ['Revit', 'Affinity Designer', 'Procreate', 'Adobe Photoshop'],
     myRole: 'I contributed to the conceptualisation of spaces by producing sketches and mood boards that captured the design vision. Assisted in developing functional and aesthetic furniture layouts, and played a key role in the design of bespoke joinery and custom FF&E pieces. I also prepared detailed technical drawings and comprehensive tender documentation to support the construction process, while also assisting in the creation of design presentations to effectively communicate ideas to clients and contractors.',
   },
   {

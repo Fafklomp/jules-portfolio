@@ -122,6 +122,9 @@ export default function ProjectModal({ project, onClose }) {
           {project.id === 1 && (
             <p className="text-[10px] font-light text-stone/35 italic mb-3">(disclaimer: the design of this project is copyright and remains the property of Silvio Rech & Lesley Carstens).</p>
           )}
+          {project.id === 2 && (
+            <p className="text-[10px] font-light text-stone/35 italic mb-3">(disclaimer: the design of this project is copyright and remains the property of Luxury Frontiers).</p>
+          )}
 
           <div className="grid grid-cols-3 gap-4 pt-6 border-t border-stone/10 mb-0">
             {[
@@ -325,7 +328,21 @@ export default function ProjectModal({ project, onClose }) {
           {project.id === 1 && (
             <div className="mt-5">
               <a
-                href="https://drive.google.com/drive/u/0/folders/1RIk5xZZ-Xg_da6_nBqM_DZxSUOm_EoQJ"
+                href="/projects/tropical-spa.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+              >
+                View More
+                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
+              </a>
+            </div>
+          )}
+
+          {project.id === 2 && (
+            <div className="mt-5">
+              <a
+                href="/projects/jungle-resort.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
