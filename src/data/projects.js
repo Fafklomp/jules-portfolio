@@ -67,11 +67,10 @@ const projects = [
     location: 'Hatfield Precinct, South Africa',
     year: '2023',
     area: '?',
-    role: 'Principal Designer',
     image: '/projects/notting-hill.jpg',
     description:
-      'Redesign of a lateral apartment for a young couple relocating from Paris. The brief prioritised a relaxed, lived-in quality — a palette of warm whites, aged brass, and vintage French furniture sourced alongside a full bespoke joinery package.',
-    tags: ['Apartment', 'French Influence', 'Joinery'],
+      'A visionary spatial strategy for Hatfield, Pretoria, using food systems as a driver for sustainable urban development. It addresses the area\'s linear waste economy by integrating the Bagarezi (marginalised informal waste pickers) into a recognised, collaborative trash economy through a phased, multi-scalar spatial intervention that weaves collection, sorting and exchange into the urban fabric.',
+    tags: ['Future Cities System', 'Phased Urban Strategy', 'Spatial Strategy', 'Waste Systems', 'Circular Economy'],
     software: ['QGIS', 'Procreate', 'Affinity Designer', 'Epicollect', 'Adobe Photoshop'],
   },
   {

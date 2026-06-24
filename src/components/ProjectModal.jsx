@@ -477,6 +477,19 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
+          {project.id === 5 && (
+            <div className="mt-5">
+              <a
+                href="/projects/hatfield-wayste.pdf"
+                download
+                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+              >
+                View Project
+                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
+              </a>
+            </div>
+          )}
+
         </div>
       </motion.div>
 
