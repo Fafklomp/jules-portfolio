@@ -67,7 +67,7 @@ const projects = [
     location: 'Hatfield Precinct, South Africa',
     year: '2023',
     area: '~7.7km²',
-    image: '/projects/notting-hill.jpg',
+    image: '/projects/hatfield-wayste.webp',
     description:
       'A visionary spatial strategy for Hatfield, Pretoria, using food systems as a driver for sustainable urban development. It addresses the area\'s linear waste economy by integrating the Bagarezi (marginalised informal waste pickers) into a recognised, collaborative trash economy through a phased, multi-scalar spatial intervention that weaves collection, sorting and exchange into the urban fabric.',
     tags: ['Future Cities System', 'Phased Urban Strategy', 'Spatial Strategy', 'Waste Systems', 'Circular Economy'],
@@ -81,7 +81,7 @@ const projects = [
     location: 'Pretoria, South Africa',
     year: '2020',
     area: '~350m²',
-    image: '/projects/maison-larue.jpg',
+    image: '/projects/creative-incubator.webp',
     description:
       'A creative incubator with a retail and makerspace in Pretoria Central built around a closed-loop design process, centred on the sale and production of a uniquely designed upcycled luminaire. Branded "Cinergy," the store challenges consumerist retail culture, using materials from the luminaire itself to spotlight plastic waste and bring sustainability awareness into an inner-city retail environment. Guided by the principle: Eliminate. Regenerate. Illuminate.',
     tags: ['Creative Incubator', 'Adaptive Reuse', 'Retail & Makerspace', 'Closed-Loop Design', 'Product Design'],
