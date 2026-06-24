@@ -38,7 +38,7 @@ const projects = [
     category: 'University',
     location: 'Sunnyside, South Africa',
     year: '2023',
-    area: '?',
+    area: '~1,600m²',
     image: '/projects/closed-loop-incubator.webp',
     description:
       'An adaptive reuse project transforming an existing deteriorated building in Sunnyside, South Africa into a fashion incubator supporting the area\'s circular fashion economy. The design closes the loop between local fashion communities and textile waste through three connected spaces (a design development area, a maker space for repairing and repurposing textiles, and a public retail center). This proposed programme and design supports the fostering of community connection, skill-sharing, and spatial agency through exposed joinery and adaptable, human-scaled interiors.',
@@ -53,11 +53,10 @@ const projects = [
     location: 'University of Pretoria, South Africa',
     year: '2023',
     area: '?',
-    role: 'Interior Consultant',
     image: '/projects/aster-spa.jpg',
     description:
-      'Concept and FF&E direction for a members-only urban spa. The palette was drawn from Swiss alpine landscapes — stone, birch, deep moss — with a material language that emphasised warmth and tactility over the clinical feel typical of urban wellness spaces.',
-    tags: ['Wellness', 'Members Club', 'Material Concept'],
+      'A temporary, adaptable museum pavilion along the University of Pretoria\'s arts axis, designed as a public interface between the university\'s museum collections and the wider community. Drawing on works from the Artology Exhibition, it uses motion picture as a medium to reframe the museum experience for a digital, Gen Z–oriented audience, with a winding circulation path threading through a lightweight timber-and-glass structure nestled among the campus trees.',
+    tags: ['Motion-Picture Museum Pavilion', 'Pop-Up Museum', 'Public Interface', 'Temporary Installation', 'Design for Disassembly'],
     software: ['Revit', 'Affinity Designer', 'Procreate'],
   },
   {
