@@ -188,7 +188,7 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
-          <p className="text-sm md:text-base leading-relaxed text-stone/80 mb-8">
+          <p className="text-[10px] md:text-xs leading-relaxed text-stone/80 mb-8 border border-[#fdbf69] rounded-sm px-3 py-2">
             {project.id === 1 ? (
               <>A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</>
             ) : project.description}

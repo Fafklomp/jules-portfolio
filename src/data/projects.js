@@ -67,7 +67,7 @@ const projects = [
     location: 'Hatfield Precinct, South Africa',
     year: '2023',
     area: '~7.7km²',
-    image: '/projects/hatfield-wayste.webp',
+    image: '/projects/hatfield-wayste-1.webp',
     description:
       'A visionary spatial strategy for Hatfield, Pretoria, using food systems as a driver for sustainable urban development. It addresses the area\'s linear waste economy by integrating the Bagarezi (marginalised informal waste pickers) into a recognised, collaborative trash economy through a phased, multi-scalar spatial intervention that weaves collection, sorting and exchange into the urban fabric.',
     tags: ['Future Cities System', 'Phased Urban Strategy', 'Spatial Strategy', 'Waste Systems', 'Circular Economy'],
