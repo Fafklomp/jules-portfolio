@@ -40,6 +40,12 @@ export default function MissionPage() {
                     {label === 'Context' && (
                       <video src="/context.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover" style={{objectPosition: '50% 70%'}} />
                     )}
+                    {label === 'Wellbeing' && (
+                      <video src="/wellbeing.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                    )}
+                    {label === 'Sustainability' && (
+                      <video src="/sustainability.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover" style={{objectPosition: '50% 30%'}} />
+                    )}
                   </div>
                   {/* Curved label around sphere */}
                   <svg
