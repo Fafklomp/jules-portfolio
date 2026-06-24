@@ -47,7 +47,7 @@ export default function ImageBanner({ speed = 40 }) {
 
   return (
     <div
-      className="w-full overflow-hidden pt-14 pb-4 select-none"
+      className="w-full overflow-hidden pt-14 pb-4 select-none relative"
       style={{ cursor }}
       onMouseDown={(e) => startDrag(e.clientX)}
       onMouseMove={(e) => moveDrag(e.clientX)}
@@ -57,6 +57,10 @@ export default function ImageBanner({ speed = 40 }) {
       onTouchMove={(e) => { e.preventDefault(); moveDrag(e.touches[0].clientX) }}
       onTouchEnd={endDrag}
     >
+      <div className="absolute bottom-7 right-3 z-10 pointer-events-none">
+        <span style={{ color: '#fdbf69', fontSize: '18px', lineHeight: 1 }}>↔</span>
+      </div>
+
       <motion.div
         ref={containerRef}
         style={{ x }}

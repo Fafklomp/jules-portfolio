@@ -3,6 +3,7 @@ import { motion, useAnimationFrame, useMotionValue, AnimatePresence } from 'fram
 import PageTransition from '../components/PageTransition'
 import FadeIn from '../components/FadeIn'
 import { SiInstagram } from 'react-icons/si'
+import { MdTouchApp } from 'react-icons/md'
 
 function PH({ children }) {
   return (
@@ -254,11 +255,14 @@ export default function BeyondPage() {
                         onImageClick={(i) => openLightbox(images, i)}
                       />
                     ) : (
-                      <motion.div key="banner" initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
+                      <motion.div key="banner" initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="relative">
                         <PhotoBanner
                           images={images}
                           onImageClick={() => openGrid(title)}
                         />
+                        <div className="absolute top-3 left-3 pointer-events-none z-10">
+                          <MdTouchApp size={22} style={{ color: '#fdbf69' }} />
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
