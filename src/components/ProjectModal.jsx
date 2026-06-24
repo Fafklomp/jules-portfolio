@@ -180,7 +180,7 @@ export default function ProjectModal({ project, onClose }) {
               <p className="text-xs tracking-widest uppercase text-stone/40 mb-3">Software</p>
               <div className="flex flex-wrap gap-2">
                 {project.software.map(s => (
-                  <span key={s} className="text-[9px] md:text-xs tracking-wide lowercase text-sage border border-sage/30 px-2 py-0.5 md:px-3 md:py-1 rounded-sm">
+                  <span key={s} className="text-[10px] md:text-xs tracking-wide lowercase text-sage border border-sage/30 px-2 py-0.5 md:px-3 md:py-1 rounded-sm">
                     {s}
                   </span>
                 ))}
@@ -416,7 +416,7 @@ export default function ProjectModal({ project, onClose }) {
             {project.tags.map(tag => (
               <span
                 key={tag}
-                className="text-[9px] md:text-xs tracking-wide lowercase text-sage border border-sage/30 px-2 py-0.5 md:px-3 md:py-1 rounded-sm"
+                className="text-[10px] md:text-xs tracking-wide lowercase text-sage border border-sage/30 px-2 py-0.5 md:px-3 md:py-1 rounded-sm"
               >
                 {tag}
               </span>
