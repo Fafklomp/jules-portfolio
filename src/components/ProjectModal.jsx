@@ -5,8 +5,13 @@ import { motion, AnimatePresence, useAnimationFrame, useMotionValue } from 'fram
 function PerspBanner({ speed = 30 }) {
   const x = useMotionValue(0)
   const imgRef = useRef(null)
+  const isDragging = useRef(false)
+  const dragStartX = useRef(0)
+  const dragStartMotionX = useRef(0)
+  const [cursor, setCursor] = useState('grab')
 
   useAnimationFrame((_, delta) => {
+    if (isDragging.current) return
     const img = imgRef.current
     if (!img) return
     const imgWidth = img.naturalWidth / img.naturalHeight * img.offsetHeight
@@ -14,8 +19,41 @@ function PerspBanner({ speed = 30 }) {
     x.set(next <= -imgWidth ? 0 : next)
   })
 
+  function startDrag(clientX) {
+    isDragging.current = true
+    dragStartX.current = clientX
+    dragStartMotionX.current = x.get()
+    setCursor('grabbing')
+  }
+
+  function moveDrag(clientX) {
+    if (!isDragging.current) return
+    const img = imgRef.current
+    if (!img) return
+    const imgWidth = img.naturalWidth / img.naturalHeight * img.offsetHeight
+    let next = dragStartMotionX.current + (clientX - dragStartX.current)
+    if (next <= -imgWidth) next += imgWidth
+    if (next > 0) next -= imgWidth
+    x.set(next)
+  }
+
+  function endDrag() {
+    isDragging.current = false
+    setCursor('grab')
+  }
+
   return (
-    <div className="w-full overflow-hidden mt-3">
+    <div
+      className="w-full overflow-hidden mt-3 select-none"
+      style={{ cursor }}
+      onMouseDown={(e) => startDrag(e.clientX)}
+      onMouseMove={(e) => moveDrag(e.clientX)}
+      onMouseUp={endDrag}
+      onMouseLeave={endDrag}
+      onTouchStart={(e) => startDrag(e.touches[0].clientX)}
+      onTouchMove={(e) => { e.preventDefault(); moveDrag(e.touches[0].clientX) }}
+      onTouchEnd={endDrag}
+    >
       <motion.div style={{ x }} className="flex w-max">
         {[0, 1].map(n => (
           <img
@@ -24,7 +62,8 @@ function PerspBanner({ speed = 30 }) {
             src="/projects/jungle-resort/perspectives-strip.webp"
             alt=""
             aria-hidden="true"
-            className="h-36 w-auto flex-shrink-0 object-contain"
+            className="h-36 w-auto flex-shrink-0 object-contain pointer-events-none"
+            draggable={false}
           />
         ))}
       </motion.div>
@@ -62,6 +101,26 @@ const TREATMENT_GALLERY = [
   '/projects/tropical-spa/treatment-3.webp',
   '/projects/tropical-spa/treatment-4.webp',
   '/projects/tropical-spa/treatment-5.webp',
+]
+
+const RELAXATION_GALLERY = [
+  '/projects/tropical-spa/relaxation-2.webp',
+  '/projects/tropical-spa/relaxation-3.webp',
+]
+
+const GYM_GALLERY = [
+  '/projects/tropical-spa/gym-1.webp',
+  '/projects/tropical-spa/gym-2.webp',
+]
+
+const RESORT_MAIN_GALLERY = [
+  '/projects/jungle-resort/resort-2.webp',
+  '/projects/jungle-resort/resort-1.webp',
+]
+
+const RESORT_PLANS_GALLERY = [
+  '/projects/jungle-resort/floorplan.webp',
+  '/projects/jungle-resort/floorplan-2.webp',
 ]
 
 export default function ProjectModal({ project, onClose }) {
@@ -201,17 +260,17 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="text-stone/25 mr-1">01</span>Resort Main Area
               </p>
               <div className="grid grid-cols-2 gap-2 mb-2">
-                <Img src="/projects/jungle-resort/resort-2.webp" alt="Resort main area aerial" className="w-full h-auto rounded-sm" />
-                <Img src="/projects/jungle-resort/resort-1.webp" alt="Resort main area" className="w-full h-auto rounded-sm" />
+                <Img src="/projects/jungle-resort/resort-2.webp" alt="Resort main area aerial" className="w-full h-auto rounded-sm" gallery={RESORT_MAIN_GALLERY} galleryIndex={0} />
+                <Img src="/projects/jungle-resort/resort-1.webp" alt="Resort main area" className="w-full h-auto rounded-sm" gallery={RESORT_MAIN_GALLERY} galleryIndex={1} />
               </div>
               <p className="text-[10px] font-light text-stone/35 italic mb-4">(disclaimer: render was produced by an internal employee).</p>
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <Img src="/projects/jungle-resort/floorplan.webp" alt="Resort floor plan" className="w-full h-auto rounded-sm" />
+                  <Img src="/projects/jungle-resort/floorplan.webp" alt="Resort floor plan" className="w-full h-auto rounded-sm" gallery={RESORT_PLANS_GALLERY} galleryIndex={0} />
                   <p className="text-[9px] font-light text-stone/35 italic mt-1">ground floor plan - NTS</p>
                 </div>
                 <div>
-                  <Img src="/projects/jungle-resort/floorplan-2.webp" alt="Resort floor plan 2" className="w-full h-auto rounded-sm" />
+                  <Img src="/projects/jungle-resort/floorplan-2.webp" alt="Resort floor plan 2" className="w-full h-auto rounded-sm" gallery={RESORT_PLANS_GALLERY} galleryIndex={1} />
                   <p className="text-[9px] font-light text-stone/35 italic mt-1">first floor plan - NTS</p>
                 </div>
               </div>
@@ -359,8 +418,8 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="text-stone/25 mr-1">02</span>Relaxation Area
               </p>
               <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Changeroom 01</p>
-              <Img src="/projects/tropical-spa/relaxation-2.webp" alt="Relaxation area view 1" className="w-full h-auto rounded-sm mb-2" />
-              <Img src="/projects/tropical-spa/relaxation-3.webp" alt="Relaxation area view 2" className="w-full h-auto rounded-sm mb-4" />
+              <Img src="/projects/tropical-spa/relaxation-2.webp" alt="Relaxation area view 1" className="w-full h-auto rounded-sm mb-2" gallery={RELAXATION_GALLERY} galleryIndex={0} />
+              <Img src="/projects/tropical-spa/relaxation-3.webp" alt="Relaxation area view 2" className="w-full h-auto rounded-sm mb-4" gallery={RELAXATION_GALLERY} galleryIndex={1} />
               <a
                 href="/projects/tropical-spa/relaxation-changeroom-01.pdf"
                 download
@@ -381,8 +440,8 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="text-stone/25 mr-1">03</span>Gym
               </p>
               <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Changeroom 02</p>
-              <Img src="/projects/tropical-spa/gym-1.webp" alt="Gym changeroom 02" className="w-full h-auto rounded-sm mb-2" />
-              <Img src="/projects/tropical-spa/gym-2.webp" alt="Gym changeroom 02 view 2" className="w-full h-auto rounded-sm mb-4" />
+              <Img src="/projects/tropical-spa/gym-1.webp" alt="Gym changeroom 02" className="w-full h-auto rounded-sm mb-2" gallery={GYM_GALLERY} galleryIndex={0} />
+              <Img src="/projects/tropical-spa/gym-2.webp" alt="Gym changeroom 02 view 2" className="w-full h-auto rounded-sm mb-4" gallery={GYM_GALLERY} galleryIndex={1} />
               <a
                 href="/projects/tropical-spa/gym-changeroom-02.pdf"
                 download
