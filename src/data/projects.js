@@ -52,8 +52,8 @@ const projects = [
     category: 'University',
     location: 'University of Pretoria, South Africa',
     year: '2023',
-    area: '?',
-    image: '/projects/aster-spa.jpg',
+    area: '~250m²',
+    image: '/projects/motion-picture-museum.webp',
     description:
       'A temporary, adaptable museum pavilion along the University of Pretoria\'s arts axis, designed as a public interface between the university\'s museum collections and the wider community. Drawing on works from the Artology Exhibition, it uses motion picture as a medium to reframe the museum experience for a digital, Gen Z–oriented audience, with a winding circulation path threading through a lightweight timber-and-glass structure nestled among the campus trees.',
     tags: ['Motion-Picture Museum Pavilion', 'Pop-Up Museum', 'Public Interface', 'Temporary Installation', 'Design for Disassembly'],
