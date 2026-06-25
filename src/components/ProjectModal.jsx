@@ -259,6 +259,11 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">01</span>Resort Main Area
               </p>
+              <div className="grid grid-cols-2 gap-2 mb-2">
+                <Img src="/projects/jungle-resort/resort-2.webp" alt="Resort main area aerial" className="w-full h-auto rounded-sm" gallery={RESORT_MAIN_GALLERY} galleryIndex={0} />
+                <Img src="/projects/jungle-resort/resort-1.webp" alt="Resort main area" className="w-full h-auto rounded-sm" gallery={RESORT_MAIN_GALLERY} galleryIndex={1} />
+              </div>
+              <p className="text-[10px] font-light text-stone/35 italic mb-4">(disclaimer: render was produced by an internal employee).</p>
               <div className="grid grid-cols-2 gap-2">
                 <div>
                   <Img src="/projects/jungle-resort/floorplan.webp" alt="Resort floor plan" className="w-full h-auto rounded-sm" gallery={RESORT_PLANS_GALLERY} galleryIndex={0} />
@@ -279,6 +284,8 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="text-stone/25 mr-1">02</span>Resort Accommodation Units
               </p>
               <p className="text-xs font-light leading-relaxed text-stone/70 mt-3">The Resort Interior colour palette is inspired by the vibrant colours of the flowers native to the Puerto Rican rainforest. These forms are celebrated through the natural patterns and lively colours scattered through the Orocovis rainforest.</p>
+              <Img src="/projects/jungle-resort/accommodation.webp" alt="Resort accommodation floor plan" className="w-full h-auto rounded-sm" />
+              <p className="text-[9px] font-light text-stone/35 italic mt-1">ground floor plan - NTS</p>
               <p className="text-xs tracking-wide lowercase font-light italic mt-6" style={{ color: '#fdbf69' }}>Materiality</p>
               <div className="grid grid-cols-10 gap-1 sm:gap-3 mt-3">
                 {[
@@ -489,6 +496,20 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
+
+          {project.id === 2 && (
+            <div className="mt-5">
+              <a
+                href="/projects/jungle-resort.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+              >
+                View More
+                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
+              </a>
+            </div>
+          )}
 
           {project.id === 3 && (
             <div className="mt-5">

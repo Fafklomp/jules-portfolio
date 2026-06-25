@@ -29,7 +29,7 @@ const projects = [
       'A jungle resort and accommodation development in the rainforests of Puerto Rico, featuring organic, canopy-inspired forms for the main resort building and accommodation units that blend seamlessly into the lush landscape. The interior draws inspiration from the colouring, rhythm and movement of the humming birds exploration through the rainforest.',
     tags: ['Luxury Hospitality', 'Jungle Resort Design', 'High-End Accommodation Units', 'Biophilic Design', 'Custom Joinery', 'Architecture & Interior Architecture'],
     software: ['Revit', 'Affinity Designer', 'Procreate', 'Adobe Photoshop'],
-    myRole: 'I contributed to the conceptualisation of interior spaces by producing sketches and assisting with the mood boards that captured the design vision. I also developed technical drawings for custom furniture items as well as comprehensive tender documentation to support the construction process, while also assisting in the creation of design presentations to effectively communicate ideas to clients and contractors.',
+    myRole: 'I contributed to the conceptualisation of interior spaces by producing sketches and assisting with the mood boards that captured the design vision. I also developed technical drawings for custom FF&E items as well as comprehensive tender documentation to support the construction process, while also assisting in the creation of design presentations to effectively communicate ideas to clients and contractors.',
   },
   {
     id: 3,
