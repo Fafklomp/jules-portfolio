@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { MdTouchApp } from 'react-icons/md'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'
@@ -6,9 +6,15 @@ import FadeIn from '../components/FadeIn'
 import PageTransition from '../components/PageTransition'
 
 function WorkEntry({ dates, company, role, children }) {
-  const [hovered, setHovered] = useState(false)
-  const [pinned, setPinned] = useState(false)
-  const open = hovered || pinned
+  const [open, setOpen] = useState(false)
+  const suppressHover = useRef(false)
+
+  function closeDescription() {
+    suppressHover.current = true
+    setOpen(false)
+    setTimeout(() => { suppressHover.current = false }, 300)
+  }
+
   return (
     <div className="flex gap-4">
       <div className="text-xs font-light text-stone/40 w-20 shrink-0 leading-snug">
@@ -19,19 +25,17 @@ function WorkEntry({ dates, company, role, children }) {
       )}
       <div
         className="flex-1"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onClick={() => setPinned(p => !p)}
+        onMouseEnter={() => { if (!suppressHover.current) setOpen(true) }}
+        onMouseLeave={() => setOpen(false)}
       >
-        <div className="cursor-pointer">
+        <div className="cursor-pointer" onClick={() => setOpen(o => !o)}>
           <p className={`text-sm font-light transition-colors duration-200 ${open ? 'text-terra' : 'text-stone/80'}`}>
             {company}
-            {pinned && <span className="ml-2 text-xs text-terra/50">●</span>}
           </p>
           <p className="text-sm font-light text-stone/50">{role}</p>
         </div>
         {open && (
-          <div className="mt-3 space-y-3" onClick={(e) => { e.stopPropagation(); setPinned(false) }}>
+          <div className="mt-3 space-y-3" onClick={closeDescription}>
             {children}
           </div>
         )}
