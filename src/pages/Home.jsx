@@ -72,16 +72,16 @@ export default function Home() {
                 <p className="text-xs font-light text-stone/70 leading-relaxed">After graduating with distinction in my undergraduate degree, I sought work that would challenge me to advance my technical and software skills. At Luxury Frontiers, I assisted in the design and technical drawings of world-class hospitality resorts and lodges (which have received multiple awards) refining my technical expertise, attention to detail and ability to perform under pressure. I worked on two projects (a resort and tented camp in Puerto Rico and Saudi Arabia) within an interior team of seven, comprising two senior designers and five juniors on a six-month probation period. At the end of this period, three of us, including myself, were offered permanent contracts. This role also provided valuable experience in cross-disciplinary coordination and effective communication.</p>
               </WorkEntry>
 
-              <WorkEntry dates={['Dec 2016 –', 'Jan 2017']} company="Lifestyle Health" role="Sales Assistant · Ballito, South Africa">
-                <p className="text-xs font-light text-stone/70 leading-relaxed">Worked alongside one other sales assistant to serve customers during my summer holiday, offering advice and guidance on the store's health products.</p>
+              <WorkEntry dates={['Jul 2018 –', 'Aug 2018']} company="Charles Taylor Architects" role="Intern · Ballito, South Africa">
+                <p className="text-xs font-light text-stone/70 leading-relaxed">During the July holidays, I interned at CTA and went to various site visits and client meetings, as well as shadowed and assisted the Interior Architects in corporate and residential design projects.</p>
               </WorkEntry>
 
               <WorkEntry dates={['Dec 2017 –', 'Jan 2018']} company="Origins Home and Decor" role="Sales Assistant · Ballito, South Africa">
                 <p className="text-xs font-light text-stone/70 leading-relaxed">During my summer holiday, I welcomed customers into the store, offering guidance on home and décor products while ensuring the space remained inviting and well-presented. This experience taught me how to confidently discuss and sell products, building both my communication and customer service skills.</p>
               </WorkEntry>
 
-              <WorkEntry dates={['Jul 2018 –', 'Aug 2018']} company="Charles Taylor Architects" role="Intern · Ballito, South Africa">
-                <p className="text-xs font-light text-stone/70 leading-relaxed">During the July holidays, I interned at CTA and went to various site visits and client meetings, as well as shadowed and assisted the Interior Architects in corporate and residential design projects.</p>
+              <WorkEntry dates={['Dec 2016 –', 'Jan 2017']} company="Lifestyle Health" role="Sales Assistant · Ballito, South Africa">
+                <p className="text-xs font-light text-stone/70 leading-relaxed">Worked alongside one other sales assistant to serve customers during my summer holiday, offering advice and guidance on the store's health products.</p>
               </WorkEntry>
             </div>
           </div>
