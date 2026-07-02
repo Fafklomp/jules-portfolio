@@ -98,7 +98,7 @@ export default function Home() {
               <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold mb-6">Info</p>
               <dl className="space-y-2">
                 {[
-                  ['Location',    'London United Kingdom'],
+                  ['Location',    'London, United Kingdom'],
                   ['Age',         '27 (18/04/1999)'],
                   ['Nationality', 'South African'],
                 ].map(([label, value]) => (
@@ -110,7 +110,8 @@ export default function Home() {
                 <div className="flex gap-4">
                   <dt className="text-sm font-light text-stone/40 w-24 shrink-0">Passport / Visa</dt>
                   <dd className="text-sm font-light text-stone/80 space-y-1">
-                    <p>British Passport (exp. 2029)</p>
+                    <p>South African Passport</p>
+                    <p>British Passport</p>
                     <p>US B1/B2 Visa (exp. 2033)</p>
                   </dd>
                 </div>
