@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { MdTouchApp } from 'react-icons/md'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'
@@ -7,12 +7,16 @@ import PageTransition from '../components/PageTransition'
 
 function WorkEntry({ dates, company, role, children }) {
   const [open, setOpen] = useState(false)
-  const suppressHover = useRef(false)
+  const [pinned, setPinned] = useState(false)
 
-  function closeDescription() {
-    suppressHover.current = true
-    setOpen(false)
-    setTimeout(() => { suppressHover.current = false }, 300)
+  function handleClick() {
+    if (pinned) {
+      setPinned(false)
+      setOpen(false)
+    } else {
+      setPinned(true)
+      setOpen(true)
+    }
   }
 
   return (
@@ -25,17 +29,17 @@ function WorkEntry({ dates, company, role, children }) {
       )}
       <div
         className="flex-1"
-        onMouseEnter={() => { if (!suppressHover.current) setOpen(true) }}
-        onMouseLeave={() => setOpen(false)}
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => { if (!pinned) setOpen(false) }}
       >
-        <div className="cursor-pointer" onClick={() => setOpen(o => !o)}>
+        <div className="cursor-pointer" onClick={handleClick}>
           <p className={`text-sm font-light transition-colors duration-200 ${open ? 'text-terra' : 'text-stone/80'}`}>
             {company}
           </p>
           <p className="text-sm font-light text-stone/50">{role}</p>
         </div>
         {open && (
-          <div className="mt-3 space-y-3" onClick={closeDescription}>
+          <div className="mt-3 space-y-3">
             {children}
           </div>
         )}
@@ -55,8 +59,8 @@ export default function Home() {
           <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
             <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Work Experience</p>
             <div className="space-y-6">
-              <WorkEntry dates={['Jun 2026 –', 'Present']} company="Artala" role="Social Media Consultant & Interior Design Assistant · Seattle, US">
-                <p className="text-xs font-light text-stone/70 leading-relaxed">Supported a boutique interior design studio across creative marketing and project development. Managed social media content and brand communications while assisting with interior design projects, material sourcing and product research. Gained valuable exposure to the U.S. residential design industry through visits to site, local manufacturers, design showrooms and supplier studios. This helped develop a strong understanding of American design trends, products and industry workflows. Worked closely with the studio founder, contributing to both the creative design process and the day-to-day operations of the studio.</p>
+              <WorkEntry dates={['Jun 2026 –', 'Present']} company="Artala" role="Social Media Consultant & Interior Design Assistant · Remote">
+                <p className="text-xs font-light text-stone/70 leading-relaxed">Supported a boutique US interior design studio across creative marketing and project development. Managed social media content and brand communications while assisting with interior design research, material sourcing and product selection. Conducted research into US residential design trends, suppliers and products to support project development. Collaborated closely with the studio founder on creative concepts and project coordination.</p>
               </WorkEntry>
 
               <WorkEntry dates={['Jul 2024 –', 'Jun 2026']} company="Silvio Rech and Lesley Carstens" role="Interior Architect · Johannesburg, South Africa">
