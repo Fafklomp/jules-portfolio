@@ -207,13 +207,13 @@ export default function BeyondPage() {
           <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start mb-20">
             <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Additional Creative Fields</p>
             <div className="space-y-6">
-              <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+              <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80 text-justify">
                 In my free time, I love exploring my <PH>creativity</PH> through <PH>painting</PH>, <PH>photography</PH>, and <PH>hands-on making</PH>, from <PH>pottery</PH> and <PH>model building</PH> to <PH>CNC projects</PH>.
               </p>
-              <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+              <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80 text-justify">
                 Painting <PH>landscapes</PH> lets me capture moments and places that left an impression on me, turning memory into art. Working with my hands allows me to experiment and bring ideas to life in a <PH>tactile</PH> way. Photography, especially while <PH>travelling</PH>, helps me notice fleeting moments, people, and landscapes (recently, I've been drawn to the textured, timeless quality of film).
               </p>
-              <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+              <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80 text-justify">
                 These hobbies give me space to switch off, let my mind <PH>wander</PH> and <PH>recharge</PH>, while continuously inspiring the way I approach design.
               </p>
             </div>

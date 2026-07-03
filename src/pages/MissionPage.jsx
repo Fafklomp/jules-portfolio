@@ -70,13 +70,13 @@ export default function MissionPage() {
             <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
               <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Mission Statement</p>
               <div className="space-y-6">
-                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80 text-justify">
                   I value <PH>loyalty</PH>, <PH>respect</PH>, and <PH>joy</PH>, and I strive to bring these qualities into everything I do. I believe life shouldn't always be taken too seriously, which is why I embrace a spirit of <PH>curiosity</PH> and <PH>playfulness</PH>, while also staying true to myself rather than simply following the crowd.
                 </p>
-                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80 text-justify">
                   <PH>Creativity</PH>, <PH>spontaneity</PH>, and <PH>originality</PH> are part of who I am, and I hope to channel these traits into <PH>meaningful</PH> design work that contributes positively to both <PH>people and the environment</PH>.
                 </p>
-                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80 text-justify">
                   I aspire to <PH>travel</PH>, broaden my perspective, and <PH>connect</PH> with inspiring people along the way. I am committed to stepping outside of my comfort zone, living a healthy and balanced life, and facing challenges with resilience. In doing so, I aim not only to grow personally but also to encourage and <PH>uplift</PH> those around me.
                 </p>
               </div>
@@ -85,13 +85,13 @@ export default function MissionPage() {
             <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
               <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Normative Position</p>
               <div className="space-y-6">
-                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80 text-justify">
                   My approach to interior architecture is <PH>anchored in craftsmanship</PH> and <PH>shaped by context</PH>. I believe design should grow from an intimate understanding of place, culture, users and materials. Creating spaces that <PH>resonate with their surroundings</PH> and <PH>support human wellbeing</PH>. Architecture moves at the pace of culture, and enduring design begins with thoughtful, efficient, and responsible construction.
                 </p>
-                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80 text-justify">
                   While emerging technologies fascinate me and broaden our creative possibilities, they should never distance the designer from the act of making. I value a hands-on, collaborative process that weaves together <PH>local skills</PH> and <PH>contemporary innovations</PH>, ensuring each project remains both tactile and relevant.
                 </p>
-                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80">
+                <p className="text-xs md:text-sm font-light leading-relaxed text-stone/80 text-justify">
                   In a globalized world, I champion a <PH>circular design</PH> ethos. Where knowledge, skills, and materials are continuously shared, reused, and reimagined.
                 </p>
               </div>
