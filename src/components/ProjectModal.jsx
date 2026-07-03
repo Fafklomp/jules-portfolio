@@ -247,7 +247,7 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
-          <p className="text-[10px] md:text-xs leading-relaxed text-stone/80 mb-8 border border-[#fdbf69] rounded-sm px-3 py-2">
+          <p className="text-[10px] md:text-xs leading-relaxed text-stone/80 text-justify mb-8 border border-[#fdbf69] rounded-sm px-3 py-2 text-justify">
             {project.id === 1 ? (
               <>A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</>
             ) : project.description}
@@ -277,13 +277,13 @@ export default function ProjectModal({ project, onClose }) {
               <p className="text-xs tracking-wide lowercase font-light italic mt-6" style={{ color: '#fdbf69' }}>perspectives</p>
               <PerspBanner />
               <p className="text-xs tracking-wide lowercase font-light italic mt-8" style={{ color: '#fdbf69' }}>Look &amp; Feel</p>
-              <p className="text-xs font-light leading-relaxed text-stone/70 mt-2 mb-3">The design features a natural material palette, rich in organic textures and earthy tones, complemented by vibrant pops of colour. This contrast brings energy and visual interest to the space, while allowing the warmth and authenticity of the natural materials to remain the foundation of the overall aesthetic.</p>
+              <p className="text-xs font-light leading-relaxed text-stone/70 text-justify mt-2 mb-3">The design features a natural material palette, rich in organic textures and earthy tones, complemented by vibrant pops of colour. This contrast brings energy and visual interest to the space, while allowing the warmth and authenticity of the natural materials to remain the foundation of the overall aesthetic.</p>
               <img src="/projects/jungle-resort/look-feel.webp" alt="Look and feel" className="w-full h-auto rounded-sm" />
               <p className="text-xs tracking-widest uppercase text-stone/40 mt-8 flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 <span className="text-stone/25 mr-1">02</span>Resort Accommodation Units
               </p>
-              <p className="text-xs font-light leading-relaxed text-stone/70 mt-3">The Resort Interior colour palette is inspired by the vibrant colours of the flowers native to the Puerto Rican rainforest. These forms are celebrated through the natural patterns and lively colours scattered through the Orocovis rainforest.</p>
+              <p className="text-xs font-light leading-relaxed text-stone/70 text-justify mt-3">The Resort Interior colour palette is inspired by the vibrant colours of the flowers native to the Puerto Rican rainforest. These forms are celebrated through the natural patterns and lively colours scattered through the Orocovis rainforest.</p>
               <Img src="/projects/jungle-resort/accommodation.webp" alt="Resort accommodation floor plan" className="w-full h-auto rounded-sm" />
               <p className="text-[9px] font-light text-stone/35 italic mt-1">ground floor plan - NTS</p>
               <p className="text-xs tracking-wide lowercase font-light italic mt-6" style={{ color: '#fdbf69' }}>Materiality</p>
@@ -363,7 +363,7 @@ export default function ProjectModal({ project, onClose }) {
           {project.id === 1 && (
             <div className="mb-8">
               <p className="text-xs tracking-wide lowercase font-light italic mb-2" style={{ color: '#fdbf69' }}>Materiality</p>
-              <p className="text-xs leading-relaxed text-stone/60 mb-4">The material palette celebrates the natural beauty of the site, incorporating locally sourced elements such as rockwork and the golden, swaying Alang Alang grass, creating a harmonious connection between the architecture and its surroundings.</p>
+              <p className="text-xs leading-relaxed text-stone/60 text-justify mb-4">The material palette celebrates the natural beauty of the site, incorporating locally sourced elements such as rockwork and the golden, swaying Alang Alang grass, creating a harmonious connection between the architecture and its surroundings.</p>
               <div className="grid grid-cols-9 gap-1 sm:gap-3">
                 {[
                   { name: 'Internal Rockwork', img: 'swatch-2.webp' },
@@ -401,7 +401,7 @@ export default function ProjectModal({ project, onClose }) {
               <a
                 href="/projects/tropical-spa/double-treatment-room.pdf"
                 download
-                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 rounded-sm hover:bg-sage/5 transition-colors duration-150"
+                className="inline-flex items-center gap-1 text-[8px] tracking-widest lowercase text-sage border border-sage/30 px-2 py-1 rounded-sm hover:bg-sage/5 transition-colors duration-150"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
@@ -423,7 +423,7 @@ export default function ProjectModal({ project, onClose }) {
               <a
                 href="/projects/tropical-spa/relaxation-changeroom-01.pdf"
                 download
-                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 rounded-sm hover:bg-sage/5 transition-colors duration-150"
+                className="inline-flex items-center gap-1 text-[8px] tracking-widest lowercase text-sage border border-sage/30 px-2 py-1 rounded-sm hover:bg-sage/5 transition-colors duration-150"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
@@ -445,7 +445,7 @@ export default function ProjectModal({ project, onClose }) {
               <a
                 href="/projects/tropical-spa/gym-changeroom-02.pdf"
                 download
-                className="inline-flex items-center gap-1 text-[8px] tracking-widest uppercase text-sage border border-sage/30 px-2 py-1 rounded-sm hover:bg-sage/5 transition-colors duration-150"
+                className="inline-flex items-center gap-1 text-[8px] tracking-widest lowercase text-sage border border-sage/30 px-2 py-1 rounded-sm hover:bg-sage/5 transition-colors duration-150"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
@@ -460,12 +460,12 @@ export default function ProjectModal({ project, onClose }) {
               <p className="text-xs tracking-widests uppercase text-stone/40 mb-3">My Role</p>
               {project.id === 1 ? (
                 <>
-                  <p className="text-xs leading-relaxed text-stone/80 mb-4">I was responsible for the interior design of the Spa (budget of $10 million), working alongside my interior designer colleague. My scope included the <PH>schematic design, custom design and detailing of the joinery and FF&E, furniture selection and layout, reflected ceiling plans, and coordination of plumbing and electrical layouts.</PH> I also prepared room, door, and window schedules (with custom door details), vanity basin matrix, tender documentation, and 3D renderings and visualisations.</p>
-                  <p className="text-xs leading-relaxed text-stone/80">In addition, I developed client presentations, responded to RFIs, and maintained communication with contractors and the wider project team to ensure the seamless delivery of the Spa interiors.</p>
+                  <p className="text-xs leading-relaxed text-stone/80 text-justify mb-4">I was responsible for the interior design of the Spa (budget of $10 million), working alongside my interior designer colleague. My scope included the <PH>schematic design, custom design and detailing of the joinery and FF&E, furniture selection and layout, reflected ceiling plans, and coordination of plumbing and electrical layouts.</PH> I also prepared room, door, and window schedules (with custom door details), vanity basin matrix, tender documentation, and 3D renderings and visualisations.</p>
+                  <p className="text-xs leading-relaxed text-stone/80 text-justify">In addition, I developed client presentations, responded to RFIs, and maintained communication with contractors and the wider project team to ensure the seamless delivery of the Spa interiors.</p>
                 </>
               ) : (
                 project.myRole.split('\n\n').map((para, i) => (
-                  <p key={i} className="text-xs leading-relaxed text-stone/80 mb-4 last:mb-0">{para}</p>
+                  <p key={i} className="text-xs leading-relaxed text-stone/80 text-justify mb-4 last:mb-0">{para}</p>
                 ))
               )}
             </div>
