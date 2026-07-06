@@ -60,7 +60,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.2em] uppercase text-sage font-semibold pt-1">Work Experience</p>
             <div className="space-y-6">
               <WorkEntry dates={['Jun 2026 –', 'Present']} company="Artala" role="Social Media Consultant & Interior Design Assistant · Remote">
-                <p className="text-xs font-light text-stone/70 leading-relaxed text-justify">Supported a boutique US interior design studio across creative marketing and project development. Managed social media content and brand communications while assisting with interior design research, material sourcing and product selection. Conducted research into US residential design trends, suppliers and products to support project development. Collaborated closely with the studio founder on creative concepts and project coordination.</p>
+                <p className="text-xs font-light text-stone/70 leading-relaxed text-justify">Supported a boutique U.S.-based interior design studio across creative marketing and project development. Managed social media content and brand communications while assisting with interior design research, material sourcing and product selection. Conducted research into U.S. residential design trends, suppliers and products to support project development. Collaborated closely with the studio founder on creative concepts and project coordination.</p>
               </WorkEntry>
 
               <WorkEntry dates={['Jul 2024 –', 'Jun 2026']} company="Silvio Rech and Lesley Carstens" role="Interior Architect · Johannesburg, South Africa">
