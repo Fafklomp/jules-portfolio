@@ -361,6 +361,8 @@ export default function ProjectModal({ project, onClose }) {
               <img src="/projects/between-tide-time/ffe-refreshments-wardrobe.webp" alt="Refreshments and wardrobe FF&E moodboard with arrival narrative, joinery, and styling details" className="w-full h-auto rounded-sm" />
               <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Bedroom</p>
               <img src="/projects/between-tide-time/ffe-bedroom.webp" alt="Bedroom FF&E moodboard with lighting, textiles, bed, and furniture details" className="w-full h-auto rounded-sm" />
+              <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Bathroom</p>
+              <img src="/projects/between-tide-time/ffe-bathroom.webp" alt="Bathroom FF&E moodboard with fixtures, stone surfaces, and rainfall shower details" className="w-full h-auto rounded-sm" />
             </div>
           )}
 
