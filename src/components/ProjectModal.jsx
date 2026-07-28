@@ -295,6 +295,13 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-wide lowercase font-light italic mb-3" style={{ color: '#fdbf69' }}>Overall Look &amp; Feel</p>
+              <img src="/projects/between-tide-time/look-feel.webp" alt="Look and feel moodboard: organic forms inspired by the surroundings" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
           {project.id === 2 && (
             <div className="mb-8">
               <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
