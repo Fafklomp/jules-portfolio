@@ -351,6 +351,19 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                FF&amp;E
+              </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Refreshments &amp; Wardrobe</p>
+              <img src="/projects/between-tide-time/ffe-refreshments-wardrobe.webp" alt="Refreshments and wardrobe FF&E moodboard with arrival narrative, joinery, and styling details" className="w-full h-auto rounded-sm" />
+              <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Bedroom</p>
+              <img src="/projects/between-tide-time/ffe-bedroom.webp" alt="Bedroom FF&E moodboard with lighting, textiles, bed, and furniture details" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
           {project.id === 2 && (
             <div className="mb-8">
               <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
