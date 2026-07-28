@@ -329,14 +329,14 @@ export default function ProjectModal({ project, onClose }) {
 
           {project.id === 7 && (
             <div className="mb-8">
-              <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 Material Palette
               </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Shaped by Nature</p>
               <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-2 items-start">
                 <Img src="/projects/between-tide-time/material-palette.webp" alt="Material palette moodboard with color swatches, timber, stone and textiles" className="w-full h-auto rounded-sm" />
                 <div>
-                  <p className="text-xs italic mb-2" style={{ color: '#fdbf69' }}>Shaped by Nature</p>
                   <p className="text-[10px] italic text-stone/70 leading-tight"><PH>Earth</PH> &ndash; The Memory of Time</p>
                   <p className="text-[10px] leading-tight text-stone/80 text-justify">Materials that feel ancient &amp; grounded.</p>
                   <p className="text-[10px] italic text-stone/40 tracking-wide mb-2">Permanent &middot; Warm &middot; Tactile</p>
