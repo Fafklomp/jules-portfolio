@@ -270,7 +270,7 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 Existing
               </p>
-              <img src="/projects/between-tide-time/existing-user-journey.webp" alt="Existing guestroom user journey and floor plan analysis" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/existing-user-journey.webp" alt="Existing guestroom user journey and floor plan analysis" className="w-full h-auto rounded-sm" />
             </div>
           )}
 
@@ -281,7 +281,7 @@ export default function ProjectModal({ project, onClose }) {
                 Concept
               </p>
               <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Between Tide &amp; Time</p>
-              <img src="/projects/between-tide-time/concept-inspiration.webp" alt="Concept inspiration moodboard: restoration, sanctuary, connection, discovery, purpose" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/concept-inspiration.webp" alt="Concept inspiration moodboard: restoration, sanctuary, connection, discovery, purpose" className="w-full h-auto rounded-sm" />
             </div>
           )}
 
@@ -298,7 +298,7 @@ export default function ProjectModal({ project, onClose }) {
           {project.id === 7 && (
             <div className="mb-8">
               <p className="text-xs tracking-wide lowercase font-light italic mb-3" style={{ color: '#fdbf69' }}>Overall Look &amp; Feel</p>
-              <img src="/projects/between-tide-time/look-feel.webp" alt="Look and feel moodboard: organic forms inspired by the surroundings" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/look-feel.webp" alt="Look and feel moodboard: organic forms inspired by the surroundings" className="w-full h-auto rounded-sm" />
             </div>
           )}
 
@@ -308,7 +308,7 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 Zoning
               </p>
-              <img src="/projects/between-tide-time/zoning-options.webp" alt="Zoning options 01 and 02 with circulation diagrams" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/zoning-options.webp" alt="Zoning options 01 and 02 with circulation diagrams" className="w-full h-auto rounded-sm" />
             </div>
           )}
 
@@ -319,11 +319,11 @@ export default function ProjectModal({ project, onClose }) {
                 Spatial Configuration
               </p>
               <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Exploration</p>
-              <img src="/projects/between-tide-time/spatial-exploration.webp" alt="Spatial configuration exploration sketches with design questions" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/spatial-exploration.webp" alt="Spatial configuration exploration sketches with design questions" className="w-full h-auto rounded-sm" />
               <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Final</p>
-              <img src="/projects/between-tide-time/spatial-final.webp" alt="Final guestroom spatial layout with circulation diagram" className="w-full h-auto rounded-sm" />
-              <img src="/projects/between-tide-time/spatial-final-annotated.webp" alt="Annotated final floor plan with furniture and joinery notes" className="w-full h-auto rounded-sm mt-2" />
-              <img src="/projects/between-tide-time/final-user-journey.webp" alt="Final user journey with circulation path through the guestroom" className="w-full h-auto rounded-sm mt-2" />
+              <Img src="/projects/between-tide-time/spatial-final.webp" alt="Final guestroom spatial layout with circulation diagram" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/spatial-final-annotated.webp" alt="Annotated final floor plan with furniture and joinery notes" className="w-full h-auto rounded-sm mt-2" />
+              <Img src="/projects/between-tide-time/final-user-journey.webp" alt="Final user journey with circulation path through the guestroom" className="w-full h-auto rounded-sm mt-2" />
             </div>
           )}
 
@@ -334,18 +334,18 @@ export default function ProjectModal({ project, onClose }) {
                 Material Palette
               </p>
               <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-2 items-start">
-                <img src="/projects/between-tide-time/material-palette.webp" alt="Material palette moodboard with color swatches, timber, stone and textiles" className="w-full h-auto rounded-sm" />
+                <Img src="/projects/between-tide-time/material-palette.webp" alt="Material palette moodboard with color swatches, timber, stone and textiles" className="w-full h-auto rounded-sm" />
                 <div>
-                  <p className="text-xs italic mb-4" style={{ color: '#fdbf69' }}>Shaped by Nature</p>
-                  <p className="text-xs italic text-stone/70 mb-1"><PH>Earth</PH> &ndash; The Memory of Time</p>
-                  <p className="text-xs leading-relaxed text-stone/80 text-justify mb-1">Materials that feel ancient &amp; grounded.</p>
-                  <p className="text-xs italic text-stone/40 tracking-wide mb-4">Permanent &middot; Warm &middot; Tactile</p>
-                  <p className="text-xs italic text-stone/70 mb-1"><PH>Water</PH> &ndash; The Rhythm of Tide</p>
-                  <p className="text-xs leading-relaxed text-stone/80 text-justify mb-1">Materials that create softness &amp; movement.</p>
-                  <p className="text-xs italic text-stone/40 tracking-wide mb-4">Calm &middot; Fluid &middot; Restorative</p>
-                  <p className="text-xs italic text-stone/70 mb-1"><PH>Craft</PH> &ndash; The Human Touch</p>
-                  <p className="text-xs leading-relaxed text-stone/80 text-justify mb-1">Materials that celebrate artisanship.</p>
-                  <p className="text-xs italic text-stone/40 tracking-wide">Authentic &middot; Personal &middot; Memorable</p>
+                  <p className="text-xs italic mb-2" style={{ color: '#fdbf69' }}>Shaped by Nature</p>
+                  <p className="text-[10px] italic text-stone/70 leading-tight"><PH>Earth</PH> &ndash; The Memory of Time</p>
+                  <p className="text-[10px] leading-tight text-stone/80 text-justify">Materials that feel ancient &amp; grounded.</p>
+                  <p className="text-[10px] italic text-stone/40 tracking-wide mb-2">Permanent &middot; Warm &middot; Tactile</p>
+                  <p className="text-[10px] italic text-stone/70 leading-tight"><PH>Water</PH> &ndash; The Rhythm of Tide</p>
+                  <p className="text-[10px] leading-tight text-stone/80 text-justify">Materials that create softness &amp; movement.</p>
+                  <p className="text-[10px] italic text-stone/40 tracking-wide mb-2">Calm &middot; Fluid &middot; Restorative</p>
+                  <p className="text-[10px] italic text-stone/70 leading-tight"><PH>Craft</PH> &ndash; The Human Touch</p>
+                  <p className="text-[10px] leading-tight text-stone/80 text-justify">Materials that celebrate artisanship.</p>
+                  <p className="text-[10px] italic text-stone/40 tracking-wide">Authentic &middot; Personal &middot; Memorable</p>
                 </div>
               </div>
             </div>
@@ -358,13 +358,13 @@ export default function ProjectModal({ project, onClose }) {
                 FF&amp;E
               </p>
               <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Refreshments &amp; Wardrobe</p>
-              <img src="/projects/between-tide-time/ffe-refreshments-wardrobe.webp" alt="Refreshments and wardrobe FF&E moodboard with arrival narrative, joinery, and styling details" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/ffe-refreshments-wardrobe.webp" alt="Refreshments and wardrobe FF&E moodboard with arrival narrative, joinery, and styling details" className="w-full h-auto rounded-sm" />
               <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Bedroom</p>
-              <img src="/projects/between-tide-time/ffe-bedroom.webp" alt="Bedroom FF&E moodboard with lighting, textiles, bed, and furniture details" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/ffe-bedroom.webp" alt="Bedroom FF&E moodboard with lighting, textiles, bed, and furniture details" className="w-full h-auto rounded-sm" />
               <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Bathroom</p>
-              <img src="/projects/between-tide-time/ffe-bathroom.webp" alt="Bathroom FF&E moodboard with fixtures, stone surfaces, and rainfall shower details" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/ffe-bathroom.webp" alt="Bathroom FF&E moodboard with fixtures, stone surfaces, and rainfall shower details" className="w-full h-auto rounded-sm" />
               <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Balcony</p>
-              <img src="/projects/between-tide-time/ffe-balcony.webp" alt="Balcony FF&E moodboard with lounge furniture and natural textures" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/ffe-balcony.webp" alt="Balcony FF&E moodboard with lounge furniture and natural textures" className="w-full h-auto rounded-sm" />
             </div>
           )}
 
@@ -375,10 +375,10 @@ export default function ProjectModal({ project, onClose }) {
                 Art Direction
               </p>
               <div className="relative">
-                <img src="/projects/between-tide-time/art-direction.webp" alt="Art direction moodboard: fragments of the island with abstract landscapes and wildlife photography" className="w-full h-auto rounded-sm" />
+                <Img src="/projects/between-tide-time/art-direction.webp" alt="Art direction moodboard: fragments of the island with abstract landscapes and wildlife photography" className="w-full h-auto rounded-sm" />
                 <div className="absolute top-0 left-0 bg-offwhite/90 px-3 py-2 md:px-4 md:py-3 rounded-sm max-w-[70%] md:max-w-xs">
                   <p className="text-xs italic mb-0 leading-tight" style={{ color: '#fdbf69' }}>Fragments of the Island</p>
-                  <ul className="text-[10px] md:text-xs text-stone/70 leading-tight list-disc pl-4 space-y-0.5 mt-0.5">
+                  <ul className="text-[8px] md:text-[10px] text-stone/70 leading-tight list-disc pl-4 space-y-0.5 mt-0.5">
                     <li>Abstract desert landscapes</li>
                     <li>Wildlife photography</li>
                     <li>Geological studies</li>
@@ -386,6 +386,18 @@ export default function ProjectModal({ project, onClose }) {
                   </ul>
                 </div>
               </div>
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                The Renovated Guestroom
+              </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Between Tide &amp; Time</p>
+              <p className="text-xs leading-relaxed text-stone/80 text-justify mb-4">A <PH>private refuge</PH> where guests <PH>wake with the desert</PH>, <PH>retreat with the tide</PH>, &amp; experience the <PH>timeless beauty of the Anantara Sir Bani Yas Island</PH>.</p>
+              <Img src="/projects/between-tide-time/color-palette-banner.webp" alt="Color palette banner with five material and mood swatches" className="w-full h-auto rounded-sm" />
             </div>
           )}
 
