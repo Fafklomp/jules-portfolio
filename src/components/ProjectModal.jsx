@@ -374,7 +374,7 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
                 Art Direction
               </p>
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <Img src="/projects/between-tide-time/art-direction.webp" alt="Art direction moodboard: fragments of the island with abstract landscapes and wildlife photography" className="w-full h-auto rounded-sm mt-12 md:mt-0" />
                 <div className="absolute top-0 left-0 px-3 py-2 md:px-4 md:py-3 max-w-[70%] md:max-w-xs">
                   <p className="text-xs italic mb-0 leading-tight" style={{ color: '#fdbf69' }}>Fragments of the Island</p>
