@@ -247,11 +247,31 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
-          <p className="text-[10px] md:text-xs leading-relaxed text-stone/80 text-justify mb-8 border border-[#fdbf69] rounded-sm px-3 py-2 text-justify">
+          <div className="mb-8 border border-[#fdbf69] rounded-sm px-3 py-2">
             {project.id === 1 ? (
-              <>A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</>
-            ) : project.description}
-          </p>
+              <p className="text-[10px] md:text-xs leading-relaxed text-stone/80 text-justify">A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</p>
+            ) : (
+              project.description.split('\n\n').map((para, i) => (
+                <p key={i} className="text-[10px] md:text-xs leading-relaxed text-stone/80 text-justify mb-2 last:mb-0">
+                  {para.split(project.name).map((chunk, j, arr) => (
+                    <span key={j}>
+                      {chunk}
+                      {j < arr.length - 1 && <em>{project.name}</em>}
+                    </span>
+                  ))}
+                </p>
+              ))
+            )}
+          </div>
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                <span className="text-stone/25 mr-1">01</span>Existing
+              </p>
+            </div>
+          )}
 
           {project.id === 2 && (
             <div className="mb-8">

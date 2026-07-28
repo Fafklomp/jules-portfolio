@@ -5,7 +5,7 @@ import ProjectModal from '../components/ProjectModal'
 import ImageBanner from '../components/ImageBanner'
 import projects from '../data/projects'
 
-const filters = ['All', 'Work', 'University']
+const filters = ['All', 'Work', 'University', 'Design Explorations']
 
 const gridVariants = {
   hidden: {},

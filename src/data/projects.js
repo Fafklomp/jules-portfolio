@@ -33,7 +33,7 @@ const projects = [
   },
   {
     id: 3,
-    name: 'Closed-Loop Incubator',
+    name: 'Clothed-Loop Incubator',
     subtitle: 'Retail & Makerspace',
     category: 'University',
     location: 'Sunnyside, South Africa',
@@ -86,6 +86,20 @@ const projects = [
       'A creative incubator with a retail and makerspace in Pretoria Central built around a closed-loop design process, centred on the sale and production of a uniquely designed upcycled luminaire. Branded "Cinergy," the store challenges consumerist retail culture, using materials from the luminaire itself to spotlight plastic waste and bring sustainability awareness into an inner-city retail environment. Guided by the principle: Eliminate. Regenerate. Illuminate.',
     tags: ['Creative Incubator', 'Adaptive Reuse', 'Retail & Makerspace', 'Closed-Loop Design', 'Product Design'],
     software: ['AutoCAD', 'Adobe Photoshop', 'Adobe Illustrator'],
+  },
+  {
+    id: 7,
+    name: 'Between Tide & Time',
+    subtitle: 'Renovated Guestroom Exploration',
+    category: 'Design Explorations',
+    location: 'Sir Bani Yas Island, Abu Dhabi, UAE',
+    year: '2026',
+    area: '60m²',
+    image: '/projects/between-tide-time.webp',
+    description:
+      'Between Tide & Time is a conceptual proposal for the renovation of a five-star guestroom at a luxury island resort on Sir Bani Yas Island, Abu Dhabi. Inspired by the meeting of desert and sea, the design reinterprets the island\'s unique genius loci through a contemporary hospitality experience that celebrates both its heritage and extraordinary natural landscape.\n\nThe proposal responds to the brief\'s ambition to modernise the resort while preserving its authentic character. Drawing from the island\'s shifting dunes, coastal waters, native wildlife, and artisanal heritage, the design creates a calm, immersive sanctuary where every element contributes to a seamless guest experience. Spatial planning, bespoke joinery, curated FF&E, lighting, materiality, and art direction work together to blur the boundaries between interior and landscape, extending the room into its surrounding environment.',
+    tags: ['Guestroom Renovation', 'Material Exploration', 'Hospitality Design', 'Personal Work'],
+    software: ['Procreate', 'Adobe Photoshop'],
   },
 ]
 
