@@ -375,7 +375,7 @@ export default function ProjectModal({ project, onClose }) {
                 Art Direction
               </p>
               <div className="relative">
-                <Img src="/projects/between-tide-time/art-direction.webp" alt="Art direction moodboard: fragments of the island with abstract landscapes and wildlife photography" className="w-full h-auto rounded-sm" />
+                <Img src="/projects/between-tide-time/art-direction.webp" alt="Art direction moodboard: fragments of the island with abstract landscapes and wildlife photography" className="w-full h-auto rounded-sm mt-6 md:mt-0" />
                 <div className="absolute top-0 left-0 px-3 py-2 md:px-4 md:py-3 max-w-[70%] md:max-w-xs">
                   <p className="text-xs italic mb-0 leading-tight" style={{ color: '#fdbf69' }}>Fragments of the Island</p>
                   <ul className="text-[8px] md:text-[10px] text-stone/70 leading-tight list-disc pl-4 space-y-0.5 mt-0.5">
