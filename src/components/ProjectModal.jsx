@@ -302,6 +302,31 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Zoning
+              </p>
+              <img src="/projects/between-tide-time/zoning-options.webp" alt="Zoning options 01 and 02 with circulation diagrams" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Spatial Configuration
+              </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Exploration</p>
+              <img src="/projects/between-tide-time/spatial-exploration.webp" alt="Spatial configuration exploration sketches with design questions" className="w-full h-auto rounded-sm" />
+              <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Final</p>
+              <img src="/projects/between-tide-time/spatial-final.webp" alt="Final guestroom spatial layout with circulation diagram" className="w-full h-auto rounded-sm" />
+              <img src="/projects/between-tide-time/spatial-final-annotated.webp" alt="Annotated final floor plan with furniture and joinery notes" className="w-full h-auto rounded-sm mt-2" />
+              <img src="/projects/between-tide-time/final-user-journey.webp" alt="Final user journey with circulation path through the guestroom" className="w-full h-auto rounded-sm mt-2" />
+            </div>
+          )}
+
           {project.id === 2 && (
             <div className="mb-8">
               <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
