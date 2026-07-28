@@ -268,8 +268,30 @@ export default function ProjectModal({ project, onClose }) {
             <div className="mb-8">
               <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
-                <span className="text-stone/25 mr-1">01</span>Existing
+                Existing
               </p>
+              <img src="/projects/between-tide-time/existing-user-journey.webp" alt="Existing guestroom user journey and floor plan analysis" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Concept
+              </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Between Tide &amp; Time</p>
+              <img src="/projects/between-tide-time/concept-inspiration.webp" alt="Concept inspiration moodboard: restoration, sanctuary, connection, discovery, purpose" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs italic mb-4" style={{ color: '#fdbf69' }}>Rhythm - Nature Translated</p>
+              <p className="text-xs leading-relaxed text-stone/80 text-justify mb-3">Between the <PH>ancient landscape</PH> of <PH>Anantara Sir Bani Yas Island</PH> &amp; the <PH>ever-changing rhythm</PH> of the <PH>Arabian Gulf</PH>, the guestroom is envisioned as a <PH>secluded wilderness sanctuary</PH>.</p>
+              <p className="text-xs leading-relaxed text-stone/80 text-justify mb-3">A space that is not inspired by the desert island, but by the <PH>process</PH> that created it.</p>
+              <p className="text-xs leading-relaxed text-stone/80 text-justify mb-4">This is celebrated in the interior through <PH>authentic</PH> &amp; <PH>timeless</PH> materials, <PH>texture</PH>, and refined <PH>craftmanship</PH> to create a restorative retreat immersed in nature.</p>
+              <p className="text-xs italic text-stone/40 tracking-wide">Timeless &middot; Tactile &middot; Restorative &middot; Immersive</p>
             </div>
           )}
 
