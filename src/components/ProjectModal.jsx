@@ -363,6 +363,29 @@ export default function ProjectModal({ project, onClose }) {
               <img src="/projects/between-tide-time/ffe-bedroom.webp" alt="Bedroom FF&E moodboard with lighting, textiles, bed, and furniture details" className="w-full h-auto rounded-sm" />
               <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Bathroom</p>
               <img src="/projects/between-tide-time/ffe-bathroom.webp" alt="Bathroom FF&E moodboard with fixtures, stone surfaces, and rainfall shower details" className="w-full h-auto rounded-sm" />
+              <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Balcony</p>
+              <img src="/projects/between-tide-time/ffe-balcony.webp" alt="Balcony FF&E moodboard with lounge furniture and natural textures" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Art Direction
+              </p>
+              <div className="relative">
+                <img src="/projects/between-tide-time/art-direction.webp" alt="Art direction moodboard: fragments of the island with abstract landscapes and wildlife photography" className="w-full h-auto rounded-sm" />
+                <div className="absolute top-0 left-0 bg-offwhite/90 px-3 py-2 md:px-4 md:py-3 rounded-sm max-w-[70%] md:max-w-xs">
+                  <p className="text-xs italic mb-0 leading-tight" style={{ color: '#fdbf69' }}>Fragments of the Island</p>
+                  <ul className="text-[10px] md:text-xs text-stone/70 leading-tight list-disc pl-4 space-y-0.5 mt-0.5">
+                    <li>Abstract desert landscapes</li>
+                    <li>Wildlife photography</li>
+                    <li>Geological studies</li>
+                    <li>Handmade Emirati crafts</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           )}
 
