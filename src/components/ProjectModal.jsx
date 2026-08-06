@@ -247,7 +247,7 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
-          <p className="text-[10px] md:text-xs leading-relaxed text-stone/80 text-justify mb-8 border border-[#fdbf69] rounded-sm px-3 py-2 text-justify">
+          <p className="text-[10px] md:text-xs leading-relaxed text-stone/80 text-justify mb-4 border border-[#fdbf69] rounded-sm px-3 py-2 text-justify">
             {project.id === 1 ? (
               <>A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</>
             ) : project.description}
@@ -475,20 +475,72 @@ export default function ProjectModal({ project, onClose }) {
             {project.tags.map(tag => (
               <span
                 key={tag}
-                className="text-[10px] md:text-xs tracking-wide lowercase text-sage border border-sage/30 px-2 py-0.5 md:px-3 md:py-1 rounded-sm"
+                className="text-[8px] tracking-wide lowercase text-sage border border-sage/30 px-1.5 py-0.5 rounded-sm"
               >
                 {tag}
               </span>
             ))}
           </div>
 
+          {project.id === 3 && (
+            <div className="mt-4">
+              <a
+                href="/projects/closed-loop-incubator.pdf"
+                download
+                className="flex w-full items-center justify-center gap-2 text-xs tracking-wide lowercase italic text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+              >
+                View Project
+                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
+              </a>
+            </div>
+          )}
+
+          {project.id === 4 && (
+            <div className="mt-4">
+              <a
+                href="/projects/motion-picture-museum.pdf"
+                download
+                className="flex w-full items-center justify-center gap-2 text-xs tracking-wide lowercase italic text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+              >
+                View Project
+                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
+              </a>
+            </div>
+          )}
+
+          {project.id === 5 && (
+            <div className="mt-4">
+              <a
+                href="/projects/hatfield-wayste.pdf"
+                download
+                className="flex w-full items-center justify-center gap-2 text-xs tracking-wide lowercase italic text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+              >
+                View Project
+                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
+              </a>
+            </div>
+          )}
+
+          {project.id === 6 && (
+            <div className="mt-4">
+              <a
+                href="/projects/creative-incubator.pdf"
+                download
+                className="flex w-full items-center justify-center gap-2 text-xs tracking-wide lowercase italic text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+              >
+                View Project
+                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
+              </a>
+            </div>
+          )}
+
           {project.id === 1 && (
-            <div className="mt-5">
+            <div className="mt-4">
               <a
                 href="/projects/tropical-spa.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+                className="flex w-full items-center justify-center gap-2 text-xs tracking-wide lowercase italic text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
               >
                 View More
                 <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
@@ -498,66 +550,14 @@ export default function ProjectModal({ project, onClose }) {
 
 
           {project.id === 2 && (
-            <div className="mt-5">
+            <div className="mt-4">
               <a
                 href="/projects/jungle-resort.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
+                className="flex w-full items-center justify-center gap-2 text-xs tracking-wide lowercase italic text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
               >
                 View More
-                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
-              </a>
-            </div>
-          )}
-
-          {project.id === 3 && (
-            <div className="mt-5">
-              <a
-                href="/projects/closed-loop-incubator.pdf"
-                download
-                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
-              >
-                View Project
-                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
-              </a>
-            </div>
-          )}
-
-          {project.id === 4 && (
-            <div className="mt-5">
-              <a
-                href="/projects/motion-picture-museum.pdf"
-                download
-                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
-              >
-                View Project
-                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
-              </a>
-            </div>
-          )}
-
-          {project.id === 5 && (
-            <div className="mt-5">
-              <a
-                href="/projects/hatfield-wayste.pdf"
-                download
-                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
-              >
-                View Project
-                <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
-              </a>
-            </div>
-          )}
-
-          {project.id === 6 && (
-            <div className="mt-5">
-              <a
-                href="/projects/creative-incubator.pdf"
-                download
-                className="inline-flex items-center gap-2 text-xs tracking-wide lowercase text-stone/70 hover:text-stone/90 transition-colors duration-150 bg-[#fdbf69]/20 hover:bg-[#fdbf69]/35 px-3 py-1.5 rounded-sm"
-              >
-                View Project
                 <MdTouchApp size={16} style={{ color: '#fdbf69' }} />
               </a>
             </div>
