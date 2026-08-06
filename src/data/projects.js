@@ -16,6 +16,20 @@ const projects = [
     myRole: 'I was responsible for the interior design of the Spa (budget of $10 million), working alongside my interior designer colleague. My scope included the schematic design, custom design and detailing of the joinery and FF&E, furniture selection and layout, reflected ceiling plans, and coordination of plumbing and electrical layouts. I also prepared room, door, and window schedules (with custom door details), vanity basin matrix, tender documentation, and 3D renderings and visualisations.\n\nIn addition, I developed client presentations, responded to RFIs, and maintained communication with contractors and the wider project team to ensure the seamless delivery of the Spa interiors.',
   },
   {
+    id: 7,
+    name: 'Between Tide & Time',
+    subtitle: 'Renovated Guestroom Exploration',
+    category: 'Explorations',
+    location: 'Sir Bani Yas Island, Abu Dhabi, UAE',
+    year: '2026',
+    area: '60m²',
+    image: '/projects/between-tide-time.webp',
+    description:
+      'Between Tide & Time is a conceptual proposal for the renovation of a five-star guestroom at a luxury island resort on Sir Bani Yas Island, Abu Dhabi. Inspired by the meeting of desert and sea, the design reinterprets the island\'s unique genius loci through a contemporary hospitality experience that celebrates both its heritage and extraordinary natural landscape.\n\nThe proposal responds to the brief\'s ambition to modernise the resort while preserving its authentic character. Drawing from the island\'s shifting dunes, coastal waters, native wildlife, and artisanal heritage, the design creates a calm, immersive sanctuary where every element contributes to a seamless guest experience. Spatial planning, bespoke joinery, curated FF&E, lighting, materiality, and art direction work together to blur the boundaries between interior and landscape, extending the room into its surrounding environment.',
+    tags: ['Guestroom Renovation', 'Material Exploration', 'Hospitality Design', 'Personal Work'],
+    software: ['Procreate', 'Adobe Photoshop'],
+  },
+  {
     id: 2,
     name: 'Jungle Resort & Accommodation',
     subtitle: 'Luxury Frontiers',
@@ -33,7 +47,7 @@ const projects = [
   },
   {
     id: 3,
-    name: 'Closed-Loop Incubator',
+    name: 'Clothed-Loop Incubator',
     subtitle: 'Retail & Makerspace',
     category: 'University',
     location: 'Sunnyside, South Africa',

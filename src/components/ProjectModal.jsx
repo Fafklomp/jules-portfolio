@@ -247,11 +247,159 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           )}
 
-          <p className="text-[10px] md:text-xs leading-relaxed text-stone/80 text-justify mb-4 border border-[#fdbf69] rounded-sm px-3 py-2 text-justify">
+          <div className="mb-4 border border-[#fdbf69] rounded-sm px-3 py-2">
             {project.id === 1 ? (
-              <>A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</>
-            ) : project.description}
-          </p>
+              <p className="text-[10px] md:text-xs leading-relaxed text-stone/80 text-justify">A luxury spa and wellness center on a private island in the Seychelles, designed in collaboration with Silvio Rech & Lesley Carstens, blending tropical materiality with calm, resort-style interiors across treatment rooms, relaxation areas, a gym, changerooms, thermal suite, and a retail and arrival space.</p>
+            ) : (
+              project.description.split('\n\n').map((para, i) => (
+                <p key={i} className="text-[10px] md:text-xs leading-relaxed text-stone/80 text-justify mb-2 last:mb-0">
+                  {para.split(project.name).map((chunk, j, arr) => (
+                    <span key={j}>
+                      {chunk}
+                      {j < arr.length - 1 && <em>{project.name}</em>}
+                    </span>
+                  ))}
+                </p>
+              ))
+            )}
+          </div>
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Existing
+              </p>
+              <Img src="/projects/between-tide-time/existing-user-journey.webp" alt="Existing guestroom user journey and floor plan analysis" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Concept
+              </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Between Tide &amp; Time</p>
+              <Img src="/projects/between-tide-time/concept-inspiration.webp" alt="Concept inspiration moodboard: restoration, sanctuary, connection, discovery, purpose" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs italic mb-4" style={{ color: '#fdbf69' }}>Rhythm - Nature Translated</p>
+              <p className="text-xs leading-relaxed text-stone/80 text-justify mb-3">Between the <PH>ancient landscape</PH> of <PH>Anantara Sir Bani Yas Island</PH> &amp; the <PH>ever-changing rhythm</PH> of the <PH>Arabian Gulf</PH>, the guestroom is envisioned as a <PH>secluded wilderness sanctuary</PH>.</p>
+              <p className="text-xs leading-relaxed text-stone/80 text-justify mb-3">A space that is not inspired by the desert island, but by the <PH>process</PH> that created it.</p>
+              <p className="text-xs leading-relaxed text-stone/80 text-justify mb-4">This is celebrated in the interior through <PH>authentic</PH> &amp; <PH>timeless</PH> materials, <PH>texture</PH>, and refined <PH>craftmanship</PH> to create a restorative retreat immersed in nature.</p>
+              <p className="text-xs italic text-stone/40 tracking-wide">Timeless &middot; Tactile &middot; Restorative &middot; Immersive</p>
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-wide lowercase font-light italic mb-3" style={{ color: '#fdbf69' }}>Overall Look &amp; Feel</p>
+              <Img src="/projects/between-tide-time/look-feel.webp" alt="Look and feel moodboard: organic forms inspired by the surroundings" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Zoning
+              </p>
+              <Img src="/projects/between-tide-time/zoning-options.webp" alt="Zoning options 01 and 02 with circulation diagrams" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Spatial Configuration
+              </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Exploration</p>
+              <Img src="/projects/between-tide-time/spatial-exploration.webp" alt="Spatial configuration exploration sketches with design questions" className="w-full h-auto rounded-sm" />
+              <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Final</p>
+              <Img src="/projects/between-tide-time/spatial-final.webp" alt="Final guestroom spatial layout with circulation diagram" className="w-full h-auto rounded-sm" />
+              <Img src="/projects/between-tide-time/spatial-final-annotated.webp" alt="Annotated final floor plan with furniture and joinery notes" className="w-full h-auto rounded-sm mt-2" />
+              <Img src="/projects/between-tide-time/final-user-journey.webp" alt="Final user journey with circulation path through the guestroom" className="w-full h-auto rounded-sm mt-2" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Material Palette
+              </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Shaped by Nature</p>
+              <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-2 items-start">
+                <Img src="/projects/between-tide-time/material-palette.webp" alt="Material palette moodboard with color swatches, timber, stone and textiles" className="w-full h-auto rounded-sm" />
+                <div>
+                  <p className="text-[10px] italic text-stone/70 leading-tight"><PH>Earth</PH> &ndash; The Memory of Time</p>
+                  <p className="text-[10px] leading-tight text-stone/80 text-justify">Materials that feel ancient &amp; grounded.</p>
+                  <p className="text-[10px] italic text-stone/40 tracking-wide mb-2">Permanent &middot; Warm &middot; Tactile</p>
+                  <p className="text-[10px] italic text-stone/70 leading-tight"><PH>Water</PH> &ndash; The Rhythm of Tide</p>
+                  <p className="text-[10px] leading-tight text-stone/80 text-justify">Materials that create softness &amp; movement.</p>
+                  <p className="text-[10px] italic text-stone/40 tracking-wide mb-2">Calm &middot; Fluid &middot; Restorative</p>
+                  <p className="text-[10px] italic text-stone/70 leading-tight"><PH>Craft</PH> &ndash; The Human Touch</p>
+                  <p className="text-[10px] leading-tight text-stone/80 text-justify">Materials that celebrate artisanship.</p>
+                  <p className="text-[10px] italic text-stone/40 tracking-wide">Authentic &middot; Personal &middot; Memorable</p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                FF&amp;E
+              </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Refreshments &amp; Wardrobe</p>
+              <Img src="/projects/between-tide-time/ffe-refreshments-wardrobe.webp" alt="Refreshments and wardrobe FF&E moodboard with arrival narrative, joinery, and styling details" className="w-full h-auto rounded-sm" />
+              <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Bedroom</p>
+              <Img src="/projects/between-tide-time/ffe-bedroom.webp" alt="Bedroom FF&E moodboard with lighting, textiles, bed, and furniture details" className="w-full h-auto rounded-sm" />
+              <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Bathroom</p>
+              <Img src="/projects/between-tide-time/ffe-bathroom.webp" alt="Bathroom FF&E moodboard with fixtures, stone surfaces, and rainfall shower details" className="w-full h-auto rounded-sm" />
+              <p className="text-xs italic mt-6 mb-4 ml-4" style={{ color: '#fdbf69' }}>Balcony</p>
+              <Img src="/projects/between-tide-time/ffe-balcony.webp" alt="Balcony FF&E moodboard with lounge furniture and natural textures" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Art Direction
+              </p>
+              <div className="relative overflow-hidden">
+                <Img src="/projects/between-tide-time/art-direction.webp" alt="Art direction moodboard: fragments of the island with abstract landscapes and wildlife photography" className="w-full h-auto rounded-sm mt-12 md:mt-0" />
+                <div className="absolute top-0 left-0 px-3 py-2 md:px-4 md:py-3 max-w-[70%] md:max-w-xs">
+                  <p className="text-xs italic mb-0 leading-tight" style={{ color: '#fdbf69' }}>Fragments of the Island</p>
+                  <ul className="text-[8px] md:text-[10px] text-stone/70 leading-tight list-disc pl-4 space-y-0.5 mt-0.5">
+                    <li>Abstract desert landscapes</li>
+                    <li>Wildlife photography</li>
+                    <li>Geological studies</li>
+                    <li>Handmade Emirati crafts</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {project.id === 7 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-1 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                The Renovated Guestroom
+              </p>
+              <p className="text-xs italic mb-4 ml-4" style={{ color: '#fdbf69' }}>Between Tide &amp; Time</p>
+              <p className="text-xs leading-relaxed text-stone/80 text-justify mb-4">A <PH>private refuge</PH> where guests <PH>wake with the desert</PH>, <PH>retreat with the tide</PH>, &amp; experience the <PH>timeless beauty of the Anantara Sir Bani Yas Island</PH>.</p>
+              <Img src="/projects/between-tide-time/color-palette-banner.webp" alt="Color palette banner with five material and mood swatches" className="w-full h-auto rounded-sm" />
+            </div>
+          )}
 
           {project.id === 2 && (
             <div className="mb-8">
@@ -589,7 +737,7 @@ export default function ProjectModal({ project, onClose }) {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="max-w-full max-h-full object-contain rounded-sm cursor-default"
+              className={`max-w-full max-h-full object-contain rounded-sm cursor-default ${project.id === 7 ? 'bg-white' : ''}`}
               onClick={e => e.stopPropagation()}
             />
 

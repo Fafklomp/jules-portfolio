@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import photo from '../assets/photo.jpg'
 
 function PH({ children }) {
@@ -11,13 +13,61 @@ function PH({ children }) {
   )
 }
 
+function PhotoLightbox({ onClose }) {
+  useEffect(() => {
+    const handler = (e) => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [onClose])
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [])
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4"
+      onClick={onClose}
+    >
+      <motion.img
+        src={photo}
+        alt="Jules Tucker"
+        initial={{ scale: 0.92, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.92, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        className="max-w-full max-h-full object-contain rounded-sm cursor-default"
+        onClick={e => e.stopPropagation()}
+      />
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors duration-150 text-xl leading-none"
+        aria-label="Close"
+      >
+        ✕
+      </button>
+    </motion.div>
+  )
+}
+
 export default function Hero() {
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+
   return (
     <div className="px-6 md:px-16 pt-24 md:pt-20 pb-16 max-w-5xl mx-auto">
       {/* Mobile: photo + name side by side */}
       <div className="flex flex-row gap-5 items-end md:hidden mb-6">
         <div className="shrink-0">
-          <img src={photo} alt="Jules Tucker" className="w-32 rounded-sm block" />
+          <img
+            src={photo}
+            alt="Jules Tucker"
+            className="w-32 rounded-sm block cursor-zoom-in"
+            onClick={() => setLightboxOpen(true)}
+          />
         </div>
         <div>
           <h1
@@ -43,7 +93,12 @@ export default function Hero() {
       {/* Desktop: original layout */}
       <div className="hidden md:flex flex-row gap-16 items-end">
         <div className="md:sticky md:top-20 shrink-0">
-          <img src={photo} alt="Jules Tucker" className="w-80 rounded-sm block" />
+          <img
+            src={photo}
+            alt="Jules Tucker"
+            className="w-80 rounded-sm block cursor-zoom-in"
+            onClick={() => setLightboxOpen(true)}
+          />
         </div>
         <div className="flex flex-col justify-start space-y-6">
           <div>
@@ -65,6 +120,10 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {lightboxOpen && <PhotoLightbox onClose={() => setLightboxOpen(false)} />}
+      </AnimatePresence>
     </div>
   )
 }
