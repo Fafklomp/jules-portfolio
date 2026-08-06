@@ -72,6 +72,37 @@ function PerspBanner({ speed = 30 }) {
 }
 
 
+function ImageBanner({ images, speed = 40, onImageClick }) {
+  const x = useMotionValue(0)
+  const containerRef = useRef(null)
+  const doubled = [...images, ...images]
+
+  useAnimationFrame((_, delta) => {
+    const container = containerRef.current
+    if (!container) return
+    const halfWidth = container.scrollWidth / 2
+    const next = x.get() - (speed * delta) / 1000
+    x.set(next <= -halfWidth ? 0 : next)
+  })
+
+  return (
+    <div className="w-full overflow-hidden">
+      <motion.div ref={containerRef} style={{ x }} className="flex gap-3 w-max items-stretch h-48 md:h-64">
+        {doubled.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt=""
+            className="h-full w-auto object-cover flex-shrink-0 rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-150"
+            onClick={() => onImageClick(i % images.length)}
+          />
+        ))}
+      </motion.div>
+    </div>
+  )
+}
+
+
 function PH({ children }) {
   return (
     <span className="relative inline">
@@ -123,9 +154,12 @@ const RESORT_PLANS_GALLERY = [
   '/projects/jungle-resort/floorplan-2.webp',
 ]
 
+const SKETCHES_GALLERY = Array.from({ length: 15 }, (_, i) => `/projects/closed-loop-incubator/sketches/${i + 1}.jpg`)
+
 export default function ProjectModal({ project, onClose }) {
   // enlargedImg = { src, gallery: string[] | null, index: number }
   const [enlargedImg, setEnlargedImg] = useState(null)
+  const [sketchesExpanded, setSketchesExpanded] = useState(false)
   const touchStartX = useRef(null)
 
   function openEnlarged(src, gallery = null, index = 0) {
@@ -263,6 +297,54 @@ export default function ProjectModal({ project, onClose }) {
               ))
             )}
           </div>
+
+          {project.id === 3 && (
+            <div className="mb-8">
+              <p className="text-xs tracking-widest uppercase text-stone/40 mb-4 flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-gold shrink-0" />
+                Sneak Peek through Sketches
+              </p>
+              {sketchesExpanded && (
+                <button
+                  onClick={() => setSketchesExpanded(false)}
+                  className="block mb-3 text-[10px] tracking-widest uppercase text-stone/35 hover:text-stone/60 transition-colors duration-150"
+                >
+                  ← collapse
+                </button>
+              )}
+              <AnimatePresence mode="wait">
+                {sketchesExpanded ? (
+                  <motion.div
+                    key="grid"
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="grid grid-cols-2 sm:grid-cols-3 gap-2"
+                  >
+                    {SKETCHES_GALLERY.map((src, i) => (
+                      <img
+                        key={i}
+                        src={src}
+                        alt=""
+                        className="w-full aspect-square object-cover rounded-sm cursor-zoom-in hover:opacity-90 transition-opacity duration-150"
+                        onClick={() => openEnlarged(src, SKETCHES_GALLERY, i)}
+                      />
+                    ))}
+                  </motion.div>
+                ) : (
+                  <motion.div key="banner" initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="relative">
+                    <ImageBanner
+                      images={SKETCHES_GALLERY}
+                      onImageClick={() => setSketchesExpanded(true)}
+                    />
+                    <div className="absolute top-3 left-3 pointer-events-none z-10">
+                      <MdTouchApp size={22} style={{ color: '#fdbf69' }} />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
 
           {project.id === 7 && (
             <div className="mb-8">
